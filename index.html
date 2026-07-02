@@ -3,7 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clypio | attention, sold by the view</title>
+<meta name="description" content="Clypio turns your content into short clips and distributes them across TikTok, Reels, Shorts, and X through a creator network. Pay only per verified view. Bots filtered, tracked live.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clypio.com">
+<meta property="og:title" content="Clypio | Attention, sold by the view.">
+<meta property="og:description" content="Your content, everywhere. A creator network distributes your clips across every major platform. Pay only for verified views. Around 8x cheaper than ads.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Clypio | Attention, sold by the view.">
+<meta name="twitter:description" content="Performance clipping network. Pay only per verified view. Bots filtered, tracked live.">
+<title>Clypio | Attention, sold by the view.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..560&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -243,7 +251,7 @@ a:focus-visible,button:focus-visible,.tab:focus-visible,input:focus-visible,sele
       <a href="#demo" class="btn ghost">See the dashboard</a>
     </div>
     <div class="hstats reveal">
-      <div class="s"><div class="n"><b>$1-3</b></div><div class="l">per 1,000 views, vs ~$25 on paid ads</div></div>
+      <div class="s"><div class="n"><b>$3-4</b></div><div class="l">per 1,000 views, vs ~$25 on paid ads</div></div>
       <div class="s"><div class="n">Pay per <b>view</b></div><div class="l">verified, or you don't pay</div></div>
       <div class="s"><div class="n"><b>4</b> platforms</div><div class="l">TikTok · Reels · Shorts · X</div></div>
     </div>
@@ -299,7 +307,7 @@ a:focus-visible,button:focus-visible,.tab:focus-visible,input:focus-visible,sele
       <div class="tabs"><button type="button" class="tab on" data-t="ov" aria-label="Overview tab">Overview</button><button type="button" class="tab" data-t="cl" aria-label="Clips tab">Clips</button></div>
       <div class="appbody">
         <div class="democtl">
-          <div class="cl">Try it <span class="hint">— drag to set a campaign budget and watch the numbers move</span></div>
+          <div class="cl">Try it <span class="hint">· drag to set a campaign budget and watch the numbers move</span></div>
           <div class="row"><input type="range" id="budget" min="1000" max="20000" step="500" value="2500" aria-label="Campaign budget"><span class="val" id="budgetVal">$2,500</span></div>
           <div class="ends"><span>$1k</span><span>$20k</span></div>
         </div>
@@ -326,7 +334,7 @@ a:focus-visible,button:focus-visible,.tab:focus-visible,input:focus-visible,sele
         </div>
       </div>
     </div>
-    <div class="disclaim">Sample data for illustration. Live campaigns track real platform views, with bot-flagged clips voided automatically.</div>
+    <div class="disclaim">Sample data at the pilot rate ($3 per 1k verified views). Live campaigns track real platform views, with bot-flagged clips voided automatically.</div>
   </div>
 </section>
 
@@ -467,8 +475,9 @@ function setKPIs(views,budget){k_views.textContent=fmt(views);k_spend.textConten
   k_saved.textContent='You saved '+Math.round((1-CLIENT_CPM/AD_CPM)*100)+'% vs running ads';}
 function scaleClips(views){const s=views/BASE_OK;clipEls.forEach(o=>{const sv=o.v*s;o.vc.textContent=fmt(sv);o.pc.textContent=o.ok?money(sv/1000*CLIP_CPM):'$0';});}
 function paint(budget){const views=viewsFor(budget);budgetVal.textContent=money(budget);poolMeta.textContent=money(budget);setKPIs(views,budget);scaleClips(views);}
-let played=false;
+let played=false,animId=0;
 function runDemo(){
+  const myId=++animId;
   const budget=+bud.value,views=viewsFor(budget);
   budgetVal.textContent=money(budget);poolMeta.textContent=money(budget);scaleClips(views);
   const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -476,13 +485,13 @@ function runDemo(){
     const mx=Math.max(...DAYS);document.querySelectorAll('.daybars .col').forEach((c,i)=>c.style.height=(DAYS[i]/mx*100)+'%');
     document.querySelectorAll('#cliprows tr').forEach(r=>r.classList.add('in'));return;}
   const t0=performance.now(),dur=1500;
-  function tick(now){const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3);setKPIs(views*e,budget*e);if(p<1)requestAnimationFrame(tick);else setKPIs(views,budget);}
+  function tick(now){if(myId!==animId)return;const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3);setKPIs(views*e,budget*e);if(p<1)requestAnimationFrame(tick);else setKPIs(views,budget);}
   requestAnimationFrame(tick);
   setTimeout(()=>document.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.pct+'%'),150);
   const mx=Math.max(...DAYS);document.querySelectorAll('.daybars .col').forEach((c,i)=>setTimeout(()=>c.style.height=(DAYS[i]/mx*100)+'%',150+i*60));
   document.querySelectorAll('#cliprows tr').forEach((r,i)=>setTimeout(()=>r.classList.add('in'),200+i*80));
 }
-bud.addEventListener('input',()=>paint(+bud.value));
+bud.addEventListener('input',()=>{animId++;paint(+bud.value);});
 new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting&&!played){played=true;runDemo();}}),{threshold:.3}).observe(document.getElementById('appwin'));
 document.getElementById('replay').addEventListener('click',()=>{
   document.querySelectorAll('.fill').forEach(f=>f.style.width='0');
@@ -500,8 +509,8 @@ document.getElementById('leadform').addEventListener('submit',async(e)=>{e.preve
   try{
     const r=await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
     if(r.ok){form.style.display='none';document.getElementById('success').classList.add('show');}
-    else{btn.disabled=false;btn.textContent='Book my pilot';alert('Something went wrong — please email us directly.');}
-  }catch(err){btn.disabled=false;btn.textContent='Book my pilot';alert('Network error — please try again.');}
+    else{btn.disabled=false;btn.textContent='Book my pilot';alert('Something went wrong. Please email us directly.');}
+  }catch(err){btn.disabled=false;btn.textContent='Book my pilot';alert('Network error. Please try again.');}
 });
 </script>
 </body>
