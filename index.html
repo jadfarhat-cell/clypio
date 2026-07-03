@@ -47,6 +47,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .navlinks{display:flex;align-items:center;gap:26px;}
 .navlinks a.link{font-family:var(--grotesk);font-weight:500;font-size:14px;color:var(--dim);transition:.2s;}
 .navlinks a.link:hover{color:var(--text);}
+.navlinks a.nav-login{font-family:var(--grotesk);font-weight:500;font-size:14px;color:var(--dim);transition:.2s;}
+.navlinks a.nav-login:hover{color:var(--text);}
 .navcta{font-family:var(--grotesk);font-weight:600;font-size:13px;background:var(--text);color:var(--ink);padding:9px 18px;border-radius:99px;transition:.2s;}
 .navcta:hover{background:var(--gold2);transform:translateY(-1px);}
 
@@ -209,6 +211,23 @@ footer .fl:hover{opacity:1;color:var(--gold);}
   .appbody{padding:16px;}
 }
 @media(max-width:520px){ .steps,.plays{grid-template-columns:1fr;} .hstats .s{border-right:none;border-bottom:1px solid var(--line);} }
+@media(max-width:600px){
+  html,body{overflow-x:hidden;}
+  .hero{padding:120px 0 56px;}
+  .navlinks{gap:16px;}
+  .cta-row{gap:10px;}
+  .appbar{gap:10px;padding:12px 14px;}
+  .appbar .title{display:none;}                    /* free room on a phone */
+  .replay{margin-left:10px;}
+  .appbody{padding:14px;}
+  .democtl .row{gap:12px;}
+  .democtl .val{font-size:20px;min-width:82px;}
+  .appbody .tabpane{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  table.clips{min-width:440px;}                     /* scrolls inside its pane */
+  .formcard{padding:26px 20px;}
+  .field input,.field select{font-size:16px;}       /* stops iOS zoom on focus */
+  .hstats .s{padding:20px 22px;}
+}
 
 /* ui/ux pass: accessibility + interaction */
 *{touch-action:manipulation;}
@@ -236,7 +255,7 @@ a:focus-visible,button:focus-visible,.tab:focus-visible,input:focus-visible,sele
     <a href="#system" class="link">How it works</a>
     <a href="#demo" class="link">Live demo</a>
     <a href="#plays" class="link">Campaigns</a>
-    <a href="https://app.clypio.com/login" class="link">Log in</a>
+    <a href="https://app.clypio.com/login" class="nav-login">Log in</a>
     <a href="#book" class="navcta">Book a pilot</a>
   </div>
 </div></nav>
