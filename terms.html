@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- REVIEW BEFORE PUBLISHING: fill the [bracketed] items (legal entity, governing
+     jurisdiction, contact mailboxes) and have counsel review. Contractor status,
+     payout terms, and limitation of liability especially warrant a lawyer's eyes. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all">
+<meta name="description" content="The terms that govern your use of Clypio.">
+<title>Terms of Service | Clypio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..560&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C0D10; --ink2:#121419; --card:#16181E; --card2:#1B1E25; --line:#23262E;
+  --text:#ECEAE3; --dim:#A2A6AE; --faint:#6D7480; --gold:#C9A227; --gold2:#E3C04A; --green:#3FB66B;
+  --serif:'Fraunces',Georgia,serif; --grotesk:'Space Grotesk',sans-serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.68;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
+
+nav{position:sticky;top:0;z-index:40;background:rgba(12,13,16,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:var(--grotesk);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--text);}
+.logo .d{color:var(--gold);}
+.backlink{font-family:var(--grotesk);font-weight:600;font-size:13px;color:var(--dim);transition:.2s;}
+.backlink:hover{color:var(--text);}
+
+header{padding:64px 0 34px;border-bottom:1px solid var(--line);}
+.eyebrow{font-family:var(--grotesk);font-weight:500;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);}
+h1{font-family:var(--serif);font-weight:540;font-size:clamp(32px,5vw,52px);line-height:1.04;letter-spacing:-.015em;margin:16px 0 0;}
+.updated{color:var(--faint);font-size:13.5px;font-family:var(--grotesk);margin-top:18px;}
+.intro{color:var(--dim);font-size:16.5px;max-width:66ch;margin-top:22px;}
+
+.doc{display:grid;grid-template-columns:230px 1fr;gap:48px;padding:52px 0 96px;}
+.toc{position:sticky;top:92px;align-self:start;}
+.toc .tl{font-family:var(--grotesk);font-weight:600;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;}
+.toc a{display:block;font-size:13.5px;color:var(--dim);padding:5px 0;border-left:2px solid transparent;padding-left:12px;margin-left:-2px;transition:.15s;}
+.toc a:hover{color:var(--text);border-color:var(--line);}
+.toc a.on{color:var(--gold);border-color:var(--gold);}
+
+.body h2{font-family:var(--serif);font-weight:540;font-size:26px;line-height:1.15;letter-spacing:-.01em;margin:44px 0 14px;scroll-margin-top:88px;}
+.body h2:first-child{margin-top:0;}
+.body h3{font-family:var(--grotesk);font-weight:600;font-size:15px;color:var(--text);margin:26px 0 8px;letter-spacing:.01em;}
+.body p{color:var(--dim);font-size:15.5px;margin:0 0 15px;max-width:70ch;}
+.body ul{margin:0 0 15px;padding-left:0;list-style:none;max-width:70ch;}
+.body li{color:var(--dim);font-size:15.5px;position:relative;padding-left:22px;margin-bottom:10px;}
+.body li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:.7;}
+.body strong{color:var(--text);font-weight:600;}
+.body a.inline{color:var(--gold2);border-bottom:1px solid rgba(227,192,74,.35);}
+.body a.inline:hover{border-color:var(--gold2);}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:16px 20px;margin:20px 0;}
+.note p{margin:0;color:var(--dim);font-size:14.5px;}
+.caps{font-size:14px;color:var(--dim);background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:16px 0;max-width:72ch;}
+
+footer{border-top:1px solid var(--line);padding:40px 0;}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center;}
+.flinks a{font-family:var(--grotesk);font-size:13px;color:var(--dim);margin-right:20px;transition:.2s;}
+.flinks a:hover{color:var(--text);}
+.fcopy{font-size:12.5px;color:var(--faint);font-family:var(--grotesk);}
+
+@media (max-width:820px){ .doc{grid-template-columns:1fr;gap:0;} .toc{display:none;} }
+@media (pointer:coarse){ .backlink,.flinks a{min-height:36px;display:inline-flex;align-items:center;} }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="https://clypio.com" class="logo">Clypio<span class="d">.</span></a>
+  <a href="https://clypio.com" class="backlink">← Back to site</a>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="eyebrow">Legal</div>
+  <h1>Terms of Service</h1>
+  <div class="updated">Last updated: July 14, 2026</div>
+  <p class="intro">These terms are the agreement between you and Clypio. They cover how the network works, what brands and clippers each agree to, how payments and verified views are handled, and the limits of our responsibility. Please read them.</p>
+</div></header>
+
+<div class="wrap"><div class="doc">
+  <aside class="toc" aria-label="Table of contents">
+    <div class="tl">On this page</div>
+    <a href="#accept">1. Agreement</a>
+    <a href="#service">2. The service</a>
+    <a href="#accounts">3. Accounts</a>
+    <a href="#brands">4. Terms for brands</a>
+    <a href="#clippers">5. Terms for clippers</a>
+    <a href="#views">6. Verified views</a>
+    <a href="#prohibited">7. Prohibited conduct</a>
+    <a href="#ip">8. Intellectual property</a>
+    <a href="#termination">9. Termination</a>
+    <a href="#disclaimer">10. Disclaimers</a>
+    <a href="#liability">11. Liability</a>
+    <a href="#indemnity">12. Indemnification</a>
+    <a href="#law">13. Governing law</a>
+    <a href="#changes">14. Changes</a>
+    <a href="#contact">15. Contact</a>
+  </aside>
+
+  <main class="body">
+    <h2 id="accept">1. Agreement to these terms</h2>
+    <p>By using Clypio, creating an account, funding a campaign, or submitting a clip, you agree to these terms. If you're using Clypio on behalf of a company, you confirm you're authorized to bind that company. If you don't agree, don't use Clypio. Clypio is operated by <strong>Jad Farhat, operating as a sole proprietorship ("Clypio")</strong> ("Clypio", "we", "us").</p>
+
+    <h2 id="service">2. The service</h2>
+    <p>Clypio is a performance clipping network. Brands fund campaign pools and pay for verified reach. Independent creators ("clippers") make and post short-form clips promoting those campaigns and earn based on the verified views their clips generate. Clypio operates the platform that connects the two, measures performance, and handles payments. We don't guarantee any particular level of views, reach, or results.</p>
+
+    <h2 id="accounts">3. Accounts</h2>
+    <ul>
+      <li>You must be at least 18 and able to enter a binding contract.</li>
+      <li>You agree to give accurate information and keep it current.</li>
+      <li>You're responsible for keeping your login secure and for everything done under your account.</li>
+      <li>Accounts are created by Clypio after you apply. You may not share, sell, or transfer your account.</li>
+    </ul>
+
+    <h2 id="brands">4. Terms for brands and clients</h2>
+    <ul>
+      <li><strong>Funding.</strong> You add funds to a campaign pool before a campaign runs. Funds in your pool are applied to verified views at the rate shown when you launch a campaign.</li>
+      <li><strong>Billing.</strong> You are charged per verified view, drawn from your pool, up to the budget you set. You can see spend and remaining budget in your dashboard.</li>
+      <li><strong>What you promote.</strong> You confirm you have the rights to what you ask clippers to promote, and that it's lawful and not misleading, infringing, or harmful.</li>
+      <li><strong>No guarantee.</strong> Clypio doesn't guarantee a specific number of views or any business outcome. Reach depends on clippers, platforms, and audiences we don't control.</li>
+      <li><strong>Refunds.</strong> Unused pool funds may be refundable as described at funding or on request; verified views already delivered are not refundable. Payment processing fees may be non-refundable.</li>
+    </ul>
+
+    <h2 id="clippers">5. Terms for clippers</h2>
+    <ul>
+      <li><strong>Your content.</strong> You must own or have the rights to the clips you post, and you're responsible for following each platform's rules.</li>
+      <li><strong>You post as you.</strong> You submit clips posted from accounts you control. Submitting someone else's post as your own is grounds for voiding earnings and removal.</li>
+      <li><strong>No artificial views.</strong> Bots, view farms, paid or incentivized fake views, and any manipulation of view counts are strictly prohibited.</li>
+      <li><strong>Earnings.</strong> You earn based on verified views at the rate shown for each campaign, subject to the verification and fraud checks in Section 6. Tiers may affect your rate.</li>
+      <li><strong>Payouts.</strong> We pay verified, non-disputed earnings to the payout method you provide, on the schedule we publish. You're responsible for giving us accurate payout details.</li>
+      <li><strong>Independent contractor.</strong> You are an independent contractor, not an employee, partner, or agent of Clypio. You have no authority to bind Clypio, and nothing here creates an employment or joint-venture relationship. <strong>You are solely responsible for your own taxes</strong> on what you earn. We may issue tax documentation where required by law.</li>
+    </ul>
+
+    <h2 id="views">6. Verified views and fraud</h2>
+    <p>A "verified view" is a view Clypio counts as real after our verification and fraud checks. We read public platform data to confirm a clip's performance and that it was posted by the clipper who submitted it. We may hold, review, reduce, or void views or earnings we reasonably believe are inflated, fraudulent, misattributed, or obtained in breach of these terms. Where a judgment call is required, Clypio makes the final determination in good faith. This protects both brands paying for reach and clippers competing fairly.</p>
+
+    <h2 id="prohibited">7. Prohibited conduct</h2>
+    <ul>
+      <li>Faking, buying, botting, or otherwise manipulating views or engagement.</li>
+      <li>Submitting content you don't have the rights to, or that infringes anyone's IP.</li>
+      <li>Posting unlawful, deceptive, hateful, or harmful content.</li>
+      <li>Misrepresenting who you are or who posted a clip.</li>
+      <li>Interfering with, probing, or abusing the platform, or trying to bypass our fraud checks.</li>
+    </ul>
+    <p>Breaking these rules can lead to voided earnings, suspension, or removal, and where relevant, forfeiture of disputed amounts.</p>
+
+    <h2 id="ip">8. Intellectual property</h2>
+    <p>Clypio's name, brand, site, and platform are ours and protected by law; you may not use them without permission. You keep the rights to the content you create. By submitting a clip, you grant Clypio a limited license to reference, display, and measure that clip as needed to run the network and, where relevant, to show a brand the work performed for their campaign.</p>
+
+    <h2 id="termination">9. Termination</h2>
+    <p>You can stop using Clypio and ask us to close your account at any time. We may suspend or end access if you breach these terms, if we're required to by law, or to protect Clypio or its users. Verified earnings owed to you that aren't disputed will still be paid; obligations that by their nature should survive termination (such as payment, IP, and liability terms) will survive.</p>
+
+    <h2 id="disclaimer">10. Disclaimers</h2>
+    <div class="caps">Clypio is provided "as is" and "as available", without warranties of any kind, whether express or implied, including any implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the service will be uninterrupted, error-free, or that any particular reach or result will be achieved.</div>
+
+    <h2 id="liability">11. Limitation of liability</h2>
+    <div class="caps">To the fullest extent permitted by law, Clypio and its operators will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for lost profits, revenue, data, or goodwill. Our total liability for any claim relating to the service is limited to the amount you paid to (or, for clippers, were owed by) Clypio in the three months before the event giving rise to the claim.</div>
+
+    <h2 id="indemnity">12. Indemnification</h2>
+    <p>You agree to indemnify and hold Clypio harmless from claims, losses, and expenses (including reasonable legal fees) arising out of your use of the service, your content, or your breach of these terms or of anyone's rights.</p>
+
+    <h2 id="law">13. Governing law and disputes</h2>
+    <p>These terms are governed by the laws of <strong>the Province of Quebec, Canada</strong>, without regard to its conflict-of-laws rules. You agree that disputes will be resolved in the courts located there, unless the law where you live gives you a right you can't waive.</p>
+
+    <h2 id="changes">14. Changes to these terms</h2>
+    <p>We may update these terms as Clypio grows. When we make a material change, we'll update the date above and, where appropriate, notify you. Continuing to use Clypio after a change means you accept the updated terms.</p>
+
+    <h2 id="contact">15. Contact us</h2>
+    <p>Questions about these terms? Email <a class="inline" href="mailto:legal@clypio.com">legal@clypio.com</a>. See also our <a class="inline" href="/privacy.html">Privacy Policy</a>.</p>
+  </main>
+</div></div>
+
+<footer><div class="wrap">
+  <div class="flinks">
+    <a href="https://clypio.com">Home</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="https://app.clypio.com/login">Log in</a>
+  </div>
+  <div class="fcopy">© 2026 Clypio. Performance clipping network.</div>
+</div></footer>
+
+<script>
+const links=[...document.querySelectorAll('.toc a')];
+const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+const obs=new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting){ links.forEach(l=>l.classList.remove('on')); map.get(e.target.id)?.classList.add('on'); } });
+},{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('.body h2[id]').forEach(h=>obs.observe(h));
+</script>
+</body>
+</html>
