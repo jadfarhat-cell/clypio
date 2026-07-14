@@ -435,6 +435,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
         </div>
         <button type="submit" class="btn primary">Book my pilot</button>
         <div class="formnote">No commitment. We reply within 24 hours.</div>
+        <div class="formnote" style="margin-top:8px;">By submitting you agree to our <a href="/terms.html" style="color:var(--gold2);">Terms</a> and <a href="/privacy.html" style="color:var(--gold2);">Privacy Policy</a>.</div>
       </form>
       <div class="success" id="success" role="status" aria-live="polite">
         <div class="ck"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -466,7 +467,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
         <a href="#book" class="fl">Book a pilot</a>
       </div>
     </div>
-    <div class="fbottom"><span>© 2026 Clypio. Performance clipping network.</span><span>Attention, sold by the view.</span></div>
+    <div class="fbottom"><span>© 2026 Clypio. Performance clipping network.</span><span>Attention, sold by the view.</span><span><a href="/privacy.html" style="color:var(--dim);margin-right:18px;">Privacy</a><a href="/terms.html" style="color:var(--dim);">Terms</a></span></div>
   </div>
 </footer>
 
@@ -527,13 +528,18 @@ document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');
   document.querySelectorAll('.tabpane').forEach(p=>p.classList.toggle('on',p.dataset.pane===t.dataset.t));}));
 
+const CLYPIO_API='https://app.clypio.com';
 document.getElementById('leadform').addEventListener('submit',async(e)=>{e.preventDefault();
   const form=e.target, data=new FormData(form);
   const name=f_name.value.trim(),email=f_email.value.trim(),what=f_what.value.trim();
   if(!name||!email||!what)return;
   const btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending…';
+  const budget=(document.getElementById('f_budget')?.value||'').trim();
+  const promoting=budget?`${what}  ·  Budget: ${budget}`:what;
+  const payload={name,email,promoting,role:'client'};
   try{
-    const r=await fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
+    const r=await fetch(CLYPIO_API+'/access-request',{method:'POST',
+      headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
     if(r.ok){form.style.display='none';document.getElementById('success').classList.add('show');}
     else{btn.disabled=false;btn.textContent='Book my pilot';alert('Something went wrong. Please email us directly.');}
   }catch(err){btn.disabled=false;btn.textContent='Book my pilot';alert('Network error. Please try again.');}
