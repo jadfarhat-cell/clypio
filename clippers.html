@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Get paid for every real view. Clypio pays clippers per verified view, weekly, on real brand campaigns. Bots and fakes are voided, so you never compete with them. Free to join.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clypio.com/clippers">
+<meta property="og:title" content="Clypio for Creators | Get paid per verified view.">
+<meta property="og:description" content="You already make clips. Get paid for the ones that land, per verified view, paid weekly.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Clypio for Creators | Get paid per verified view.">
+<title>Clypio for Creators | Get paid per verified view.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..560&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C0D10; --ink2:#121419; --card:#16181E; --card2:#1B1E25; --line:#23262E;
+  --text:#ECEAE3; --dim:#A2A6AE; --faint:#8A8F98; --gold:#C9A227; --gold2:#E3C04A; --green:#3FB66B; --red:#E5615F;
+  --serif:'Fraunces',Georgia,serif; --grotesk:'Space Grotesk',sans-serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
+.eyebrow{font-family:var(--grotesk);font-weight:500;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);}
+h2{font-family:var(--serif);font-weight:540;font-size:clamp(28px,4.4vw,46px);line-height:1.06;letter-spacing:-.01em;margin:14px 0 0;}
+.sec-lead{color:var(--dim);font-size:16.5px;max-width:54ch;margin-top:18px;line-height:1.6;}
+.btn{font-family:var(--grotesk);font-weight:600;font-size:15px;padding:14px 26px;border-radius:99px;transition:.2s;cursor:pointer;border:1px solid transparent;display:inline-block;}
+.btn.primary{background:var(--gold);color:#1A1405;}
+.btn.primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(201,162,39,.5);}
+.btn.ghost{border-color:var(--line);color:var(--text);}
+.btn.ghost:hover{border-color:var(--dim);background:rgba(255,255,255,.03);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+section{padding:88px 0;}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px;}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(12px);background:rgba(12,13,16,.72);border-bottom:1px solid transparent;transition:.3s;}
+nav.scrolled{border-bottom-color:var(--line);background:rgba(12,13,16,.92);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:var(--grotesk);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--text);text-decoration:none;cursor:pointer;}
+.logo .d{color:var(--gold);}
+.navlinks{display:flex;align-items:center;gap:24px;}
+.navlinks a.link{font-family:var(--grotesk);font-weight:500;font-size:14px;color:var(--dim);transition:.2s;}
+.navlinks a.link:hover{color:var(--text);}
+.navcta{font-family:var(--grotesk);font-weight:600;font-size:13px;background:var(--gold);color:#1A1405;padding:9px 18px;border-radius:99px;transition:.2s;}
+.navcta:hover{background:var(--gold2);transform:translateY(-1px);}
+@media (pointer:coarse){ .navcta,.navlinks a{min-height:44px;display:inline-flex;align-items:center;} }
+
+/* hero */
+.hero{position:relative;padding:168px 0 66px;overflow:hidden;text-align:center;}
+.glow{position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:1000px;height:620px;background:radial-gradient(ellipse at center,rgba(201,162,39,.2),transparent 62%);filter:blur(46px);pointer-events:none;z-index:0;}
+.grain{position:absolute;inset:0;opacity:.05;pointer-events:none;z-index:1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.hero .wrap{position:relative;z-index:2;}
+.hero .kicker{font-family:var(--grotesk);font-weight:600;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:inline-block;border:1px solid rgba(201,162,39,.35);border-radius:99px;padding:7px 16px;}
+h1{font-family:var(--serif);font-weight:540;font-size:clamp(44px,8vw,82px);line-height:.98;letter-spacing:-.025em;margin:22px auto 0;max-width:16ch;}
+h1 em{font-style:italic;color:var(--gold);font-weight:500;}
+.hero p.lead{font-size:clamp(16px,2vw,20px);color:var(--dim);max-width:52ch;margin:26px auto 0;line-height:1.55;}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px;justify-content:center;}
+.hstats{display:flex;justify-content:center;flex-wrap:wrap;margin-top:60px;border:1px solid var(--line);border-radius:16px;background:rgba(22,24,30,.5);overflow:hidden;}
+.hstats .s{padding:24px 34px;flex:1;min-width:170px;border-right:1px solid var(--line);}
+.hstats .s:last-child{border-right:none;}
+.hstats .n{font-family:var(--serif);font-weight:560;font-size:30px;line-height:1;}
+.hstats .n b{color:var(--gold);}
+.hstats .l{font-size:12px;color:var(--dim);margin-top:8px;}
+
+/* earnings calculator (signature) */
+.calc-sec{position:relative;overflow:hidden;}
+.calc-sec .glow{top:38%;opacity:.5;}
+.calc-head{text-align:center;}
+.calc-head h2,.calc-head .sec-lead{margin-left:auto;margin-right:auto;}
+.calc{position:relative;z-index:2;max-width:760px;margin:46px auto 0;background:var(--ink2);border:1px solid var(--line);border-radius:20px;padding:38px 34px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7);}
+.calc-out{text-align:center;padding-bottom:26px;border-bottom:1px solid var(--line);}
+.calc-out .tier{font-family:var(--grotesk);font-weight:700;font-size:11px;letter-spacing:.16em;color:var(--gold);border:1px solid rgba(201,162,39,.35);border-radius:99px;padding:6px 14px;display:inline-block;}
+.calc-out .big{font-family:var(--serif);font-weight:560;font-size:clamp(46px,9vw,74px);line-height:1;color:var(--gold);margin-top:16px;font-variant-numeric:tabular-nums;letter-spacing:-.02em;}
+.calc-out .per{font-family:var(--grotesk);font-size:13px;color:var(--dim);margin-top:10px;letter-spacing:.02em;}
+.calc-ctl{margin-top:26px;}
+.calc-ctl .cl{font-family:var(--grotesk);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);display:flex;justify-content:space-between;margin-bottom:13px;}
+.calc-ctl .cl b{color:var(--text);font-variant-numeric:tabular-nums;}
+.calc-ctl input[type=range]{width:100%;accent-color:var(--gold);height:6px;cursor:pointer;}
+.calc-ctl .ends{display:flex;justify-content:space-between;font-size:10.5px;color:var(--faint);margin-top:9px;font-family:var(--grotesk);}
+.calc-note{font-size:12.5px;color:var(--faint);margin-top:24px;text-align:center;line-height:1.55;}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;}
+.stepc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 20px;transition:.25s;}
+.stepc:hover{border-color:#33373F;transform:translateY(-3px);}
+.stepc .k{font-family:var(--serif);font-weight:560;font-size:34px;color:var(--gold);line-height:1;}
+.stepc .t{font-family:var(--grotesk);font-weight:600;font-size:17px;margin:14px 0 8px;}
+.stepc .d{font-size:13.5px;color:var(--dim);line-height:1.5;}
+
+/* value grid */
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 22px;}
+.vcard .ic{width:40px;height:40px;border-radius:10px;background:rgba(201,162,39,.12);border:1px solid rgba(201,162,39,.3);display:flex;align-items:center;justify-content:center;color:var(--gold);}
+.vcard .vt{font-family:var(--grotesk);font-weight:600;font-size:17px;margin:16px 0 8px;}
+.vcard .vd{font-size:13.5px;color:var(--dim);line-height:1.55;}
+
+/* tiers strip */
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px;}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center;}
+.tcard .tn{font-family:var(--grotesk);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);}
+.tcard .tv{font-family:var(--serif);font-weight:560;font-size:22px;margin-top:12px;}
+.tcard .td{font-size:12px;color:var(--dim);margin-top:6px;}
+
+/* what you clip */
+.clips{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;}
+.clipc{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;}
+.clipc .cd{font-family:var(--grotesk);font-weight:600;font-size:15px;}
+.clipc .cs{font-size:13px;color:var(--dim);margin-top:5px;line-height:1.5;}
+.clipc .cdot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none;margin-top:6px;}
+
+/* form */
+.form-sec{position:relative;overflow:hidden;}
+.formcard{max-width:560px;margin:40px auto 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px 32px;position:relative;z-index:2;}
+.field{margin-bottom:18px;}
+.field label{font-family:var(--grotesk);font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:8px;}
+.field input,.field select{width:100%;background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:13px 15px;color:var(--text);font-family:var(--sans);font-size:15px;transition:.2s;}
+.field input:focus,.field select:focus{outline:none;border-color:var(--gold);background:#15171d;}
+.field input::placeholder{color:#5D616A;}
+.formcard .btn.primary{width:100%;text-align:center;margin-top:4px;}
+.formnote{font-size:12px;color:var(--faint);text-align:center;margin-top:14px;}
+.success{display:none;text-align:center;padding:20px 0;}
+.success.show{display:block;}
+.success .ck{width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,.12);border:1px solid rgba(201,162,39,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+.success h3{font-family:var(--serif);font-weight:560;font-size:26px;}
+.success p{color:var(--dim);font-size:15px;margin-top:10px;max-width:40ch;margin-left:auto;margin-right:auto;}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:56px 0 40px;}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;}
+.ftag{color:var(--dim);font-size:14px;margin-top:14px;max-width:38ch;line-height:1.6;}
+.fh{font-family:var(--grotesk);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.fl{display:block;color:var(--text);font-size:14px;margin-bottom:10px;transition:.2s;}
+.fl:hover{color:var(--gold);}
+.fbottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--faint);font-size:12.5px;font-family:var(--grotesk);}
+.skip{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--gold);color:#1A1400;padding:10px 16px;border-radius:8px;font-weight:600;}
+.skip:focus{left:12px;}
+
+@media (max-width:860px){
+  .steps,.vgrid,.tiers{grid-template-columns:repeat(2,1fr);}
+  .clips{grid-template-columns:1fr;}
+}
+@media (max-width:560px){
+  .navlinks a.link{display:none;}
+  .steps,.tiers{grid-template-columns:1fr;}
+  .vgrid{grid-template-columns:1fr;}
+  section{padding:64px 0;}
+  .calc{padding:28px 20px;}
+}
+@media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important;scroll-behavior:auto!important;} .reveal{opacity:1;transform:none;} }
+</style>
+</head>
+<body>
+<script>/* Always enter at the top; strip any leftover #hash so mobile doesn't jump. */
+if(location.hash){history.replaceState(null,'',location.pathname+location.search);}
+if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
+<a href="#how" class="skip">Skip to content</a>
+
+<nav id="nav"><div class="wrap">
+  <a href="#top" class="logo" onclick="return goTop()">Clypio<span class="d">.</span></a>
+  <div class="navlinks">
+    <a href="#earn" class="link">Earnings</a>
+    <a href="#how" class="link">How it works</a>
+    <a href="https://clypio.com" class="link">For brands</a>
+    <a href="https://app.clypio.com/login" class="link">Log in</a>
+    <a href="#apply" class="navcta">Apply to clip</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="glow"></div><div class="grain"></div>
+  <div class="wrap">
+    <span class="kicker reveal">For clippers &amp; creators</span>
+    <h1 class="reveal">You already make clips. <em>Get paid</em> for the ones that land.</h1>
+    <p class="lead reveal">Clip real brand campaigns, post them where you already post, and get paid per verified view, every week. No fees to join. Bots and fake views are voided, so you never share the pool with them.</p>
+    <div class="cta-row reveal">
+      <a href="#apply" class="btn primary">Apply to clip</a>
+      <a href="#earn" class="btn ghost">See what you'd earn</a>
+    </div>
+    <div class="hstats reveal">
+      <div class="s"><div class="n"><b>$2&ndash;2.50</b></div><div class="l">per 1,000 verified views</div></div>
+      <div class="s"><div class="n"><b>Weekly</b></div><div class="l">payouts, not net-90</div></div>
+      <div class="s"><div class="n"><b>$0</b></div><div class="l">to join, no lock-in</div></div>
+      <div class="s"><div class="n"><b>Real</b></div><div class="l">views only, bots voided</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="earn" class="calc-sec">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="calc-head">
+      <div class="eyebrow reveal">Your paycheck</div>
+      <h2 class="reveal">Every real view is money in your pocket.</h2>
+      <p class="sec-lead reveal">Drag to the views you pull in a month. That's roughly what you'd take home, paid weekly, for verified views only.</p>
+    </div>
+    <div class="calc reveal">
+      <div class="calc-out">
+        <div class="tier" id="tier">SILVER TIER</div>
+        <div class="big" id="earn_out">$2,000</div>
+        <div class="per">a month &middot; at $2 per 1,000 verified views</div>
+      </div>
+      <div class="calc-ctl">
+        <div class="cl"><span>Monthly verified views</span><b id="views_out">1,000,000</b></div>
+        <input type="range" id="views" min="100000" max="20000000" step="100000" value="1000000" aria-label="Monthly verified views">
+        <div class="ends"><span>100k</span><span>20M</span></div>
+      </div>
+      <div class="calc-note">Top clippers earn $2.50 per 1,000. This is an estimate, only verified views are billable, and fakes are voided so you never compete with them for the campaign pool.</div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow reveal">How it works</div>
+    <h2 class="reveal">From application to payout, in four steps.</h2>
+    <div class="steps">
+      <div class="stepc reveal"><div class="k">01</div><div class="t">Apply</div><div class="d">Send your handle and a clip you're proud of. We set you up with a login, no fee, no catch.</div></div>
+      <div class="stepc reveal"><div class="k">02</div><div class="t">Pick a campaign</div><div class="d">Open your dashboard, browse live brand campaigns, and read the brief: what to clip and how to tag it.</div></div>
+      <div class="stepc reveal"><div class="k">03</div><div class="t">Clip &amp; post</div><div class="d">Cut it your way, post it from your own handle, and drop the link back into Clypio.</div></div>
+      <div class="stepc reveal"><div class="k">04</div><div class="t">Get paid</div><div class="d">We verify the views, void the fakes, and pay you weekly for what's real. Watch it all in your dashboard.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" style="background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="eyebrow reveal">Why clip with Clypio</div>
+    <h2 class="reveal">Built so the good clippers win.</h2>
+    <div class="vgrid">
+      <div class="vcard reveal">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <div class="vt">Fakes don't count</div>
+        <div class="vd">Bot and fake views are voided before anyone gets paid. You're never splitting the pool with a bot farm, so real reach actually pays.</div>
+      </div>
+      <div class="vcard reveal">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <div class="vt">Paid weekly</div>
+        <div class="vd">Verified views turn into money every week, not on some net-90 invoice. Clear rate, clear schedule, no chasing.</div>
+      </div>
+      <div class="vcard reveal">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+        <div class="vt">Your own dashboard</div>
+        <div class="vd">Every clip, every verified view, every dollar owed, live. No guessing what you earned or when it lands.</div>
+      </div>
+      <div class="vcard reveal">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5z"/></svg></div>
+        <div class="vt">Real campaigns</div>
+        <div class="vd">Actual brands and creators with real briefs and funded pools, not vague "post something" bounties that never pay out.</div>
+      </div>
+      <div class="vcard reveal">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18a3 3 0 0 1-3-3v-2a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a3 3 0 0 1-3 3"/><path d="M6 14h12v8H6z"/></svg></div>
+        <div class="vt">Climb the tiers</div>
+        <div class="vd">The more verified views you rack up, the higher your tier, Rookie to Diamond. Your best work is on record and it follows you.</div>
+      </div>
+      <div class="vcard reveal">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div class="vt">Clip on your terms</div>
+        <div class="vd">Your style, your platforms, your schedule. Pick the campaigns you like and post where you already have an audience.</div>
+      </div>
+    </div>
+    <div class="tiers">
+      <div class="tcard reveal"><div class="tn">Rookie</div><div class="tv">Just started</div><div class="td">Your first verified views</div></div>
+      <div class="tcard reveal"><div class="tn">Silver</div><div class="tv">100k+</div><div class="td">verified views on record</div></div>
+      <div class="tcard reveal"><div class="tn">Gold</div><div class="tv">1M+</div><div class="td">verified views on record</div></div>
+      <div class="tcard reveal"><div class="tn">Diamond</div><div class="tv">5M+</div><div class="td">verified views on record</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="clip">
+  <div class="wrap">
+    <div class="eyebrow reveal">What you'll clip</div>
+    <h2 class="reveal">Content people actually want to watch.</h2>
+    <div class="clips">
+      <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Streamer &amp; gaming moments</div><div class="cs">The clutch, the rage, the funny bit, cut into short-form that pops on TikTok and Reels.</div></div></div>
+      <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Music drops</div><div class="cs">Hooks and snippets from new releases, timed to the moment fans are looking for the sound.</div></div></div>
+      <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Podcast &amp; interview clips</div><div class="cs">The hot take, the story, the one-liner, the parts that travel far beyond the full episode.</div></div></div>
+      <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Brand &amp; product</div><div class="cs">Native, watchable takes that feel like content, not an ad, for brands that get short-form.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="apply" class="form-sec">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div style="text-align:center;">
+      <div class="eyebrow reveal">Apply to clip</div>
+      <h2 class="reveal" style="margin-left:auto;margin-right:auto;">Send us your best clip. We'll set you up.</h2>
+      <p class="sec-lead reveal" style="margin-left:auto;margin-right:auto;">Tell us where you post and drop a link you're proud of. If it's a fit, we'll send your login and get you on live campaigns.</p>
+    </div>
+    <div class="formcard reveal">
+      <form id="applyform" action="https://formspree.io/f/mnjkgaze" method="POST">
+        <input type="hidden" name="_subject" value="New Clypio clipper application">
+        <input type="hidden" name="role" value="clipper">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field"><label for="f_name">Name</label><input type="text" id="f_name" name="name" placeholder="Your name" required></div>
+        <div class="field"><label for="f_email">Email</label><input type="email" id="f_email" name="email" placeholder="you@email.com" required></div>
+        <div class="field"><label for="f_handle">Main handle</label><input type="text" id="f_handle" name="handle" placeholder="@yourhandle" required></div>
+        <div class="field"><label for="f_platforms">Where do you post?</label><input type="text" id="f_platforms" name="platforms" placeholder="TikTok, Reels, Shorts, X…" required></div>
+        <div class="field"><label for="f_reach">Views you pull in a good month</label>
+          <select id="f_reach" name="reach"><option>Just getting started</option><option>100k &ndash; 1M</option><option>1M &ndash; 5M</option><option>5M+</option></select>
+        </div>
+        <div class="field"><label for="f_clip">Link to your best clip</label><input type="url" id="f_clip" name="best_clip" placeholder="https://…" required></div>
+        <button type="submit" class="btn primary">Apply to clip</button>
+        <div class="formnote">Free to join. We reply within a couple of days.</div>
+        <div class="formnote" style="margin-top:8px;">By applying you agree to our <a href="/terms.html" style="color:var(--gold);">Terms</a> and <a href="/privacy.html" style="color:var(--gold);">Privacy Policy</a>.</div>
+      </form>
+      <div class="success" id="success" role="status" aria-live="polite">
+        <div class="ck"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3>Application in.</h3>
+        <p>We've got your details. If it's a fit, your login and first campaigns are on the way to your inbox.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="#top" class="logo" onclick="return goTop()">Clypio<span class="d">.</span></a>
+        <div class="ftag">A performance clipping network. Brands pay for verified reach, clippers get paid for the views that land.</div>
+      </div>
+      <div>
+        <div class="fh">For clippers</div>
+        <a href="#earn" class="fl">What you'd earn</a>
+        <a href="#how" class="fl">How it works</a>
+        <a href="#apply" class="fl">Apply to clip</a>
+        <a href="https://app.clypio.com/login" class="fl">Log in</a>
+      </div>
+      <div>
+        <div class="fh">Company</div>
+        <a href="https://clypio.com" class="fl">For brands</a>
+        <a href="https://clypio.com#system" class="fl">How Clypio works</a>
+        <a href="https://clypio.com#book" class="fl">Book a pilot</a>
+      </div>
+    </div>
+    <div class="fbottom"><span>© 2026 Clypio. Performance clipping network.</span><span><a href="/privacy.html" style="color:var(--faint);margin-right:18px;">Privacy</a><a href="/terms.html" style="color:var(--faint);">Terms</a></span></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+function goTop(){window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',location.pathname+location.search);return false;}
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*55)+'ms';io.observe(el);});
+
+/* earnings calculator */
+const RATE=2; // $ per 1,000 verified views (base). Top clippers hit 2.50.
+const views=document.getElementById('views');
+const nfmt=n=>Math.round(n).toLocaleString('en-US');
+function tierFor(v){ return v>=5000000?'DIAMOND TIER':v>=1000000?'GOLD TIER':v>=100000?'SILVER TIER':'ROOKIE TIER'; }
+function paintCalc(){
+  const v=+views.value;
+  document.getElementById('views_out').textContent=nfmt(v);
+  document.getElementById('earn_out').textContent='$'+nfmt(v/1000*RATE);
+  document.getElementById('tier').textContent=tierFor(v);
+}
+views.addEventListener('input',paintCalc);
+paintCalc();
+
+/* apply form -> lands directly in the Clypio console's Requests tab.
+   /access-request also notifies the team by email server-side, so this
+   replaces the old Formspree-only submission rather than adding to it. */
+const CLYPIO_API = 'https://app.clypio.com';
+document.getElementById('applyform').addEventListener('submit',async(e)=>{e.preventDefault();
+  const form=e.target, data=new FormData(form);
+  const btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending…';
+  const payload={
+    name:data.get('name')||'', email:data.get('email')||'',
+    handle:data.get('handle')||'', platforms:data.get('platforms')||'',
+    reach:data.get('reach')||'', clip_url:data.get('best_clip')||'',
+    role:'clipper'
+  };
+  try{
+    const r=await fetch(CLYPIO_API+'/access-request',{method:'POST',
+      headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
+    if(r.ok){form.style.display='none';document.getElementById('success').classList.add('show');}
+    else{btn.disabled=false;btn.textContent='Apply to clip';alert('Something went wrong. Please email us directly.');}
+  }catch(err){btn.disabled=false;btn.textContent='Apply to clip';alert('Network error. Please try again.');}
+});
+</script>
+</body>
+</html>
