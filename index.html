@@ -272,7 +272,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
     <h1 class="reveal">Attention, sold by the <em>view.</em></h1>
     <p class="lead reveal">Clypio turns your content into short clips and pushes it across TikTok, Reels, Shorts, and X through a network of creators. You only pay for the views that land.</p>
     <div class="cta-row reveal">
-      <a href="#book" class="btn primary">Book a pilot ↗</a>
+      <a href="#book" class="btn primary">Book a pilot <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:2px;" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       <a href="#demo" class="btn ghost">See the dashboard</a>
     </div>
     <div class="hstats reveal">
@@ -411,7 +411,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
   <div class="wrap">
     <div class="eyebrow reveal">Built for visibility at scale</div>
     <h2 class="reveal" style="max-width:16ch;">Turn your content into reach.</h2>
-    <a href="#book" class="btn primary reveal">Book a pilot ↗</a>
+    <a href="#book" class="btn primary reveal">Book a pilot <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:2px;" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
   </div>
 </section>
 
@@ -467,7 +467,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
         <a href="#book" class="fl">Book a pilot</a>
       </div>
     </div>
-    <div class="fbottom"><span>© 2026 Clypio. Performance clipping network.</span><span>Attention, sold by the view.</span><span><a href="/privacy.html" style="color:var(--dim);margin-right:18px;">Privacy</a><a href="/terms.html" style="color:var(--dim);">Terms</a></span></div>
+    <div class="fbottom"><span>© 2026 Clypio. Performance clipping network.</span><span><a href="/privacy.html" style="color:var(--dim);margin-right:18px;">Privacy</a><a href="/terms.html" style="color:var(--dim);">Terms</a></span></div>
   </div>
 </footer>
 
@@ -528,6 +528,9 @@ document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');
   document.querySelectorAll('.tabpane').forEach(p=>p.classList.toggle('on',p.dataset.pane===t.dataset.t));}));
 
+/* pilot form -> lands directly in the Clypio console's Requests tab.
+   /access-request also notifies the team server-side and sends the applicant
+   an instant branded confirmation, so this replaces the Formspree-only path. */
 const CLYPIO_API='https://app.clypio.com';
 document.getElementById('leadform').addEventListener('submit',async(e)=>{e.preventDefault();
   const form=e.target, data=new FormData(form);
