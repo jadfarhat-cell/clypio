@@ -27,7 +27,7 @@ html{scroll-behavior:smooth;}
 body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 a{color:inherit;text-decoration:none;}
 .wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
-.eyebrow{font-family:var(--grotesk);font-weight:500;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);}
+.eyebrow{font-family:var(--grotesk);font-weight:600;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:9px;}.eyebrow::before{content:'';width:13px;height:2px;background:var(--gold);transform:skewX(-24deg);flex:none;}
 h2{font-family:var(--serif);font-weight:540;font-size:clamp(28px,4.4vw,46px);line-height:1.06;letter-spacing:-.01em;margin:14px 0 0;}
 .sec-lead{color:var(--dim);font-size:16.5px;max-width:54ch;margin-top:18px;line-height:1.6;}
 .btn{font-family:var(--grotesk);font-weight:600;font-size:15px;padding:14px 26px;border-radius:99px;transition:.2s;cursor:pointer;border:1px solid transparent;display:inline-block;}
@@ -35,7 +35,7 @@ h2{font-family:var(--serif);font-weight:540;font-size:clamp(28px,4.4vw,46px);lin
 .btn.primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(201,162,39,.5);}
 .btn.ghost{border-color:var(--line);color:var(--text);}
 .btn.ghost:hover{border-color:var(--dim);background:rgba(255,255,255,.03);}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal{opacity:0;transform:translateY(6px);transition:opacity .24s cubic-bezier(.2,.6,.3,1),transform .24s cubic-bezier(.2,.6,.3,1);}.reveal.wipe{transform:none;clip-path:polygon(0 0,0 0,-28% 100%,0 100%);transition:clip-path .52s cubic-bezier(.16,.84,.24,1),opacity .2s linear;}.reveal.wipe.in{clip-path:polygon(0 0,128% 0,100% 100%,0 100%);}
 .reveal.in{opacity:1;transform:none;}
 section{padding:88px 0;}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px;}
@@ -60,7 +60,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .hero .wrap{position:relative;z-index:2;}
 .hero .kicker{font-family:var(--grotesk);font-weight:600;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:inline-block;border:1px solid rgba(201,162,39,.35);border-radius:99px;padding:7px 16px;}
 h1{font-family:var(--serif);font-weight:540;font-size:clamp(44px,8vw,82px);line-height:.98;letter-spacing:-.025em;margin:22px auto 0;max-width:16ch;}
-h1 em{font-style:italic;color:var(--gold);font-weight:500;}
+h1 em{font-style:italic;color:var(--gold);font-weight:500;;position:relative;display:inline-block;}h1 em::after{content:'';position:absolute;left:.02em;right:.06em;bottom:-.02em;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:1px;transform:skewX(-24deg) scaleX(0);transform-origin:left center;animation:drawrule .58s cubic-bezier(.16,.84,.24,1) .55s forwards;}@keyframes drawrule{to{transform:skewX(-24deg) scaleX(1);}}@media(prefers-reduced-motion:reduce){h1 em::after{animation:none;transform:skewX(-24deg) scaleX(1);}}
 .hero p.lead{font-size:clamp(16px,2vw,20px);color:var(--dim);max-width:52ch;margin:26px auto 0;line-height:1.55;}
 .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px;justify-content:center;}
 .hstats{display:flex;justify-content:center;flex-wrap:wrap;margin-top:60px;border:1px solid var(--line);border-radius:16px;background:rgba(22,24,30,.5);overflow:hidden;}
@@ -155,6 +155,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;}
   .calc{padding:28px 20px;}
 }
 @media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important;scroll-behavior:auto!important;} .reveal{opacity:1;transform:none;} }
+
+.link{position:relative;}.link::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--gold);transform:skewX(-24deg) scaleX(0);transform-origin:left center;transition:transform .22s cubic-bezier(.2,.6,.3,1);}.link:hover::after{transform:skewX(-24deg) scaleX(1);}.btn svg{transition:transform .22s cubic-bezier(.2,.6,.3,1);}.btn:hover svg{transform:translate(2px,-2px);}.logo .d{display:inline-block;transition:transform .2s cubic-bezier(.2,.6,.3,1);}.logo:hover .d{transform:translateY(-2px);}.navcta{display:inline-block;}.navcta:hover{transform:translateY(-1px);}@media(prefers-reduced-motion:reduce){.link::after,.btn svg,.logo .d,.navcta{transition:none!important;}.link:hover::after{transform:skewX(-24deg) scaleX(1);}}
 </style>
 </head>
 <body>
@@ -198,7 +200,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
   <div class="wrap">
     <div class="calc-head">
       <div class="eyebrow reveal">Your paycheck</div>
-      <h2 class="reveal">Every real view is money in your pocket.</h2>
+      <h2 class="reveal wipe">Every real view is money in your pocket.</h2>
       <p class="sec-lead reveal">Drag to the views you pull in a month. That's roughly what you'd take home, paid weekly, for verified views only.</p>
     </div>
     <div class="calc reveal">
@@ -220,7 +222,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section id="how">
   <div class="wrap">
     <div class="eyebrow reveal">How it works</div>
-    <h2 class="reveal">From application to payout, in four steps.</h2>
+    <h2 class="reveal wipe">From application to payout, in four steps.</h2>
     <div class="steps">
       <div class="stepc reveal"><div class="k">01</div><div class="t">Apply</div><div class="d">Send your handle and a clip you're proud of. We set you up with a login, no fee, no catch.</div></div>
       <div class="stepc reveal"><div class="k">02</div><div class="t">Pick a campaign</div><div class="d">Open your dashboard, browse live brand campaigns, and read the brief: what to clip and how to tag it.</div></div>
@@ -233,7 +235,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section id="why" style="background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
   <div class="wrap">
     <div class="eyebrow reveal">Why clip with Clypio</div>
-    <h2 class="reveal">Built so the good clippers win.</h2>
+    <h2 class="reveal wipe">Built so the good clippers win.</h2>
     <div class="vgrid">
       <div class="vcard reveal">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
@@ -278,7 +280,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section id="cut">
   <div class="wrap">
     <div class="eyebrow reveal">Straight talk</div>
-    <h2 class="reveal">Here's exactly how we make money.</h2>
+    <h2 class="reveal wipe">Here's exactly how we make money.</h2>
     <p class="sec-lead reveal">Brands pay Clypio $3 to $4 per 1,000 verified views. You earn $2 to $2.50 of that. The difference is our cut, and it's not a secret. You keep 60 to 70 cents of every dollar a brand spends, which is one of the highest passthroughs in clipping. Here's what our share pays for.</p>
     <div class="vgrid">
       <div class="vcard reveal">
@@ -304,7 +306,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section id="clip">
   <div class="wrap">
     <div class="eyebrow reveal">What you'll clip</div>
-    <h2 class="reveal">Content people actually want to watch.</h2>
+    <h2 class="reveal wipe">Content people actually want to watch.</h2>
     <div class="clips">
       <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Streamer &amp; gaming moments</div><div class="cs">The clutch, the rage, the funny bit, cut into short-form that pops on TikTok and Reels.</div></div></div>
       <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Music drops</div><div class="cs">Hooks and snippets from new releases, timed to the moment fans are looking for the sound.</div></div></div>
@@ -319,7 +321,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
   <div class="wrap">
     <div style="text-align:center;">
       <div class="eyebrow reveal">Start clipping</div>
-      <h2 class="reveal" style="margin-left:auto;margin-right:auto;">Create your account. Start today.</h2>
+      <h2 class="reveal wipe" style="margin-left:auto;margin-right:auto;">Create your account. Start today.</h2>
       <p class="sec-lead reveal" style="margin-left:auto;margin-right:auto;">No application wait, no fees. Make your account, pick a live campaign, and your first verified views start earning.</p>
       <div class="cta-row reveal" style="justify-content:center;margin:22px 0 34px;">
         <a href="https://app.clypio.com/login" class="btn primary">Create my account</a>
@@ -381,7 +383,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 const nav=document.getElementById('nav');
 function goTop(){window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',location.pathname+location.search);return false;}
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+const io=new IntersectionObserver((es)=>{const hits=es.filter(e=>e.isIntersecting);hits.forEach((e,i)=>{e.target.style.transitionDelay=Math.min(i*45,180)+'ms';e.target.classList.add('in');io.unobserve(e.target);});},{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*55)+'ms';io.observe(el);});
 
 /* earnings calculator */
