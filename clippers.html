@@ -70,23 +70,6 @@ h1 em{font-style:italic;color:var(--gold);font-weight:500;;position:relative;dis
 .hstats .n b{color:var(--gold);}
 .hstats .l{font-size:12px;color:var(--dim);margin-top:8px;}
 
-/* earnings calculator (signature) */
-.calc-sec{position:relative;overflow:hidden;}
-.calc-sec .glow{top:38%;opacity:.5;}
-.calc-head{text-align:center;}
-.calc-head h2,.calc-head .sec-lead{margin-left:auto;margin-right:auto;}
-.calc{position:relative;z-index:2;max-width:760px;margin:46px auto 0;background:var(--ink2);border:1px solid var(--line);border-radius:20px;padding:38px 34px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7);}
-.calc-out{text-align:center;padding-bottom:26px;border-bottom:1px solid var(--line);}
-.calc-out .tier{font-family:var(--grotesk);font-weight:700;font-size:11px;letter-spacing:.16em;color:var(--gold);border:1px solid rgba(201,162,39,.35);border-radius:99px;padding:6px 14px;display:inline-block;}
-.calc-out .big{font-family:var(--serif);font-weight:560;font-size:clamp(46px,9vw,74px);line-height:1;color:var(--gold);margin-top:16px;font-variant-numeric:tabular-nums;letter-spacing:-.02em;}
-.calc-out .per{font-family:var(--grotesk);font-size:13px;color:var(--dim);margin-top:10px;letter-spacing:.02em;}
-.calc-ctl{margin-top:26px;}
-.calc-ctl .cl{font-family:var(--grotesk);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);display:flex;justify-content:space-between;margin-bottom:13px;}
-.calc-ctl .cl b{color:var(--text);font-variant-numeric:tabular-nums;}
-.calc-ctl input[type=range]{width:100%;accent-color:var(--gold);height:6px;cursor:pointer;}
-.calc-ctl .ends{display:flex;justify-content:space-between;font-size:10.5px;color:var(--faint);margin-top:9px;font-family:var(--grotesk);}
-.calc-note{font-size:12.5px;color:var(--faint);margin-top:24px;text-align:center;line-height:1.55;}
-
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;}
 .stepc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 20px;transition:.25s;}
@@ -168,7 +151,6 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <nav id="nav"><div class="wrap">
   <a href="#top" class="logo" onclick="return goTop()">Clypio<span class="d">.</span></a>
   <div class="navlinks">
-    <a href="#earn" class="link">Earnings</a>
     <a href="#how" class="link">How it works</a>
     <a href="https://clypio.com" class="link">For brands</a>
     <a href="https://app.clypio.com/login" class="link">Log in</a>
@@ -187,37 +169,12 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
       <a href="#earn" class="btn ghost">See what you'd earn</a>
     </div>
     <div class="hstats reveal">
-      <div class="s"><div class="n"><b>$2&ndash;2.50</b></div><div class="l">per 1,000 verified views</div></div>
       <div class="s"><div class="n"><b>Weekly</b></div><div class="l">payouts, not net-90</div></div>
       <div class="s"><div class="n"><b>$0</b></div><div class="l">to join, no lock-in</div></div>
       <div class="s"><div class="n"><b>Real</b></div><div class="l">views only, bots voided</div></div>
     </div>
   </div>
 </header>
-
-<section id="earn" class="calc-sec">
-  <div class="glow"></div>
-  <div class="wrap">
-    <div class="calc-head">
-      <div class="eyebrow reveal">Your paycheck</div>
-      <h2 class="reveal wipe">Every real view is money in your pocket.</h2>
-      <p class="sec-lead reveal">Drag to the views you pull in a month. That's roughly what you'd take home, paid weekly, for verified views only.</p>
-    </div>
-    <div class="calc reveal">
-      <div class="calc-out">
-        <div class="tier" id="tier">SILVER TIER</div>
-        <div class="big" id="earn_out">$2,000</div>
-        <div class="per">a month &middot; at $2 per 1,000 verified views</div>
-      </div>
-      <div class="calc-ctl">
-        <div class="cl"><span>Monthly verified views</span><b id="views_out">1,000,000</b></div>
-        <input type="range" id="views" min="100000" max="20000000" step="100000" value="1000000" aria-label="Monthly verified views">
-        <div class="ends"><span>100k</span><span>20M</span></div>
-      </div>
-      <div class="calc-note">Top clippers earn $2.50 per 1,000. This is an estimate, only verified views are billable, and fakes are voided so you never compete with them for the campaign pool.</div>
-    </div>
-  </div>
-</section>
 
 <section id="how">
   <div class="wrap">
@@ -279,9 +236,9 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 
 <section id="cut">
   <div class="wrap">
-    <div class="eyebrow reveal">Straight talk</div>
+    <div class="eyebrow reveal">Our cut</div>
     <h2 class="reveal wipe">Here's exactly how we make money.</h2>
-    <p class="sec-lead reveal">Brands pay Clypio $3 to $4 per 1,000 verified views. You earn $2 to $2.50 of that. The difference is our cut, and it's not a secret. You keep 60 to 70 cents of every dollar a brand spends, which is one of the highest passthroughs in clipping. Here's what our share pays for.</p>
+    <p class="sec-lead reveal">Every campaign shows your rate per 1,000 verified views before you take it. Whatever the brand pays above that rate is our cut. We do not hide it, and we do not change it after you have already clipped. Here is what our share pays for.</p>
     <div class="vgrid">
       <div class="vcard reveal">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div>
@@ -325,32 +282,8 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
       <p class="sec-lead reveal" style="margin-left:auto;margin-right:auto;">No application wait, no fees. Make your account, pick a live campaign, and your first verified views start earning.</p>
       <div class="cta-row reveal" style="justify-content:center;margin:22px 0 34px;">
         <a href="https://app.clypio.com/login" class="btn primary">Create my account</a>
-      </div>
-      <p class="sec-lead reveal" style="margin-left:auto;margin-right:auto;font-size:14px;">Rather introduce yourself first? Drop your best clip below and we'll reach out.</p>
-    </div>
-    <div class="formcard reveal">
-      <form id="applyform" action="https://formspree.io/f/mnjkgaze" method="POST">
-        <input type="hidden" name="_subject" value="New Clypio clipper application">
-        <input type="hidden" name="role" value="clipper">
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="field"><label for="f_name">Name</label><input type="text" id="f_name" name="name" placeholder="Your name" required></div>
-        <div class="field"><label for="f_email">Email</label><input type="email" id="f_email" name="email" placeholder="you@email.com" required></div>
-        <div class="field"><label for="f_handle">Main handle</label><input type="text" id="f_handle" name="handle" placeholder="@yourhandle" required></div>
-        <div class="field"><label for="f_platforms">Where do you post?</label><input type="text" id="f_platforms" name="platforms" placeholder="TikTok, Reels, Shorts, X…" required></div>
-        <div class="field"><label for="f_reach">Views you pull in a good month</label>
-          <select id="f_reach" name="reach"><option>Just getting started</option><option>100k &ndash; 1M</option><option>1M &ndash; 5M</option><option>5M+</option></select>
-        </div>
-        <div class="field"><label for="f_clip">Link to your best clip</label><input type="url" id="f_clip" name="best_clip" placeholder="https://…" required></div>
-        <button type="submit" class="btn primary">Apply to clip</button>
-        <div class="formnote">Free to join. We reply within a couple of days.</div>
-        <div class="formnote" style="margin-top:8px;">By applying you agree to our <a href="/terms.html" style="color:var(--gold);">Terms</a> and <a href="/privacy.html" style="color:var(--gold);">Privacy Policy</a>.</div>
-      </form>
-      <div class="success" id="success" role="status" aria-live="polite">
-        <div class="ck"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <h3>Application in.</h3>
-        <p>We've got your details. If it's a fit, your login and first campaigns are on the way to your inbox.</p>
-      </div>
-    </div>
+      </div>    </div>
+    
   </div>
 </section>
 
@@ -386,40 +319,6 @@ addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
 const io=new IntersectionObserver((es)=>{const hits=es.filter(e=>e.isIntersecting);hits.forEach((e,i)=>{e.target.style.transitionDelay=Math.min(i*45,180)+'ms';e.target.classList.add('in');io.unobserve(e.target);});},{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*55)+'ms';io.observe(el);});
 
-/* earnings calculator */
-const RATE=2; // $ per 1,000 verified views (base). Top clippers hit 2.50.
-const views=document.getElementById('views');
-const nfmt=n=>Math.round(n).toLocaleString('en-US');
-function tierFor(v){ return v>=5000000?'DIAMOND TIER':v>=1000000?'GOLD TIER':v>=100000?'SILVER TIER':'ROOKIE TIER'; }
-function paintCalc(){
-  const v=+views.value;
-  document.getElementById('views_out').textContent=nfmt(v);
-  document.getElementById('earn_out').textContent='$'+nfmt(v/1000*RATE);
-  document.getElementById('tier').textContent=tierFor(v);
-}
-views.addEventListener('input',paintCalc);
-paintCalc();
-
-/* apply form -> lands directly in the Clypio console's Requests tab.
-   /access-request also notifies the team by email server-side, so this
-   replaces the old Formspree-only submission rather than adding to it. */
-const CLYPIO_API = 'https://app.clypio.com';
-document.getElementById('applyform').addEventListener('submit',async(e)=>{e.preventDefault();
-  const form=e.target, data=new FormData(form);
-  const btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending…';
-  const payload={
-    name:data.get('name')||'', email:data.get('email')||'',
-    handle:data.get('handle')||'', platforms:data.get('platforms')||'',
-    reach:data.get('reach')||'', clip_url:data.get('best_clip')||'',
-    role:'clipper'
-  };
-  try{
-    const r=await fetch(CLYPIO_API+'/access-request',{method:'POST',
-      headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
-    if(r.ok){form.style.display='none';document.getElementById('success').classList.add('show');}
-    else{btn.disabled=false;btn.textContent='Apply to clip';alert('Something went wrong. Please email us directly.');}
-  }catch(err){btn.disabled=false;btn.textContent='Apply to clip';alert('Network error. Please try again.');}
-});
 </script>
 </body>
 </html>
