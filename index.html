@@ -36,7 +36,7 @@ h2{font-family:var(--serif);font-weight:540;font-size:clamp(28px,4.4vw,46px);lin
 .btn.primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(201,162,39,.5);}
 .btn.ghost{border-color:var(--line);color:var(--text);}
 .btn.ghost:hover{border-color:var(--dim);background:rgba(255,255,255,.03);}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal{opacity:0;transform:translateY(6px);transition:opacity .24s cubic-bezier(.2,.6,.3,1),transform .24s cubic-bezier(.2,.6,.3,1);}.reveal.wipe{transform:none;clip-path:polygon(0 0,0 0,-28% 100%,0 100%);transition:clip-path .52s cubic-bezier(.16,.84,.24,1),opacity .2s linear;}.reveal.wipe.in{clip-path:polygon(0 0,128% 0,100% 100%,0 100%);}
 .reveal.in{opacity:1;transform:none;}
 section{padding:88px 0;}
 
@@ -104,8 +104,8 @@ h1 em{font-style:italic;color:var(--gold);font-weight:500;}
 .dots i:nth-child(1){background:#E5615F;}.dots i:nth-child(2){background:#E3B341;}.dots i:nth-child(3){background:#3FB66B;}
 .appbar .title{font-family:var(--grotesk);font-weight:600;font-size:13px;color:var(--dim);}.appbar .title b{color:var(--text);}
 .appbar .live{margin-left:auto;display:flex;align-items:center;gap:7px;font-family:var(--grotesk);font-size:11.5px;font-weight:600;color:var(--green);letter-spacing:.04em;}
-.appbar .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,182,107,.5);}70%{box-shadow:0 0 0 7px rgba(63,182,107,0);}100%{box-shadow:0 0 0 0 rgba(63,182,107,0);}}
+.appbar .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 3.2s cubic-bezier(.4,0,.6,1) infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,182,107,.34);}70%{box-shadow:0 0 0 5px rgba(63,182,107,0);}100%{box-shadow:0 0 0 0 rgba(63,182,107,0);}}
 .replay{margin-left:14px;font-family:var(--grotesk);font-weight:600;font-size:11.5px;color:var(--gold);border:1px solid var(--line);background:transparent;padding:6px 12px;border-radius:8px;cursor:pointer;transition:.2s;}
 .replay:hover{border-color:var(--gold);}
 .tabs{display:flex;gap:4px;padding:10px 16px 0;border-bottom:1px solid var(--line);background:var(--card);}
@@ -241,7 +241,7 @@ a:focus-visible,button:focus-visible,.tab:focus-visible,input:focus-visible,sele
 .skip:focus{left:16px;}
 @media (prefers-reduced-motion: reduce){
   *{animation:none!important;scroll-behavior:auto!important;}
-  .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important;clip-path:none!important;}
   .fill,.daybars .col,table.clips tr{transition:none!important;}
 }
   :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px;}
@@ -293,7 +293,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section id="system">
   <div class="wrap">
     <div class="eyebrow reveal">The system</div>
-    <h2 class="reveal">The machine behind the views.</h2>
+    <h2 class="reveal wipe">The machine behind the views.</h2>
     <p class="sec-lead reveal">A clean path from your content to verified, creator-powered reach. No agency noise, no paying for views that didn't happen.</p>
     <div class="flow">
       <div class="node reveal"><div class="nl">Input</div><div class="nt">Your content</div><div class="nd">The asset, the goal, the platforms you want to win.</div></div>
@@ -319,7 +319,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
   <div class="wrap">
     <div class="demohead">
       <div class="eyebrow reveal">Live demo</div>
-      <h2 class="reveal">Watch a campaign in real time.</h2>
+      <h2 class="reveal wipe">Watch a campaign in real time.</h2>
       <p class="sec-lead reveal">This is the console every client gets: every clip, every verified view, every dollar, live. Sample campaign below.</p>
     </div>
     <div class="appwin reveal" id="appwin">
@@ -366,7 +366,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section id="plays">
   <div class="wrap">
     <div class="eyebrow reveal">Campaigns</div>
-    <h2 class="reveal">One network. Every kind of campaign.</h2>
+    <h2 class="reveal wipe">One network. Every kind of campaign.</h2>
     <p class="sec-lead reveal">The same distribution engine, pointed at whatever you need to get seen.</p>
     <div class="plays">
       <div class="play reveal"><div class="pt">Streamer & creator clips</div><div class="pd">Turn streams and long-form into short clips that flood every feed.</div><div class="tagline">Creator-powered reach</div></div>
@@ -382,7 +382,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section class="edge">
   <div class="wrap">
     <div class="eyebrow reveal">Our edge</div>
-    <h2 class="reveal">Most of this market runs on trust. We run on verification.</h2>
+    <h2 class="reveal wipe">Most of this market runs on trust. We run on verification.</h2>
     <div class="edgegrid">
       <div class="ec reveal"><div class="h">Verified view tracking</div><div class="p">Counts come from the platforms, not from creators submitting numbers. You pay on data nobody can inflate.</div></div>
       <div class="ec reveal"><div class="h">Bot detection</div><div class="p">Fake and bot views are flagged and voided before you're ever billed.</div></div>
@@ -397,7 +397,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section>
   <div class="wrap">
     <div class="eyebrow reveal">Why now</div>
-    <h2 class="reveal">Clipping is becoming the default.</h2>
+    <h2 class="reveal wipe">Clipping is becoming the default.</h2>
     <p class="sec-lead reveal">Brands are moving past paid posts and into creator-powered distribution, because that's where attention already lives.</p>
     <div class="proofgrid">
       <div class="pc reveal"><div class="s">The shift</div><div class="t">Paid ads get skipped and cost ~$25 per 1,000 views. Creator clips cost a fraction and read as native.</div></div>
@@ -410,7 +410,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section class="band">
   <div class="wrap">
     <div class="eyebrow reveal">Built for visibility at scale</div>
-    <h2 class="reveal" style="max-width:16ch;">Turn your content into reach.</h2>
+    <h2 class="reveal wipe" style="max-width:16ch;">Turn your content into reach.</h2>
     <a href="#book" class="btn primary reveal">Book a pilot <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:2px;" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
   </div>
 </section>
@@ -420,7 +420,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
   <div class="wrap">
     <div style="text-align:center;">
       <div class="eyebrow reveal">Book a pilot</div>
-      <h2 class="reveal" style="margin-left:auto;margin-right:auto;">Two weeks. Funded. Walk if it doesn't beat your ad CPM.</h2>
+      <h2 class="reveal wipe" style="margin-left:auto;margin-right:auto;">Two weeks. Funded. Walk if it doesn't beat your ad CPM.</h2>
       <p class="sec-lead reveal" style="margin-left:auto;margin-right:auto;">Tell us what you want to push. We'll come back with a pilot plan within 24 hours.</p>
     </div>
     <div class="formcard reveal">
@@ -475,7 +475,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 const nav=document.getElementById('nav');
 function goTop(){window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',location.pathname+location.search);return false;}
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+const io=new IntersectionObserver((es)=>{const hits=es.filter(e=>e.isIntersecting);hits.forEach((e,i)=>{e.target.style.transitionDelay=Math.min(i*45,180)+'ms';e.target.classList.add('in');io.unobserve(e.target);});},{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*55)+'ms';io.observe(el);});
 
 const CLIPS=[
