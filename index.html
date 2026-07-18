@@ -28,7 +28,7 @@ html{scroll-behavior:smooth;}
 body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 a{color:inherit;text-decoration:none;}
 .wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
-.eyebrow{font-family:var(--grotesk);font-weight:500;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);}
+.eyebrow{font-family:var(--grotesk);font-weight:600;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:9px;}.eyebrow::before{content:'';width:13px;height:2px;background:var(--gold);transform:skewX(-24deg);flex:none;}
 h2{font-family:var(--serif);font-weight:540;font-size:clamp(28px,4.4vw,46px);line-height:1.06;letter-spacing:-.01em;margin:14px 0 0;}
 .sec-lead{color:var(--dim);font-size:16.5px;max-width:54ch;margin-top:18px;line-height:1.6;}
 .btn{font-family:var(--grotesk);font-weight:600;font-size:15px;padding:14px 26px;border-radius:99px;transition:.2s;cursor:pointer;border:1px solid transparent;display:inline-block;}
@@ -36,7 +36,19 @@ h2{font-family:var(--serif);font-weight:540;font-size:clamp(28px,4.4vw,46px);lin
 .btn.primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(201,162,39,.5);}
 .btn.ghost{border-color:var(--line);color:var(--text);}
 .btn.ghost:hover{border-color:var(--dim);background:rgba(255,255,255,.03);}
-.reveal{opacity:0;transform:translateY(6px);transition:opacity .24s cubic-bezier(.2,.6,.3,1),transform .24s cubic-bezier(.2,.6,.3,1);}.reveal.wipe{transform:none;clip-path:polygon(0 0,0 0,-28% 100%,0 100%);transition:clip-path .52s cubic-bezier(.16,.84,.24,1),opacity .2s linear;}.reveal.wipe.in{clip-path:polygon(0 0,128% 0,100% 100%,0 100%);}
+.cmpwrap{overflow-x:auto;border:1px solid #23262E;border-radius:14px;background:#121419;}
+.cmp{width:100%;border-collapse:collapse;min-width:760px;font-size:13.5px;}
+.cmp th,.cmp td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid #1B1E25;line-height:1.5;}
+.cmp thead th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6E727A;font-weight:600;background:#16181E;}
+.cmp tbody tr:last-child td{border-bottom:none;}
+.cmp .rowlab{color:#A2A6AE;font-size:12.5px;width:20%;}
+.cmp th.us{color:#E3C04A;}
+.cmp td.us{background:rgba(201,162,39,.06);color:#ECEAE3;border-left:1px solid rgba(201,162,39,.28);border-right:1px solid rgba(201,162,39,.28);}
+.cmp td.us b{color:#E3C04A;font-weight:600;}
+.cmp tbody tr:last-child td.us{border-bottom:1px solid rgba(201,162,39,.28);}
+.cmpfoot{margin-top:14px;font-size:11.5px;color:#5A5E66;}
+@media(max-width:760px){.cmp{font-size:12.5px;}.cmp th,.cmp td{padding:11px 12px;}}
+.pbar.soon{opacity:.42;}.pbar.soon .pv{font-size:11px;letter-spacing:.06em;text-transform:uppercase;}.platnote{margin-top:10px;font-size:11.5px;line-height:1.5;color:#6E727A;}.tryit{display:inline-block;background:rgba(201,162,39,.16);color:#E3C04A;border:1px solid rgba(201,162,39,.4);border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;}.democtl .hint{color:#A2A6AE;text-transform:none;letter-spacing:0;font-size:12px;font-weight:400;}.reveal{opacity:0;transform:translateY(6px);transition:opacity .24s cubic-bezier(.2,.6,.3,1),transform .24s cubic-bezier(.2,.6,.3,1);}.reveal.wipe{transform:none;clip-path:polygon(0 0,0 0,-28% 100%,0 100%);transition:clip-path .52s cubic-bezier(.16,.84,.24,1),opacity .2s linear;}.reveal.wipe.in{clip-path:polygon(0 0,128% 0,100% 100%,0 100%);}
 .reveal.in{opacity:1;transform:none;}
 section{padding:88px 0;}
 
@@ -73,7 +85,7 @@ h1 em{font-style:italic;color:var(--gold);font-weight:500;}
 /* platforms strip */
 .plats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0;}
 .plats .wrap{display:flex;align-items:center;justify-content:center;gap:14px 40px;flex-wrap:wrap;}
-.plats .lab{font-family:var(--grotesk);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);width:100%;text-align:center;margin-bottom:6px;}
+.plats .lab{font-family:var(--grotesk);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);width:100%;text-align:center;margin-bottom:6px;}
 .plats .p{font-family:var(--grotesk);font-weight:600;font-size:17px;color:#6E727A;transition:.2s;}
 .plats .p:hover{color:var(--text);}
 
@@ -268,7 +280,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <header class="hero">
   <div class="glow"></div><div class="grain"></div>
   <div class="wrap">
-    <div class="eyebrow reveal">Creator distribution, run properly</div>
+    <div class="eyebrow reveal">Creator distribution</div>
     <h1 class="reveal">Attention, sold by the <em>view.</em></h1>
     <p class="lead reveal">Clypio turns your content into short clips and pushes it across TikTok, Reels, Shorts, and X through a network of creators. You only pay for the views that land.</p>
     <div class="cta-row reveal">
@@ -332,24 +344,25 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
       <div class="tabs"><button type="button" class="tab on" data-t="ov" aria-label="Overview tab">Overview</button><button type="button" class="tab" data-t="cl" aria-label="Clips tab">Clips</button></div>
       <div class="appbody">
         <div class="democtl">
-          <div class="cl">Try it <span class="hint">· drag to set a campaign budget and watch the numbers move</span></div>
+          <div class="cl"><span class="tryit">Try it</span> <span class="hint">drag the slider to set a budget, the whole console recalculates</span></div>
           <div class="row"><input type="range" id="budget" min="1000" max="20000" step="500" value="2500" aria-label="Campaign budget"><span class="val" id="budgetVal">$2,500</span></div>
           <div class="ends"><span>$1k</span><span>$20k</span></div>
         </div>
         <div class="camprow"><span class="cn">Summer Drop · Creator Campaign</span><span class="pill">● Live</span><span class="meta">Pool <b id="poolMeta">$2,500</b> &nbsp;·&nbsp; pay per verified view</span></div>
         <div class="tabpane on" data-pane="ov">
           <div class="kpis">
-            <div class="kpi hl"><div class="l">Verified views</div><div class="v" id="k_views">0</div><div class="sub" id="k_saved">You saved 0% vs running ads</div></div>
+            <div class="kpi hl"><div class="l">Verified views</div><div class="v" id="k_views">0</div><div class="sub" id="k_saved">vs buying the same views as ads</div></div>
             <div class="kpi"><div class="l">Spend</div><div class="v small" id="k_spend">$0</div><div class="sub">at $3 / 1k views</div></div>
             <div class="kpi"><div class="l">Effective CPM</div><div class="v small" id="k_cpm">$0.00</div><div class="sub">cost per 1k views</div></div>
-            <div class="kpi"><div class="l">Same views on ads</div><div class="v small" id="k_ad">$0</div><div class="sub">at ~$25 CPM</div></div>
+            <div class="kpi"><div class="l">Same views on ads</div><div class="v small" id="k_ad">$0</div><div class="sub">assuming a $12 paid social CPM</div></div>
           </div>
           <div class="panels">
             <div class="panel"><div class="ph">Views by platform</div>
-              <div class="pbar"><span class="pl">TikTok</span><span class="track"><span class="fill" data-pct="45"></span></span><span class="pv">45%</span></div>
-              <div class="pbar"><span class="pl">Reels</span><span class="track"><span class="fill" data-pct="29"></span></span><span class="pv">29%</span></div>
-              <div class="pbar"><span class="pl">Shorts</span><span class="track"><span class="fill" data-pct="18"></span></span><span class="pv">18%</span></div>
-              <div class="pbar"><span class="pl">X</span><span class="track"><span class="fill" data-pct="8"></span></span><span class="pv">8%</span></div>
+              <div class="pbar"><span class="pl">Shorts</span><span class="track"><span class="fill" data-pct="100"></span></span><span class="pv">Live</span></div>
+              <div class="pbar soon"><span class="pl">TikTok</span><span class="track"><span class="fill" data-pct="0"></span></span><span class="pv">Soon</span></div>
+              <div class="pbar soon"><span class="pl">Reels</span><span class="track"><span class="fill" data-pct="0"></span></span><span class="pv">Soon</span></div>
+              <div class="pbar soon"><span class="pl">X</span><span class="track"><span class="fill" data-pct="0"></span></span><span class="pv">Soon</span></div>
+              <div class="platnote">YouTube Shorts is verifying views today. TikTok is in platform review; Reels and X follow.</div>
             </div>
             <div class="panel"><div class="ph">Daily verified views</div><div class="daybars" id="daybars"></div><div class="daylabel">Day 1 → Day 9</div></div>
           </div>
@@ -359,7 +372,73 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
         </div>
       </div>
     </div>
-    <div class="disclaim">Sample data at the pilot rate ($3 per 1k verified views). Live campaigns track real platform views, with bot-flagged clips voided automatically.</div>
+    <div class="disclaim">Illustrative sample at the pilot rate of $3 per 1,000 verified views. Real campaigns pull view counts from the platform itself, and clips flagged as bot traffic are voided before billing. Ad comparison assumes a $12 CPM on paid social, which varies by audience.</div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <div class="eyebrow reveal">The difference</div>
+    <h2 class="reveal wipe">What you actually pay for.</h2>
+    <p class="sec-lead reveal">Most creator marketing bills you before anyone watches. Here is how the options compare.</p>
+    <div class="cmpwrap reveal">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th class="rowlab"></th>
+            <th class="us">Clypio</th>
+            <th>Paid social ads</th>
+            <th>Influencer deals</th>
+            <th>DIY clipping</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="rowlab">What you pay for</td>
+            <td class="us"><b>Verified views only</b></td>
+            <td>Impressions, watched or not</td>
+            <td>The post itself, whatever it does</td>
+            <td>Whatever you negotiate, per person</td>
+          </tr>
+          <tr>
+            <td class="rowlab">Bot traffic</td>
+            <td class="us"><b>Voided before billing</b></td>
+            <td>Usually billed anyway</td>
+            <td>Not checked</td>
+            <td>Not checked</td>
+          </tr>
+          <tr>
+            <td class="rowlab">Where view counts come from</td>
+            <td class="us"><b>The platform itself</b></td>
+            <td>The ad platform's own reporting</td>
+            <td>Screenshots from the creator</td>
+            <td>Screenshots from the clipper</td>
+          </tr>
+          <tr>
+            <td class="rowlab">Account ownership</td>
+            <td class="us"><b>Verified by platform login</b></td>
+            <td>Not applicable</td>
+            <td>Rarely verified</td>
+            <td>Not verified</td>
+          </tr>
+          <tr>
+            <td class="rowlab">Commitment</td>
+            <td class="us"><b>Fund a pool, no retainer</b></td>
+            <td>Ad account, minimums, creative</td>
+            <td>Fees upfront, per creator</td>
+            <td>None, but you run it all</td>
+          </tr>
+          <tr>
+            <td class="rowlab">Who manages it</td>
+            <td class="us"><b>We do</b></td>
+            <td>You or an agency</td>
+            <td>You, per creator</td>
+            <td>You, every day</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cmpfoot reveal">Comparisons describe typical arrangements in each category, not any specific provider.</p>
   </div>
 </section>
 
@@ -404,14 +483,6 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
       <div class="pc reveal"><div class="s">Where attention is</div><div class="t">Short-form is the feed people actually watch. Distribution across many creators beats one brand account.</div></div>
       <div class="pc reveal"><div class="s">Distribution as infrastructure</div><div class="t">The brands winning treat reach as a system to run, not a post to publish and hope.</div></div>
     </div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap">
-    <div class="eyebrow reveal">Built for visibility at scale</div>
-    <h2 class="reveal wipe" style="max-width:16ch;">Turn your content into reach.</h2>
-    <a href="#book" class="btn primary reveal">Book a pilot <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:2px;" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
   </div>
 </section>
 
