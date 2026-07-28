@@ -50,7 +50,7 @@ h2{font-family:var(--serif);font-weight:540;font-size:clamp(28px,4.4vw,46px);lin
 .btn.primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(201,162,39,.5);}
 .btn.ghost{border-color:var(--line);color:var(--text);}
 .btn.ghost:hover{border-color:var(--dim);background:rgba(255,255,255,.03);}
-.reveal{opacity:0;transform:translateY(6px);transition:opacity .24s cubic-bezier(.2,.6,.3,1),transform .24s cubic-bezier(.2,.6,.3,1);}.reveal.wipe{transform:none;clip-path:polygon(0 0,0 0,-28% 100%,0 100%);transition:clip-path .52s cubic-bezier(.16,.84,.24,1),opacity .2s linear;}.reveal.wipe.in{clip-path:polygon(0 0,128% 0,100% 100%,0 100%);}
+.reveal{opacity:0;transform:translateY(6px);transition:opacity .24s cubic-bezier(.2,.6,.3,1),transform .24s cubic-bezier(.2,.6,.3,1);}
 .reveal.in{opacity:1;transform:none;}
 section{padding:88px 0;}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px;}
@@ -86,29 +86,28 @@ h1 em{font-style:italic;color:var(--gold);font-weight:500;;position:relative;dis
 .hstats .l{font-size:12px;color:var(--dim);margin-top:8px;}
 
 /* steps */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;}
-.stepc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 20px;transition:.25s;}
-.stepc:hover{border-color:#33373F;transform:translateY(-3px);}
-.stepc .k{font-family:var(--serif);font-weight:560;font-size:34px;color:var(--gold);line-height:1;}
-.stepc .t{font-family:var(--grotesk);font-weight:600;font-size:17px;margin:14px 0 8px;}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;align-items:start;}
+.stepc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 20px;}
+.stepc .k{font-family:var(--grotesk);font-weight:600;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);line-height:1;}
+.stepc .t{font-family:var(--grotesk);font-weight:600;font-size:17px;margin:8px 0 8px;}
 .stepc .d{font-size:13.5px;color:var(--dim);line-height:1.5;}
 
 /* value grid */
-.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;align-items:start;}
 .vcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 22px;}
 .vcard .ic{width:40px;height:40px;border-radius:10px;background:rgba(201,162,39,.12);border:1px solid rgba(201,162,39,.3);display:flex;align-items:center;justify-content:center;color:var(--gold);}
 .vcard .vt{font-family:var(--grotesk);font-weight:600;font-size:17px;margin:16px 0 8px;}
 .vcard .vd{font-size:13.5px;color:var(--dim);line-height:1.55;}
 
 /* tiers strip */
-.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px;}
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px;align-items:start;}
 .tcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center;}
 .tcard .tn{font-family:var(--grotesk);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);}
 .tcard .tv{font-family:var(--serif);font-weight:560;font-size:22px;margin-top:12px;}
 .tcard .td{font-size:12px;color:var(--dim);margin-top:6px;}
 
 /* what you clip */
-.clips{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;}
+.clips{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;align-items:start;}
 .clipc{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;}
 .clipc .cd{font-family:var(--grotesk);font-weight:600;font-size:15px;}
 .clipc .cs{font-size:13px;color:var(--dim);margin-top:5px;line-height:1.5;}
@@ -194,7 +193,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section id="how">
   <div class="wrap">
     <div class="eyebrow reveal">How it works</div>
-    <h2 class="reveal wipe">From application to payout, in four steps.</h2>
+    <h2 class="reveal">From application to payout, in four steps.</h2>
     <div class="steps">
       <div class="stepc reveal"><div class="k">01</div><div class="t">Apply</div><div class="d">Send your handle and a clip you're proud of. We set you up with a login, no fee, no catch.</div></div>
       <div class="stepc reveal"><div class="k">02</div><div class="t">Pick a campaign</div><div class="d">Open your dashboard, browse live brand campaigns, and read the brief: what to clip and how to tag it.</div></div>
@@ -207,7 +206,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section id="why" style="background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
   <div class="wrap">
     <div class="eyebrow reveal">Why clip with Clypio</div>
-    <h2 class="reveal wipe">Built so the good clippers win.</h2>
+    <h2 class="reveal">Built so the good clippers win.</h2>
     <div class="vgrid">
       <div class="vcard reveal">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
@@ -252,7 +251,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section id="cut">
   <div class="wrap">
     <div class="eyebrow reveal">Our cut</div>
-    <h2 class="reveal wipe">Here's exactly how we make money.</h2>
+    <h2 class="reveal">Here's exactly how we make money.</h2>
     <p class="sec-lead reveal">Every campaign shows your rate per 1,000 verified views before you take it. Whatever the brand pays above that rate is our cut. We do not hide it, and we do not change it after you have already clipped. Here is what our share pays for.</p>
     <div class="vgrid">
       <div class="vcard reveal">
@@ -278,7 +277,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
 <section id="clip">
   <div class="wrap">
     <div class="eyebrow reveal">What you'll clip</div>
-    <h2 class="reveal wipe">Content people actually want to watch.</h2>
+    <h2 class="reveal">Content people actually want to watch.</h2>
     <div class="clips">
       <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Streamer &amp; gaming moments</div><div class="cs">The clutch, the rage, the funny bit, cut into short-form that pops on TikTok and Reels.</div></div></div>
       <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Music drops</div><div class="cs">Hooks and snippets from new releases, timed to the moment fans are looking for the sound.</div></div></div>
@@ -293,7 +292,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
   <div class="wrap">
     <div style="text-align:center;">
       <div class="eyebrow reveal">Start clipping</div>
-      <h2 class="reveal wipe" style="margin-left:auto;margin-right:auto;">Create your account. Start today.</h2>
+      <h2 class="reveal" style="margin-left:auto;margin-right:auto;">Create your account. Start today.</h2>
       <p class="sec-lead reveal" style="margin-left:auto;margin-right:auto;">No application wait, no fees. Make your account, pick a live campaign, and your first verified views start earning.</p>
       <div class="cta-row reveal" style="justify-content:center;margin:22px 0 34px;">
         <a href="https://app.clypio.com/login" class="btn primary">Create my account</a>
