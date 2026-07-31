@@ -102,6 +102,42 @@ h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,6.2vw,84px);lin
 .steps p{font-size:15.5px;line-height:1.6;color:var(--dim);max-width:52ch;}
 h2 + .steps{margin-top:48px;}
 
+/* open campaigns (briefs) */
+.briefs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:32px;}
+.briefs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.brief-card{display:block;width:100%;text-align:left;color:inherit;font:inherit;cursor:pointer;border:1px solid var(--line);border-radius:4px;padding:24px;background:none;transition:border-color .2s ease,transform .2s var(--ease),background .2s ease;}
+.brief-card:hover{border-color:rgba(185,146,74,.55);transform:translateY(-2px);background:rgba(185,146,74,.04);}
+.brief-card:active{transform:translateY(0) scale(.995);}
+.brief-cover{height:150px;border:1px solid var(--line);border-radius:3px;margin-bottom:20px;background-color:var(--card);background-image:repeating-linear-gradient(135deg,rgba(243,241,234,.055) 0 7px,rgba(243,241,234,0) 7px 14px);display:flex;align-items:flex-end;padding:14px;overflow:hidden;}
+.brief-cover img{width:100%;height:100%;object-fit:cover;}
+.brief-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px;}
+.brief-name{font-family:var(--grotesk);font-weight:600;font-size:16px;margin-bottom:4px;}
+.brief-meta{font-family:var(--grotesk);font-size:12.5px;color:var(--dim);}
+.brief-status{font-family:var(--grotesk);font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:20px;background:var(--gold-tint);color:var(--gold2);white-space:nowrap;}
+.brief-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding-top:16px;border-top:1px solid var(--line);}
+.brief-stats .l{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:5px;display:block;}
+.brief-stats .v{font-family:var(--grotesk);font-weight:600;font-size:14px;font-variant-numeric:tabular-nums;}
+.brief-view{margin-top:18px;font-family:var(--grotesk);font-size:12.5px;color:var(--gold2);}
+.text-dim{color:var(--dim);}
+
+.brief-modal-backdrop{position:fixed;inset:0;z-index:60;background:rgba(8,8,7,.72);display:flex;align-items:center;justify-content:center;padding:24px;}
+.brief-modal-backdrop[hidden]{display:none;}
+.brief-modal{width:100%;max-width:620px;max-height:86vh;overflow-y:auto;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:32px;}
+.brief-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:22px;}
+.brief-modal-name{font-family:var(--serif);font-weight:500;font-size:25px;letter-spacing:-.01em;margin-bottom:6px;}
+.brief-modal-meta{font-family:var(--grotesk);font-size:13px;color:var(--dim);}
+.brief-modal-close{flex:none;background:none;border:1px solid var(--line);color:var(--dim);font-family:var(--grotesk);font-size:13px;width:30px;height:30px;border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:color .16s ease,border-color .16s ease;}
+.brief-modal-close:hover{color:var(--text);border-color:var(--faint);}
+.brief-modal-detail{font-size:15px;line-height:1.65;color:var(--dim);margin:0 0 24px;}
+.brief-modal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:24px;}
+.brief-modal-stats .l{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;display:block;}
+.brief-modal-stats .v{font-family:var(--grotesk);font-weight:600;font-size:16px;font-variant-numeric:tabular-nums;}
+.brief-modal-cta{display:block;text-align:center;}
+
+@media(max-width:700px){
+  .briefs-grid{grid-template-columns:1fr;}
+}
+
 /* payouts */
 .verify-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;margin-top:0;}
 .statuslist{display:flex;flex-direction:column;gap:14px;margin-top:24px;}
@@ -188,11 +224,12 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
   <a href="#top" class="logo" onclick="return goTop()">Clypio<span class="d">.</span></a>
   <div class="navlinks">
     <a href="#how" class="link">How it works</a>
+    <a href="#campaigns" class="link">Open campaigns</a>
     <a href="#payouts" class="link">Payouts</a>
     <a href="#faq" class="link">FAQ</a>
     <a href="/" class="link">For brands</a>
-    <a href="https://app.clypio.com/login" class="link">Log in</a>
-    <a href="https://app.clypio.com/login" class="btn primary">Create account</a>
+    <a href="https://app.clypio.com/login/clipper" class="link">Log in</a>
+    <a href="https://app.clypio.com/login/clipper" class="btn primary">Create account</a>
   </div>
 </nav>
 
@@ -202,13 +239,13 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
     <h1 class="reveal">Get paid for the clips that survive.</h1>
     <p class="lede reveal">Every brief sets its own rate per 1,000 verified views, and you see it before you claim. You clip, you post from your own account, you get paid on what verifies.</p>
     <div class="cta-row reveal">
-      <a href="https://app.clypio.com/login" class="btn primary">Create account</a>
-      <a href="#payouts" class="btn text">See how payouts work</a>
+      <a href="https://app.clypio.com/login/clipper" class="btn primary">Create account</a>
+      <a href="#campaigns" class="btn text">See open campaigns</a>
     </div>
     <div class="statstrip reveal">
       <div class="stat">
         <div class="l">Rate</div>
-        <div class="v accent">$2 to $2.50<span class="note">per 1,000 verified views, set per brief</span></div>
+        <div class="v accent">$1.75 to $7.50<span class="note">per 1,000 verified views, set per brief</span></div>
       </div>
       <div class="stat">
         <div class="l">Payouts</div>
@@ -256,6 +293,38 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
   </div>
 </section>
 
+<section id="campaigns">
+  <div class="wrap">
+    <div class="briefs-head">
+      <h2 class="reveal">Briefs open to the network.</h2>
+    </div>
+    <div class="briefs-grid reveal" id="briefsGrid">
+      <p class="text-dim" id="briefsEmpty" hidden>No open briefs right now &mdash; check back soon.</p>
+    </div>
+  </div>
+</section>
+
+<div class="brief-modal-backdrop" id="briefModalBackdrop" hidden>
+  <div class="brief-modal" role="dialog" aria-modal="true" aria-labelledby="briefModalName">
+    <div class="brief-modal-head">
+      <div>
+        <div class="brief-modal-name" id="briefModalName"></div>
+        <div class="brief-modal-meta" id="briefModalMeta"></div>
+      </div>
+      <button type="button" class="brief-modal-close" id="briefModalClose" aria-label="Close">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+    </div>
+    <p class="brief-modal-detail" id="briefModalDetail"></p>
+    <div class="brief-modal-stats">
+      <div><span class="l">Rate</span><span class="v" id="briefModalRate"></span></div>
+      <div><span class="l">Per-clip cap</span><span class="v" id="briefModalCap"></span></div>
+      <div><span class="l">Pool left</span><span class="v" id="briefModalPool"></span></div>
+    </div>
+    <a href="https://app.clypio.com/login/clipper" class="btn primary brief-modal-cta">Create account to claim</a>
+  </div>
+</div>
+
 <section id="payouts" class="tinted">
   <div class="wrap">
     <div class="verify-grid">
@@ -291,11 +360,11 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
   <div class="wrap">
     <div class="inner">
       <h2 class="reveal">Create your clipper account.</h2>
-      <p class="lede reveal">Applications are reviewed case by case. Once you're approved, you can connect your posting accounts and claim any open brief.</p>
+      <p class="lede reveal">We send a verification link to your email. Once it is confirmed you can connect your posting accounts and claim any open brief.</p>
       <div class="cta-row reveal">
-        <a href="https://app.clypio.com/login" class="btn primary">Create account</a>
+        <a href="https://app.clypio.com/login/clipper" class="btn primary">Create account</a>
       </div>
-      <p class="fineprint reveal">By creating an account you agree to the <a href="/terms.html">Terms</a> and the <a href="/privacy.html">Privacy Policy</a>. Already have an account? <a href="https://app.clypio.com/login">Log in</a>.</p>
+      <p class="fineprint reveal">By creating an account you agree to the <a href="/terms.html">Terms</a> and the <a href="/privacy.html">Privacy Policy</a>. Already have an account? <a href="https://app.clypio.com/login/clipper">Log in</a>.</p>
     </div>
   </div>
 </section>
@@ -311,15 +380,16 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
         <div class="fh">Clippers</div>
         <div class="fcol">
           <a href="#how">How it works</a>
+          <a href="#campaigns">Open campaigns</a>
           <a href="#payouts">Payouts</a>
-          <a href="#faq">FAQ</a>
         </div>
       </div>
       <div>
         <div class="fh">Company</div>
         <div class="fcol">
           <a href="/">For brands</a>
-          <a href="https://app.clypio.com/login">Log in</a>
+          <a href="https://app.clypio.com/login/clipper">Log in</a>
+          <a href="mailto:hello@clypio.com">Contact</a>
         </div>
       </div>
       <div>
@@ -395,9 +465,9 @@ io3.observe(ledger);
 
 /* faq accordion, first item open by default */
 const FAQS=[
-  {q:'How and when do I get paid?',a:'At the rate on the brief you claimed, paid twice monthly. Rates are set per campaign, currently $2 to $2.50 per 1,000 verified views, and are shown before you claim. Views enter your ledger as soon as they verify, so you can see a payout building before it lands.'},
+  {q:'How and when do I get paid?',a:'At the rate on the brief you claimed, paid twice monthly. Rates are set by the brand, usually between $1.75 and $7.50 per 1,000 verified views, and are shown before you claim. Views enter your ledger as soon as they verify, so you can see a payout building before it lands.'},
   {q:'Why were some of my views not paid?',a:'Two reasons only. Views flagged as bot traffic by platform-level fraud signals, and views above the per-clip cap set on the brief. Both are shown as separate lines in your ledger.'},
-  {q:'What is a per-clip cap?',a:'The maximum verified views a single clip can be paid on, set on the brief before you claim it. It protects the pool and it is disclosed up front, never applied after the fact.'},
+  {q:'What is a per-clip cap?',a:'The maximum verified views a single clip can be paid on, set on the brief before you claim it. It protects the brand&rsquo;s pool and it is disclosed up front, never applied after the fact.'},
   {q:'Which platforms can I post on?',a:'YouTube Shorts verification is live, TikTok is in platform review, Reels and X follow.'},
   {q:'Do I need approval for every campaign?',a:'No. One approved account can claim any open brief on the network, subject to the brief’s own requirements.'}
 ];
@@ -414,6 +484,49 @@ FAQS.forEach((f,i)=>{
   });
   faqlist.appendChild(item);
 });
+
+/* open campaigns: real briefs from the live backend, not illustrative data */
+function escHtml(s){return (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+const briefsGrid=document.getElementById('briefsGrid');
+const briefsEmpty=document.getElementById('briefsEmpty');
+const briefModalBackdrop=document.getElementById('briefModalBackdrop');
+let BRIEFS=[];
+
+function openBrief(b){
+  document.getElementById('briefModalName').textContent=b.name;
+  document.getElementById('briefModalMeta').textContent=`${b.type} · ${b.platform} · ${b.status}`;
+  document.getElementById('briefModalDetail').textContent=b.brief||'No additional detail from the brand yet — claim it to see the full brief.';
+  document.getElementById('briefModalRate').textContent=b.rate;
+  document.getElementById('briefModalCap').textContent=b.cap;
+  document.getElementById('briefModalPool').textContent=b.pool_left;
+  briefModalBackdrop.hidden=false;
+}
+briefModalBackdrop.addEventListener('click',(e)=>{ if(e.target===briefModalBackdrop) briefModalBackdrop.hidden=true; });
+document.getElementById('briefModalClose').addEventListener('click',()=>{ briefModalBackdrop.hidden=true; });
+
+fetch('https://app.clypio.com/public/campaigns').then(r=>r.ok?r.json():[]).then(rows=>{
+  BRIEFS=rows||[];
+  if(BRIEFS.length===0){ briefsEmpty.hidden=false; return; }
+  BRIEFS.forEach((b,i)=>{
+    const card=document.createElement('button');
+    card.type='button';
+    card.className='brief-card';
+    card.innerHTML=`
+      <div class="brief-cover">${b.cover_url?`<img src="${escHtml(b.cover_url)}" alt="">`:''}</div>
+      <div class="brief-card-head">
+        <div><div class="brief-name">${escHtml(b.name)}</div><div class="brief-meta">${escHtml(b.type)} · ${escHtml(b.platform)}</div></div>
+        <span class="brief-status">${escHtml(b.status)}</span>
+      </div>
+      <div class="brief-stats">
+        <div><span class="l">Rate</span><span class="v">${escHtml(b.rate)}</span></div>
+        <div><span class="l">Per-clip cap</span><span class="v">${escHtml(b.cap)}</span></div>
+        <div><span class="l">Pool left</span><span class="v">${escHtml(b.pool_left)}</span></div>
+      </div>
+      <div class="brief-view">View brief</div>`;
+    card.addEventListener('click',()=>openBrief(b));
+    briefsGrid.appendChild(card);
+  });
+}).catch(()=>{ briefsEmpty.textContent='Could not load open briefs right now.'; briefsEmpty.hidden=false; });
 </script>
 </body>
 </html>
