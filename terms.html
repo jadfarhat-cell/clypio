@@ -37,6 +37,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .logo .d{color:var(--gold);}
 .backlink{font-family:var(--grotesk);font-weight:600;font-size:13px;color:var(--dim);transition:.2s;}
 .backlink:hover{color:var(--text);}
+.navlinks{display:flex;align-items:center;gap:32px;}
+.navlinks a{font-family:var(--grotesk);font-size:14px;color:var(--dim);transition:.2s;}
+.navlinks a:hover{color:var(--text);}
 
 header{padding:64px 0 34px;border-bottom:1px solid var(--line);}
 .eyebrow{font-family:var(--grotesk);font-weight:500;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);}
@@ -78,7 +81,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
 <body>
 <nav><div class="wrap">
   <a href="https://clypio.com" class="logo">Clypio<span class="d">.</span></a>
-  <a href="https://clypio.com" class="backlink">← Back to site</a>
+  <div class="navlinks">
+    <a href="https://clypio.com">For brands</a>
+    <a href="/clippers.html">For clippers</a>
+    <a href="https://app.clypio.com/login">Log in</a>
+  </div>
 </div></nav>
 
 <header><div class="wrap">
