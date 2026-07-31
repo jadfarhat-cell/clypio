@@ -6,298 +6,297 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://clypio.com/clippers">
-<meta name="theme-color" content="#0B0B0F">
+<meta name="theme-color" content="#0C0D10">
 <meta property="og:site_name" content="Clypio">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_CA">
 <meta property="og:url" content="https://clypio.com/clippers">
 <meta property="og:title" content="Clypio for clippers | Get paid per verified view">
-<meta property="og:description" content="Clip brand content, post from your own accounts, and get paid for every verified view. No follower minimum.">
+<meta property="og:description" content="Clip brand content, post from your own accounts, and get paid for every verified view. Bots and fake views are voided before payout.">
 <meta property="og:image" content="https://clypio.com/og-clippers.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Clypio. Attention, sold by the view.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Clypio for clippers | Get paid per verified view">
-<meta name="twitter:description" content="Clip brand content, post from your own accounts, and get paid for every verified view. No follower minimum.">
+<meta name="twitter:description" content="Clip brand content, post from your own accounts, and get paid for every verified view. Bots and fake views are voided before payout.">
 <meta name="twitter:image" content="https://clypio.com/og-clippers.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Clypio",
 "url":"https://clypio.com","logo":"https://clypio.com/og-image.png",
 "description":"A performance clipping network. Brands fund a pool, creators clip their content, and brands pay only for verified views.",
 "slogan":"Attention, sold by the view.",
 "address":{"@type":"PostalAddress","addressLocality":"Montreal","addressRegion":"QC","addressCountry":"CA"}}</script>
-<meta name="description" content="Get paid for every real view. Clypio pays clippers per verified view, weekly, on real brand campaigns. Bots and fakes are voided, so you never compete with them. Free to join.">
+<meta name="description" content="Get paid per verified view. Claim a brief, post from your own account, and get paid at the rate on the brief. Bots and fake views are voided before anyone gets paid.">
 <title>Clypio for Creators | Get paid per verified view.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..560&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0C0D10; --ink2:#121419; --card:#16181E; --card2:#1B1E25; --line:#23262E;
-  --text:#ECEAE3; --dim:#A2A6AE; --faint:#8A8F98; --gold:#C9A227; --gold2:#E3C04A; --green:#3FB66B; --red:#E5615F;
+  --ink:#0E0D0C; --ink2:#17160F; --card:#17160F; --card2:#17160F; --line:rgba(243,241,234,.14);
+  --text:#F3F1EA; --dim:#9C988F; --faint:#6E6B62; --gold:#B9924A; --gold2:#D9BD84; --green:#3FB66B; --gold-tint:rgba(185,146,74,.14);
   --serif:'Fraunces',Georgia,serif; --grotesk:'Space Grotesk',sans-serif; --sans:'Inter',system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased;}
 a{color:inherit;text-decoration:none;}
-.wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
-.eyebrow{font-family:var(--grotesk);font-weight:600;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:9px;}.eyebrow::before{content:'';width:13px;height:2px;background:var(--gold);transform:skewX(-24deg);flex:none;}
-h2{font-family:var(--serif);font-weight:540;font-size:clamp(28px,4.4vw,46px);line-height:1.06;letter-spacing:-.01em;margin:14px 0 0;}
-.sec-lead{color:var(--dim);font-size:16.5px;max-width:54ch;margin-top:18px;line-height:1.6;}
-.btn{font-family:var(--grotesk);font-weight:600;font-size:15px;padding:14px 26px;border-radius:99px;transition:.2s;cursor:pointer;border:1px solid transparent;display:inline-block;}
-.btn.primary{background:var(--gold);color:#1A1405;}
-.btn.primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(201,162,39,.5);}
-.btn.ghost{border-color:var(--line);color:var(--text);}
-.btn.ghost:hover{border-color:var(--dim);background:rgba(255,255,255,.03);}
-.reveal{opacity:0;transform:translateY(6px);transition:opacity .24s cubic-bezier(.2,.6,.3,1),transform .24s cubic-bezier(.2,.6,.3,1);}
-.reveal.in{opacity:1;transform:none;}
-section{padding:88px 0;}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px;}
+::selection{background:rgba(185,146,74,.35);}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px);}
+section{padding:96px 0;}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.2vw,44px);line-height:1.08;letter-spacing:-.01em;max-width:20ch;}
+.lede{color:var(--dim);font-size:15.5px;line-height:1.65;max-width:52ch;margin-top:18px;}
+
+/* buttons + links */
+.btn{font-family:var(--grotesk);font-weight:600;font-size:15px;padding:14px 28px;border-radius:4px;transition:background .16s ease,transform .16s var(--ease);cursor:pointer;border:none;display:inline-block;}
+.btn.primary{background:var(--gold);color:var(--ink);}
+.btn.primary:hover{background:var(--gold2);transform:translateY(-1px);}
+.btn.primary:active{transform:scale(.97);}
+.btn.text{color:var(--text);border-bottom:1px solid var(--faint);padding:0 0 2px;border-radius:0;font-size:14px;transition:color .16s ease,border-color .16s ease,transform .16s var(--ease);}
+.btn.text:hover{color:var(--gold2);border-color:var(--gold2);}
+.btn.text:active{transform:scale(.97);}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3px;}
+.skip{position:absolute;left:-999px;top:10px;z-index:100;background:var(--gold);color:var(--ink);font-family:var(--grotesk);font-weight:600;font-size:13px;padding:10px 16px;border-radius:8px;}
+.skip:focus{left:16px;}
 
 /* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(12px);background:rgba(12,13,16,.72);border-bottom:1px solid transparent;transition:.3s;}
+nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:36px;padding:18px clamp(20px,5vw,72px);border-bottom:1px solid transparent;background:rgba(12,13,16,.7);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);transition:border-color .3s ease,background .3s ease;}
 nav.scrolled{border-bottom-color:var(--line);background:rgba(12,13,16,.92);}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
-.logo{font-family:var(--grotesk);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--text);text-decoration:none;cursor:pointer;}
+.logo{font-family:var(--grotesk);font-weight:700;font-size:21px;letter-spacing:-.02em;margin-right:auto;}
 .logo .d{color:var(--gold);}
-.navlinks{display:flex;align-items:center;gap:24px;}
-.navlinks a.link{font-family:var(--grotesk);font-weight:500;font-size:14px;color:var(--dim);transition:.2s;}
-.navlinks a.link:hover{color:var(--text);}
-.navcta{font-family:var(--grotesk);font-weight:600;font-size:13px;background:var(--gold);color:#1A1405;padding:9px 18px;border-radius:99px;transition:.2s;}
-.navcta:hover{background:var(--gold2);transform:translateY(-1px);}
-@media (pointer:coarse){ .navcta,.navlinks a{min-height:44px;display:inline-flex;align-items:center;} }
+nav a.link{color:var(--dim);font-size:14px;font-family:var(--grotesk);transition:color .18s ease;}
+nav a.link:hover{color:var(--text);}
+nav .navcta{padding:10px 20px;font-size:14px;}
+.navlinks{display:flex;align-items:center;gap:32px;}
+
+/* reveal (scroll-in) */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
 
 /* hero */
-.hero{position:relative;padding:168px 0 66px;overflow:hidden;text-align:center;}
-.glow{position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:1000px;height:620px;background:radial-gradient(ellipse at center,rgba(201,162,39,.2),transparent 62%);filter:blur(46px);pointer-events:none;z-index:0;}
-.grain{position:absolute;inset:0;opacity:.05;pointer-events:none;z-index:1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
-.hero .wrap{position:relative;z-index:2;}
-.hero .kicker{font-family:var(--grotesk);font-weight:600;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:inline-block;border:1px solid rgba(201,162,39,.35);border-radius:99px;padding:7px 16px;}
-h1{font-family:var(--serif);font-weight:540;font-size:clamp(44px,8vw,82px);line-height:.98;letter-spacing:-.025em;margin:22px auto 0;max-width:16ch;}
-h1 em{font-style:italic;color:var(--gold);font-weight:500;;position:relative;display:inline-block;}h1 em::after{content:'';position:absolute;left:.02em;right:.06em;bottom:-.02em;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:1px;transform:skewX(-24deg) scaleX(0);transform-origin:left center;animation:drawrule .58s cubic-bezier(.16,.84,.24,1) .55s forwards;}@keyframes drawrule{to{transform:skewX(-24deg) scaleX(1);}}@media(prefers-reduced-motion:reduce){h1 em::after{animation:none;transform:skewX(-24deg) scaleX(1);}}
-.hero p.lead{font-size:clamp(16px,2vw,20px);color:var(--dim);max-width:52ch;margin:26px auto 0;line-height:1.55;}
-.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px;justify-content:center;}
-.hstats{display:flex;justify-content:center;flex-wrap:wrap;margin-top:60px;border:1px solid var(--line);border-radius:16px;background:rgba(22,24,30,.5);overflow:hidden;}
-.hstats .s{padding:24px 34px;flex:1;min-width:170px;border-right:1px solid var(--line);}
-.hstats .s:last-child{border-right:none;}
-.hstats .n{font-family:var(--serif);font-weight:560;font-size:30px;line-height:1;}
-.hstats .n b{color:var(--gold);}
-.hstats .l{font-size:12px;color:var(--dim);margin-top:8px;}
+.hero{padding:88px 0 48px;}
+.eyebrow{display:block;font-family:var(--grotesk);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:22px;}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,6.2vw,84px);line-height:1.04;letter-spacing:-.01em;max-width:18ch;margin-bottom:28px;}
+.hero .lede{font-size:18px;max-width:54ch;margin-bottom:40px;}
+.cta-row{display:flex;align-items:center;gap:28px;flex-wrap:wrap;}
 
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;align-items:start;}
-.stepc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 20px;}
-.stepc .k{font-family:var(--grotesk);font-weight:600;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);line-height:1;}
-.stepc .t{font-family:var(--grotesk);font-weight:600;font-size:17px;margin:8px 0 8px;}
-.stepc .d{font-size:13.5px;color:var(--dim);line-height:1.5;}
+/* stats strip */
+.statstrip{border-top:1px solid var(--line);padding-top:28px;margin-top:72px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.stat .l{font-family:var(--grotesk);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.stat .v{font-family:var(--grotesk);font-weight:600;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.01em;font-variant-numeric:tabular-nums;}
+.stat .v.accent{color:var(--gold2);}
+.stat .v .note{display:block;font-family:var(--sans);font-size:14px;color:var(--dim);font-weight:400;margin-top:6px;letter-spacing:0;}
 
-/* value grid */
-.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;align-items:start;}
-.vcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 22px;}
-.vcard .ic{width:40px;height:40px;border-radius:10px;background:rgba(201,162,39,.12);border:1px solid rgba(201,162,39,.3);display:flex;align-items:center;justify-content:center;color:var(--gold);}
-.vcard .vt{font-family:var(--grotesk);font-weight:600;font-size:17px;margin:16px 0 8px;}
-.vcard .vd{font-size:13.5px;color:var(--dim);line-height:1.55;}
+/* quote */
+.quote{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.quote p{max-width:900px;margin:0 auto;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(24px,3vw,34px);line-height:1.5;letter-spacing:-.005em;text-align:center;}
+.quote em{color:var(--gold2);font-style:italic;}
+.tinted{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 
-/* tiers strip */
-.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px;align-items:start;}
-.tcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center;}
-.tcard .tn{font-family:var(--grotesk);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);}
-.tcard .tv{font-family:var(--serif);font-weight:560;font-size:22px;margin-top:12px;}
-.tcard .td{font-size:12px;color:var(--dim);margin-top:6px;}
+/* how / steps */
+.steps .row{display:grid;grid-template-columns:minmax(64px,120px) minmax(0,340px) minmax(0,1fr);gap:24px clamp(24px,4vw,64px);align-items:baseline;padding:32px 0;border-top:1px solid var(--line);}
+.steps .row:last-child{border-bottom:1px solid var(--line);}
+.steps .k{font-family:var(--grotesk);font-weight:600;font-size:14px;color:var(--gold2);}
+.steps h3{font-family:var(--serif);font-weight:500;font-size:24px;}
+.steps p{font-size:15.5px;line-height:1.6;color:var(--dim);max-width:52ch;}
+h2 + .steps{margin-top:48px;}
 
-/* what you clip */
-.clips{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;align-items:start;}
-.clipc{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;}
-.clipc .cd{font-family:var(--grotesk);font-weight:600;font-size:15px;}
-.clipc .cs{font-size:13px;color:var(--dim);margin-top:5px;line-height:1.5;}
-.clipc .cdot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none;margin-top:6px;}
+/* payouts */
+.verify-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;margin-top:0;}
+.statuslist{display:flex;flex-direction:column;gap:14px;margin-top:24px;}
+.statusitem{display:flex;align-items:center;gap:10px;font-family:var(--grotesk);font-size:14px;}
+.dot{width:8px;height:8px;border-radius:50%;flex:none;}
+.dot.live{background:var(--gold);}
+.dot.review{border:1.5px solid var(--gold2);}
+.dot.later{border:1.5px solid var(--faint);}
+.statusitem.later{color:var(--dim);}
 
-/* form */
-.form-sec{position:relative;overflow:hidden;}
-.formcard{max-width:560px;margin:40px auto 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px 32px;position:relative;z-index:2;}
-.field{margin-bottom:18px;}
-.field label{font-family:var(--grotesk);font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:8px;}
-.field input,.field select{width:100%;background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:13px 15px;color:var(--text);font-family:var(--sans);font-size:15px;transition:.2s;}
-.field input:focus,.field select:focus{outline:none;border-color:var(--gold);background:#15171d;}
-.field input::placeholder{color:#5D616A;}
-.formcard .btn.primary{width:100%;text-align:center;margin-top:4px;}
-.formnote{font-size:12px;color:var(--faint);text-align:center;margin-top:14px;}
-.success{display:none;text-align:center;padding:20px 0;}
-.success.show{display:block;}
-.success .ck{width:56px;height:56px;border-radius:50%;background:rgba(201,162,39,.12);border:1px solid rgba(201,162,39,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
-.success h3{font-family:var(--serif);font-weight:560;font-size:26px;}
-.success p{color:var(--dim);font-size:15px;margin-top:10px;max-width:40ch;margin-left:auto;margin-right:auto;}
+.ledger{background:var(--ink);border:1px solid var(--line);border-radius:6px;padding:32px;will-change:transform,opacity,filter;}
+.ledger .lhead{font-family:var(--grotesk);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:20px;}
+.ledger .lhead i{opacity:.6;font-style:normal;}
+.lrow{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px;opacity:0;transform:translateX(-6px);transition:opacity .5s var(--ease),transform .5s var(--ease);}
+.lrow.in{opacity:1;transform:none;}
+.lrow.dim{color:var(--dim);}
+.lrow .n{font-family:var(--grotesk);font-variant-numeric:tabular-nums;}
+.lrow.subtotal{padding-top:16px;font-size:15px;font-weight:600;}
+.lrow.total{border-bottom:none;padding-top:16px;font-size:16px;font-weight:600;}
+.lrow.total .n{color:var(--gold2);}
+
+/* faq */
+.faq-list{margin-top:40px;}
+.faqitem{border-top:1px solid var(--line);}
+.faqitem:last-child{border-bottom:1px solid var(--line);}
+.faqq{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;cursor:pointer;text-align:left;padding:22px 0;font-family:var(--grotesk);font-weight:600;font-size:16px;color:var(--text);transition:color .16s ease;}
+.faqq:hover{color:var(--gold2);}
+.faqicon{flex:none;font-size:18px;color:var(--gold2);transition:transform .3s var(--ease);}
+.faqitem.open .faqicon{transform:rotate(45deg);}
+.faqa-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s var(--ease);}
+.faqitem.open .faqa-wrap{grid-template-rows:1fr;}
+.faqa-inner{overflow:hidden;}
+.faqa-wrap p{font-size:15px;line-height:1.6;color:var(--dim);max-width:64ch;padding-bottom:24px;}
+
+/* apply */
+.apply{text-align:center;}
+.apply .inner{max-width:560px;margin:0 auto;}
+.apply h2{margin:0 auto 16px;max-width:none;}
+.apply .lede{margin:0 auto 32px;max-width:none;}
+.apply .cta-row{justify-content:center;}
+.apply .fineprint{font-size:13px;color:var(--faint);margin-top:20px;line-height:1.6;}
+.apply .fineprint a{color:var(--gold2);}
 
 /* footer */
-footer{border-top:1px solid var(--line);padding:56px 0 40px;}
-.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;}
-.ftag{color:var(--dim);font-size:14px;margin-top:14px;max-width:38ch;line-height:1.6;}
-.fh{font-family:var(--grotesk);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
-.fl{display:block;color:var(--text);font-size:14px;margin-bottom:10px;transition:.2s;}
-.fl:hover{color:var(--gold);}
-.fbottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--faint);font-size:12.5px;font-family:var(--grotesk);}
-.skip{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--gold);color:#1A1400;padding:10px 16px;border-radius:8px;font-weight:600;}
-.skip:focus{left:12px;}
+footer{padding:56px 0 40px;}
+.fgrid{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:32px;margin-bottom:40px;}
+footer .logo{font-size:19px;margin-bottom:10px;display:block;}
+footer .ftag{font-size:13px;color:var(--dim);max-width:30ch;}
+.fh{font-family:var(--grotesk);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.fcol{display:flex;flex-direction:column;gap:8px;font-size:14px;}
+.fcol a{color:var(--dim);transition:color .16s ease;}
+.fcol a:hover{color:var(--text);}
+.fbottom{border-top:1px solid var(--line);padding-top:20px;font-size:12.5px;color:var(--dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
 
-@media (max-width:860px){
-  .steps,.vgrid,.tiers{grid-template-columns:repeat(2,1fr);}
-  .clips{grid-template-columns:1fr;}
+@media(max-width:880px){
+  .verify-grid{grid-template-columns:1fr;}
+  .statstrip{grid-template-columns:1fr;gap:20px;}
+  .steps .row{grid-template-columns:1fr;gap:8px;}
+  .fgrid{grid-template-columns:1fr 1fr;gap:28px;}
+  nav .navlinks a.link{display:none;}
+  section{padding:72px 0;}
 }
-@media (max-width:560px){
-  .navlinks a.link{display:none;}
-  .steps,.tiers{grid-template-columns:1fr;}
-  .vgrid{grid-template-columns:1fr;}
-  section{padding:64px 0;}
-  .calc{padding:28px 20px;}
+@media(max-width:600px){
+  .fgrid{grid-template-columns:1fr;}
+  .hero{padding:56px 0 40px;}
+  nav{gap:20px;}
 }
-@media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important;scroll-behavior:auto!important;} .reveal{opacity:1;transform:none;} }
 
-.link{position:relative;}.link::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--gold);transform:skewX(-24deg) scaleX(0);transform-origin:left center;transition:transform .22s cubic-bezier(.2,.6,.3,1);}.link:hover::after{transform:skewX(-24deg) scaleX(1);}.btn svg{transition:transform .22s cubic-bezier(.2,.6,.3,1);}.btn:hover svg{transform:translate(2px,-2px);}.logo .d{display:inline-block;transition:transform .2s cubic-bezier(.2,.6,.3,1);}.logo:hover .d{transform:translateY(-2px);}.navcta{display:inline-block;}.navcta:hover{transform:translateY(-1px);}@media(prefers-reduced-motion:reduce){.link::after,.btn svg,.logo .d,.navcta{transition:none!important;}.link:hover::after{transform:skewX(-24deg) scaleX(1);}}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.001ms!important;animation-delay:0ms!important;transition-duration:.001ms!important;}
+  .reveal,.lrow{opacity:1!important;transform:none!important;}
+}
 </style>
 </head>
 <body>
-<script>/* Always enter at the top; strip any leftover #hash so mobile doesn't jump. */
+<script>
 if(location.hash){history.replaceState(null,'',location.pathname+location.search);}
-if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
+if('scrollRestoration' in history){history.scrollRestoration='manual';}
+</script>
 <a href="#how" class="skip">Skip to content</a>
 
-<nav id="nav"><div class="wrap">
+<nav id="nav">
   <a href="#top" class="logo" onclick="return goTop()">Clypio<span class="d">.</span></a>
   <div class="navlinks">
     <a href="#how" class="link">How it works</a>
-    <a href="https://clypio.com" class="link">For brands</a>
+    <a href="#payouts" class="link">Payouts</a>
+    <a href="#faq" class="link">FAQ</a>
+    <a href="/" class="link">For brands</a>
     <a href="https://app.clypio.com/login" class="link">Log in</a>
-    <a href="#apply" class="navcta">Apply to clip</a>
+    <a href="https://app.clypio.com/login" class="btn primary">Create account</a>
   </div>
-</div></nav>
+</nav>
 
-<header class="hero">
-  <div class="glow"></div><div class="grain"></div>
+<header class="hero" id="top">
   <div class="wrap">
-    <span class="kicker reveal">For clippers &amp; creators</span>
-    <h1 class="reveal">You already make clips. <em>Get paid</em> for the ones that land.</h1>
-    <p class="lead reveal">Clip real brand campaigns, post them where you already post, and get paid per verified view, every week. No fees to join. Bots and fake views are voided, so you never share the pool with them.</p>
+    <span class="eyebrow reveal">For clippers</span>
+    <h1 class="reveal">Get paid for the clips that survive.</h1>
+    <p class="lede reveal">Every brief sets its own rate per 1,000 verified views, and you see it before you claim. You clip, you post from your own account, you get paid on what verifies.</p>
     <div class="cta-row reveal">
-      <a href="#apply" class="btn primary">Apply to clip</a>
-      <a href="#earn" class="btn ghost">See what you'd earn</a>
+      <a href="https://app.clypio.com/login" class="btn primary">Create account</a>
+      <a href="#payouts" class="btn text">See how payouts work</a>
     </div>
-    <div class="hstats reveal">
-      <div class="s"><div class="n"><b>Weekly</b></div><div class="l">payouts, not net-90</div></div>
-      <div class="s"><div class="n"><b>$0</b></div><div class="l">to join, no lock-in</div></div>
-      <div class="s"><div class="n"><b>Real</b></div><div class="l">views only, bots voided</div></div>
+    <div class="statstrip reveal">
+      <div class="stat">
+        <div class="l">Rate</div>
+        <div class="v accent">$2 to $2.50<span class="note">per 1,000 verified views, set per brief</span></div>
+      </div>
+      <div class="stat">
+        <div class="l">Payouts</div>
+        <div class="v">Twice monthly</div>
+      </div>
+      <div class="stat">
+        <div class="l">Per-clip cap</div>
+        <div class="v">Shown up front</div>
+      </div>
     </div>
   </div>
 </header>
 
+<section class="quote">
+  <div class="wrap">
+    <p class="reveal">We do not pay on reported views. We pay on <em>verified views</em>, and you see the screening on every clip you post.</p>
+  </div>
+</section>
+
 <section id="how">
   <div class="wrap">
-    <div class="eyebrow reveal">How it works</div>
-    <h2 class="reveal">From application to payout, in four steps.</h2>
+    <h2 class="reveal">Claim a brief, post the clip, get paid on what verifies.</h2>
     <div class="steps">
-      <div class="stepc reveal"><div class="k">01</div><div class="t">Apply</div><div class="d">Send your handle and a clip you're proud of. We set you up with a login, no fee, no catch.</div></div>
-      <div class="stepc reveal"><div class="k">02</div><div class="t">Pick a campaign</div><div class="d">Open your dashboard, browse live brand campaigns, and read the brief: what to clip and how to tag it.</div></div>
-      <div class="stepc reveal"><div class="k">03</div><div class="t">Clip &amp; post</div><div class="d">Cut it your way, post it from your own handle, and drop the link back into Clypio.</div></div>
-      <div class="stepc reveal"><div class="k">04</div><div class="t">Get paid</div><div class="d">We verify the views, void the fakes, and pay you weekly for what's real. Watch it all in your dashboard.</div></div>
+      <div class="row reveal">
+        <div class="k">01</div>
+        <h3>Apply once</h3>
+        <p>Send your accounts and posting history. Applications are reviewed case by case, and approval covers every campaign on the network.</p>
+      </div>
+      <div class="row reveal">
+        <div class="k">02</div>
+        <h3>Claim a campaign</h3>
+        <p>Every brief shows the archive, the rate, the per-clip cap, and the pool remaining before you claim it. Nothing is hidden until after you post.</p>
+      </div>
+      <div class="row reveal">
+        <div class="k">03</div>
+        <h3>Post from your account</h3>
+        <p>Your cut, your caption, your audience. Submit the link and the clip enters verification on the platform's own reporting.</p>
+      </div>
+      <div class="row reveal">
+        <div class="k">04</div>
+        <h3>Get paid on verified views</h3>
+        <p>Paid at the rate on the brief, twice monthly. Bot traffic and views above the cap are shown as voided in your ledger, never quietly removed.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="why" style="background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+<section id="payouts" class="tinted">
   <div class="wrap">
-    <div class="eyebrow reveal">Why clip with Clypio</div>
-    <h2 class="reveal">Built so the good clippers win.</h2>
-    <div class="vgrid">
-      <div class="vcard reveal">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <div class="vt">Fakes don't count</div>
-        <div class="vd">Bot and fake views are voided before anyone gets paid. You're never splitting the pool with a bot farm, so real reach actually pays.</div>
+    <div class="verify-grid">
+      <div class="reveal">
+        <h2>You see the same ledger the brand sees.</h2>
+        <p class="lede">Screening is not a black box. Every clip shows what the platform reported, what was filtered as bot traffic, what fell above the per-clip cap, and what you were paid on.</p>
+        <div class="statuslist">
+          <div class="statusitem"><span class="dot live"></span> YouTube Shorts verification is live</div>
+          <div class="statusitem"><span class="dot review"></span> TikTok is in platform review</div>
+          <div class="statusitem later"><span class="dot later"></span> Reels and X follow</div>
+        </div>
       </div>
-      <div class="vcard reveal">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
-        <div class="vt">Paid weekly</div>
-        <div class="vd">Verified views turn into money every week, not on some net-90 invoice. Clear rate, clear schedule, no chasing.</div>
+      <div class="ledger reveal" id="ledger">
+        <div class="lhead">Your ledger, one period <i>(illustrative)</i></div>
+        <div class="lrow" data-final="302400"><span>Reported on your clips</span><span class="n">0</span></div>
+        <div class="lrow dim" data-final="-61300"><span>Bot traffic filtered</span><span class="n">&minus;0</span></div>
+        <div class="lrow dim" data-final="-26300"><span>Above per-clip cap</span><span class="n">&minus;0</span></div>
+        <div class="lrow subtotal" data-final="214800"><span>Verified and paid on</span><span class="n">0</span></div>
+        <div class="lrow total" data-final="42960" data-decimals="2" data-divide="100" data-prefix="$"><span>Payout at this brief's rate</span><span class="n">$0.00</span></div>
       </div>
-      <div class="vcard reveal">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
-        <div class="vt">Your own dashboard</div>
-        <div class="vd">Every clip, every verified view, every dollar owed, live. No guessing what you earned or when it lands.</div>
-      </div>
-      <div class="vcard reveal">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5z"/></svg></div>
-        <div class="vt">Real campaigns</div>
-        <div class="vd">Actual brands and creators with real briefs and funded pools, not vague "post something" bounties that never pay out.</div>
-      </div>
-      <div class="vcard reveal">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18a3 3 0 0 1-3-3v-2a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a3 3 0 0 1-3 3"/><path d="M6 14h12v8H6z"/></svg></div>
-        <div class="vt">Climb the tiers</div>
-        <div class="vd">The more verified views you rack up, the higher your tier, Rookie to Diamond. Your best work is on record and it follows you.</div>
-      </div>
-      <div class="vcard reveal">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <div class="vt">Clip on your terms</div>
-        <div class="vd">Your style, your platforms, your schedule. Pick the campaigns you like and post where you already have an audience.</div>
-      </div>
-    </div>
-    <div class="tiers">
-      <div class="tcard reveal"><div class="tn">Rookie</div><div class="tv">Just started</div><div class="td">Your first verified views</div></div>
-      <div class="tcard reveal"><div class="tn">Silver</div><div class="tv">100k+</div><div class="td">verified views on record</div></div>
-      <div class="tcard reveal"><div class="tn">Gold</div><div class="tv">1M+</div><div class="td">verified views on record</div></div>
-      <div class="tcard reveal"><div class="tn">Diamond</div><div class="tv">5M+</div><div class="td">verified views on record</div></div>
     </div>
   </div>
 </section>
 
-<section id="cut">
-  <div class="wrap">
-    <div class="eyebrow reveal">Our cut</div>
-    <h2 class="reveal">Here's exactly how we make money.</h2>
-    <p class="sec-lead reveal">Every campaign shows your rate per 1,000 verified views before you take it. Whatever the brand pays above that rate is our cut. We do not hide it, and we do not change it after you have already clipped. Here is what our share pays for.</p>
-    <div class="vgrid">
-      <div class="vcard reveal">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <div class="vt">Verification that protects your money</div>
-        <div class="vd">Every view gets checked against real platform data before anyone is paid. Bot farms get voided, so the pool goes to clippers who actually earned it, including you.</div>
-      </div>
-      <div class="vcard reveal">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
-        <div class="vt">Guaranteed payout</div>
-        <div class="vd">Once your views are verified, you get paid, weekly. If a brand drags their feet on an invoice, that's our problem to chase, never yours.</div>
-      </div>
-      <div class="vcard reveal">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3 12 12"/><path d="M15 3h6v6"/></svg></div>
-        <div class="vt">Deal flow you never chase</div>
-        <div class="vd">We sign the brands, get the pools funded upfront, and handle the contracts. You never cold-DM a marketing manager. You clip and post.</div>
-      </div>
-    </div>
-    <p class="sec-lead reveal" style="margin-top:26px;">No hidden fees, no surprise deductions, no fine print math. The rate on your dashboard is the rate that hits your account.</p>
+<section id="faq">
+  <div class="wrap" style="max-width:820px;">
+    <h2 class="reveal">What clippers ask first.</h2>
+    <div class="faq-list" id="faqlist"></div>
   </div>
 </section>
 
-<section id="clip">
+<section id="apply" class="apply">
   <div class="wrap">
-    <div class="eyebrow reveal">What you'll clip</div>
-    <h2 class="reveal">Content people actually want to watch.</h2>
-    <div class="clips">
-      <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Streamer &amp; gaming moments</div><div class="cs">The clutch, the rage, the funny bit, cut into short-form that pops on TikTok and Reels.</div></div></div>
-      <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Music drops</div><div class="cs">Hooks and snippets from new releases, timed to the moment fans are looking for the sound.</div></div></div>
-      <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Podcast &amp; interview clips</div><div class="cs">The hot take, the story, the one-liner, the parts that travel far beyond the full episode.</div></div></div>
-      <div class="clipc reveal"><span class="cdot"></span><div><div class="cd">Brand &amp; product</div><div class="cs">Native, watchable takes that feel like content, not an ad, for brands that get short-form.</div></div></div>
+    <div class="inner">
+      <h2 class="reveal">Create your clipper account.</h2>
+      <p class="lede reveal">Applications are reviewed case by case. Once you're approved, you can connect your posting accounts and claim any open brief.</p>
+      <div class="cta-row reveal">
+        <a href="https://app.clypio.com/login" class="btn primary">Create account</a>
+      </div>
+      <p class="fineprint reveal">By creating an account you agree to the <a href="/terms.html">Terms</a> and the <a href="/privacy.html">Privacy Policy</a>. Already have an account? <a href="https://app.clypio.com/login">Log in</a>.</p>
     </div>
-  </div>
-</section>
-
-<section id="apply" class="form-sec">
-  <div class="glow"></div>
-  <div class="wrap">
-    <div style="text-align:center;">
-      <div class="eyebrow reveal">Start clipping</div>
-      <h2 class="reveal" style="margin-left:auto;margin-right:auto;">Create your account. Start today.</h2>
-      <p class="sec-lead reveal" style="margin-left:auto;margin-right:auto;">No application wait, no fees. Make your account, pick a live campaign, and your first verified views start earning.</p>
-      <div class="cta-row reveal" style="justify-content:center;margin:22px 0 34px;">
-        <a href="https://app.clypio.com/login" class="btn primary">Create my account</a>
-      </div>    </div>
-    
   </div>
 </section>
 
@@ -305,34 +304,116 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <a href="#top" class="logo" onclick="return goTop()">Clypio<span class="d">.</span></a>
-        <div class="ftag">A performance clipping network. Brands pay for verified reach, clippers get paid for the views that land.</div>
+        <span class="logo">Clypio<span class="d">.</span></span>
+        <p class="ftag">Attention, sold by the view.</p>
       </div>
       <div>
-        <div class="fh">For clippers</div>
-        <a href="#earn" class="fl">What you'd earn</a>
-        <a href="#how" class="fl">How it works</a>
-        <a href="#apply" class="fl">Apply to clip</a>
-        <a href="https://app.clypio.com/login" class="fl">Log in</a>
+        <div class="fh">Clippers</div>
+        <div class="fcol">
+          <a href="#how">How it works</a>
+          <a href="#payouts">Payouts</a>
+          <a href="#faq">FAQ</a>
+        </div>
       </div>
       <div>
         <div class="fh">Company</div>
-        <a href="https://clypio.com" class="fl">For brands</a>
-        <a href="https://clypio.com#system" class="fl">How Clypio works</a>
-        <a href="https://clypio.com#book" class="fl">Book a pilot</a>
+        <div class="fcol">
+          <a href="/">For brands</a>
+          <a href="https://app.clypio.com/login">Log in</a>
+        </div>
+      </div>
+      <div>
+        <div class="fh">Legal</div>
+        <div class="fcol">
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+        </div>
       </div>
     </div>
-    <div class="fbottom"><span>© 2026 Clypio. Performance clipping network.</span><span><a href="/privacy.html" style="color:var(--faint);margin-right:18px;">Privacy</a><a href="/terms.html" style="color:var(--faint);">Terms</a></span></div>
+    <div class="fbottom">
+      <span>© 2026 Clypio. Figures shown throughout are illustrative.</span>
+      <span>YouTube Shorts verification is live, TikTok is in platform review, Reels and X follow.</span>
+    </div>
   </div>
 </footer>
 
 <script>
 const nav=document.getElementById('nav');
 function goTop(){window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',location.pathname+location.search);return false;}
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
-const io=new IntersectionObserver((es)=>{const hits=es.filter(e=>e.isIntersecting);hits.forEach((e,i)=>{e.target.style.transitionDelay=Math.min(i*45,180)+'ms';e.target.classList.add('in');io.unobserve(e.target);});},{threshold:.12});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*55)+'ms';io.observe(el);});
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8));
 
+const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* scroll reveal, staggered, one shot */
+const io=new IntersectionObserver((es)=>{
+  es.filter(e=>e.isIntersecting).forEach((e,i)=>{
+    e.target.style.transitionDelay=Math.min(i*45,180)+'ms';
+    e.target.classList.add('in');
+    io.unobserve(e.target);
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* count-up numbers for the ledger */
+function animateCount(el,{final,duration=1400,decimals=0,divide=1,prefix='',suffix='',negative=false}){
+  if(RM){ el.textContent=(negative?'−':'')+prefix+fmt(Math.abs(final)/divide,decimals)+suffix; return; }
+  const t0=performance.now();
+  function fmt(n,d){return n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});}
+  function tick(now){
+    const p=Math.min((now-t0)/duration,1);
+    const e=1-Math.pow(1-p,3);
+    const val=Math.abs(final)*e/divide;
+    el.textContent=(negative?'−':'')+prefix+fmt(val,decimals)+suffix;
+    if(p<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+/* verification ledger: materialize + rows count up in sequence */
+const ledger=document.getElementById('ledger');
+const io3=new IntersectionObserver((es)=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const rows=[...ledger.querySelectorAll('.lrow')];
+  rows.forEach((row,i)=>{
+    setTimeout(()=>{
+      row.classList.add('in');
+      const n=row.querySelector('.n');
+      const final=+row.dataset.final;
+      animateCount(n,{
+        final,
+        negative:final<0,
+        decimals:+(row.dataset.decimals||0),
+        divide:+(row.dataset.divide||1),
+        prefix:row.dataset.prefix||'',
+        duration:900
+      });
+    },i*140);
+  });
+  io3.unobserve(e.target);
+}),{threshold:.35});
+io3.observe(ledger);
+
+/* faq accordion, first item open by default */
+const FAQS=[
+  {q:'How and when do I get paid?',a:'At the rate on the brief you claimed, paid twice monthly. Rates are set per campaign, currently $2 to $2.50 per 1,000 verified views, and are shown before you claim. Views enter your ledger as soon as they verify, so you can see a payout building before it lands.'},
+  {q:'Why were some of my views not paid?',a:'Two reasons only. Views flagged as bot traffic by platform-level fraud signals, and views above the per-clip cap set on the brief. Both are shown as separate lines in your ledger.'},
+  {q:'What is a per-clip cap?',a:'The maximum verified views a single clip can be paid on, set on the brief before you claim it. It protects the pool and it is disclosed up front, never applied after the fact.'},
+  {q:'Which platforms can I post on?',a:'YouTube Shorts verification is live, TikTok is in platform review, Reels and X follow.'},
+  {q:'Do I need approval for every campaign?',a:'No. One approved account can claim any open brief on the network, subject to the brief’s own requirements.'}
+];
+const faqlist=document.getElementById('faqlist');
+FAQS.forEach((f,i)=>{
+  const item=document.createElement('div');
+  item.className='faqitem'+(i===0?' open':'');
+  item.innerHTML=`<button type="button" class="faqq" aria-expanded="${i===0}">${f.q}<span class="faqicon">+</span></button>
+    <div class="faqa-wrap"><div class="faqa-inner"><p>${f.a}</p></div></div>`;
+  const btn=item.querySelector('.faqq');
+  btn.addEventListener('click',()=>{
+    const open=item.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });
+  faqlist.appendChild(item);
+});
 </script>
 </body>
 </html>

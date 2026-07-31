@@ -1,0 +1,20 @@
+{
+  "detector": {
+    "ignoreRules": [
+      "overused-font"
+    ],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "privacy.html",
+          "terms.html"
+        ],
+        "createdAt": "2026-07-31T03:26:46.106Z",
+        "reason": "Matches Contour Legal.dc.html line 84's own border-left:3px gold callout box; not an AI default"
+      }
+    ]
+  }
+}
