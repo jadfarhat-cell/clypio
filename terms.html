@@ -47,7 +47,14 @@ h1{font-family:var(--serif);font-weight:540;font-size:clamp(32px,5vw,52px);line-
 .intro{color:var(--dim);font-size:16.5px;max-width:66ch;margin-top:22px;}
 
 .doc{display:grid;grid-template-columns:230px 1fr;gap:48px;padding:52px 0 96px;}
-.toc{position:sticky;top:92px;align-self:start;}
+.toc{position:sticky;top:92px;align-self:start;display:flex;flex-direction:column;gap:32px;}
+.docswitch{display:flex;flex-direction:column;}
+.docswitch a{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding:14px 0;font-family:var(--grotesk);font-weight:600;font-size:14px;color:var(--dim);transition:opacity .16s ease;}
+.docswitch a:last-child{border-bottom:1px solid var(--line);}
+.docswitch a:hover{opacity:.82;}
+.docswitch a.on{color:var(--text);}
+.docswitch .bar{width:3px;height:15px;flex:none;background:transparent;}
+.docswitch a.on .bar{background:var(--gold);}
 .toc .tl{font-family:var(--grotesk);font-weight:600;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;}
 .toc a{display:block;font-size:13.5px;color:var(--dim);padding:5px 0;border-left:2px solid transparent;padding-left:12px;margin-left:-2px;transition:.15s;}
 .toc a:hover{color:var(--text);border-color:var(--line);}
@@ -83,7 +90,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
   <div class="navlinks">
     <a href="https://clypio.com">For brands</a>
     <a href="/clippers.html">For clippers</a>
-    <a href="https://app.clypio.com/login">Log in</a>
+    <a href="/login">Log in</a>
   </div>
 </div></nav>
 
@@ -96,6 +103,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
 
 <div class="wrap"><div class="doc">
   <aside class="toc" aria-label="Table of contents">
+    <nav class="docswitch">
+      <a href="/terms.html" class="on"><span class="bar"></span>Terms of Service</a>
+      <a href="/privacy.html"><span class="bar"></span>Privacy Policy</a>
+    </nav>
+    <div>
     <div class="tl">On this page</div>
     <a href="#accept">1. Agreement</a>
     <a href="#service">2. The service</a>
@@ -113,6 +125,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
     <a href="#regional">13a. Regional rights</a>
     <a href="#changes">14. Changes</a>
     <a href="#contact">15. Contact</a>
+    </div>
   </aside>
 
   <main class="body">
@@ -196,7 +209,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
     <a href="https://clypio.com">Home</a>
     <a href="/privacy.html">Privacy</a>
     <a href="/terms.html">Terms</a>
-    <a href="https://app.clypio.com/login">Log in</a>
+    <a href="/login">Log in</a>
   </div>
   <div class="fcopy">© 2026 Clypio. Performance clipping network.</div>
 </div></footer>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Clipper console | Clypio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E0D0C; --ink-raised:#17160F; --ink-panel:#1C1B14; --text:#F3F1EA; --dim:#9C988F; --faint:#6E6B62; --line:rgba(243,241,234,.14);
+  --gold:#B9924A; --gold2:#D9BD84; --gold-tint:rgba(185,146,74,.14); --radius:12px;
+  --serif:'Fraunces',Georgia,serif; --grotesk:'Space Grotesk',sans-serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+[hidden]{display:none!important;}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);display:grid;grid-template-columns:236px 1fr;min-height:100vh;}
+a{color:var(--gold2);text-decoration:none;}
+a:hover{color:var(--text);}
+::selection{background:rgba(185,146,74,.35);}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+button{font:inherit;}
+aside{border-right:1px solid var(--line);display:flex;flex-direction:column;padding:20px 0;}
+.aside-logo{padding:0 20px 20px;margin-bottom:12px;border-bottom:1px solid var(--line);}
+.aside-logo .name{font-family:var(--grotesk);font-weight:700;font-size:20px;letter-spacing:-.02em;}
+.aside-logo .d{color:var(--gold);}
+.aside-logo .sub{font-family:var(--grotesk);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:6px;}
+.navlist{display:flex;flex-direction:column;gap:2px;padding:0 12px;flex:1;}
+.navbtn{display:flex;align-items:center;gap:12px;padding:10px 12px;border:none;cursor:pointer;text-align:left;font-size:14px;font-family:var(--grotesk);border-radius:8px;background:transparent;color:var(--text);width:100%;text-decoration:none;}
+.navbtn.on{background:var(--gold-tint);color:var(--gold2);font-weight:700;}
+.navbtn svg{flex:none;}
+.navbadge{margin-left:auto;font-family:var(--grotesk);font-size:11px;font-weight:600;padding:2px 7px;border-radius:20px;background:var(--gold-tint);color:var(--gold2);}
+.asidefoot{padding:16px 20px 0;border-top:1px solid var(--line);margin-top:12px;display:flex;align-items:center;gap:10px;}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--gold-tint);color:var(--gold2);display:flex;align-items:center;justify-content:center;font-family:var(--grotesk);font-weight:700;font-size:13px;flex:none;}
+.asidefoot .who{min-width:0;flex:1;}
+.asidefoot .name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.asidefoot .role{font-size:11.5px;color:var(--dim);}
+.asidefoot a{color:var(--faint);flex:none;display:flex;}
+main{padding:28px clamp(24px,3vw,44px) 60px;min-width:0;box-sizing:border-box;}
+.pagehead{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;gap:24px;flex-wrap:wrap;}
+.pagehead h1{font-family:var(--serif);font-weight:500;font-size:26px;letter-spacing:-.01em;margin:0 0 4px;}
+.pagehead .sub{font-size:13px;color:var(--dim);}
+.headctl{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.nextpayout{font-family:var(--grotesk);font-size:12.5px;color:var(--dim);}
+.segrow{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+.segrow label{padding:8px 14px;font-family:var(--grotesk);font-size:13px;cursor:pointer;color:var(--dim);}
+.segrow label.on{background:var(--gold);color:var(--ink);}
+.primarybtn{background:var(--gold);color:var(--ink);border:none;font-family:var(--grotesk);font-weight:600;font-size:13.5px;padding:10px 18px;border-radius:8px;cursor:pointer;}
+.primarybtn:hover{background:var(--gold2);}
+.ghostbtn{background:none;border:1px solid var(--line);color:var(--text);font-family:var(--grotesk);font-size:12.5px;padding:8px 14px;border-radius:8px;cursor:pointer;}
+.ghostbtn:hover{border-color:var(--gold);color:var(--gold2);}
+.tab{display:none;}
+.tab.on{display:block;}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:28px;}
+.tiles3{grid-template-columns:repeat(3,minmax(0,1fr));}
+.tile{background:var(--ink-panel);padding:20px;}
+.tile .l{font-size:11.5px;font-family:var(--grotesk);letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.tile .v{font-family:var(--grotesk);font-weight:700;font-size:28px;font-variant-numeric:tabular-nums;}
+.tile .v.accent{color:var(--gold2);}
+.tile .note{font-size:12px;color:var(--faint);margin-top:6px;}
+.ovgrid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px;margin-bottom:28px;align-items:start;}
+.panel{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+.panel-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+.panel-head .t{font-family:var(--serif);font-weight:500;font-size:17px;}
+.panel-head .s{font-size:12.5px;color:var(--dim);}
+.chartwrap{padding:20px;}
+.ledger-body{padding:8px 20px 20px;}
+.lrow{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;}
+.lrow.dim{color:var(--dim);}
+.lrow .n{font-family:var(--grotesk);font-variant-numeric:tabular-nums;}
+.lrow.total{padding:14px 0 6px;font-size:15px;font-weight:600;}
+.lrow.pay{border-bottom:none;padding:16px 0 0;font-size:16px;font-weight:600;}
+.lrow.pay .n{color:var(--gold2);}
+.lrow.foot{padding:14px 0 0;margin-top:14px;border-top:1px solid var(--line);border-bottom:none;font-size:13px;color:var(--dim);}
+.thead{display:grid;gap:14px;padding:10px 20px;border-bottom:1px solid var(--line);}
+.thead span{font-family:var(--grotesk);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
+.crow{display:grid;gap:14px;padding:13px 20px;border-bottom:1px solid var(--line);font-size:13.5px;align-items:center;}
+.crow:last-child{border-bottom:none;}
+.clip-grid{grid-template-columns:1.4fr 1.2fr .9fr .9fr .9fr .8fr;}
+.clip-grid .num{font-family:var(--grotesk);font-variant-numeric:tabular-nums;text-align:right;color:var(--dim);}
+.clip-grid .strong{color:var(--text);}
+.tagpill{font-family:var(--grotesk);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:20px;white-space:nowrap;}
+.tagpill.verified{background:var(--gold-tint);color:var(--gold2);}
+.tagpill.other{background:rgba(243,241,234,.08);color:var(--dim);}
+.emptynote{padding:40px;text-align:center;color:var(--dim);font-size:14px;}
+.clipsbanner{border:1px solid var(--gold);border-radius:var(--radius);padding:18px 20px;margin-bottom:24px;display:flex;align-items:center;gap:14px;animation:fadeUp .24s ease both;}
+.clipsbanner .dotgold{width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none;}
+.clipsbanner .msg{flex:1;font-size:14px;}
+.clipsbanner button{background:none;border:none;color:var(--dim);font-family:var(--grotesk);font-size:12.5px;cursor:pointer;}
+.clipsbanner button:hover{color:var(--text);}
+.submitform{border:1px solid var(--gold);border-radius:var(--radius);padding:24px;margin-bottom:24px;background:var(--ink-raised);animation:fadeUp .24s cubic-bezier(.23,1,.32,1) both;}
+.submitform-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;gap:16px;}
+.submitform-head .t{font-family:var(--serif);font-weight:500;font-size:18px;margin-bottom:4px;}
+.submitform-head .s{font-size:13px;color:var(--dim);}
+.fieldrow2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.flabel{display:block;font-family:var(--grotesk);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
+.flabel .opt{text-transform:none;letter-spacing:0;color:var(--faint);}
+.finput,.fselect{width:100%;box-sizing:border-box;height:44px;background:var(--ink);border:1px solid var(--line);color:var(--text);font-family:var(--sans);font-size:14px;padding:0 13px;border-radius:8px;}
+.finput:focus,.fselect:focus{outline:none;border-color:var(--gold);}
+.fgroup{margin-bottom:16px;}
+.fgroup.last{margin-bottom:20px;}
+.chevron{color:var(--faint);display:inline-flex;transition:transform .2s cubic-bezier(.23,1,.32,1);}
+.chevron.open{transform:rotate(180deg);}
+.clipdetail{padding:4px 20px 20px 42px;animation:fadeUp .18s ease both;}
+.clipdetail-inner{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--ink-panel);max-width:560px;}
+.clipdetail-label{font-family:var(--grotesk);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:12px;}
+.cdrow{display:flex;justify-content:space-between;gap:12px;font-size:13px;padding:6px 0;}
+.cdrow.dim{color:var(--dim);}
+.cdrow.total{font-size:13.5px;font-weight:600;padding:9px 0;border-top:1px solid var(--line);margin-top:5px;}
+.cdrow.pay{font-size:15px;font-weight:600;padding:10px 0 0;border-top:1px solid var(--line);margin-top:5px;}
+.cdrow.pay .v{color:var(--gold2);}
+.cdrow .v{font-family:var(--grotesk);font-variant-numeric:tabular-nums;}
+.cdnote{font-size:12px;color:var(--faint);margin-top:12px;line-height:1.5;}
+
+/* briefs list */
+.brieffilterrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:16px;flex-wrap:wrap;}
+.briefgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(196px,100%),1fr));gap:14px;}
+.briefcard{display:block;width:100%;text-align:left;color:inherit;padding:0;overflow:hidden;cursor:pointer;border:1px solid var(--line);border-radius:var(--radius);background:var(--ink-raised);animation:fadeUp .24s ease both;}
+.briefcard:hover{border-color:rgba(185,146,74,.55);}
+.briefcard-media{height:158px;border-bottom:1px solid var(--line);background-color:var(--ink-panel);background-image:repeating-linear-gradient(135deg,rgba(243,241,234,.055) 0 7px,rgba(243,241,234,0) 7px 14px);display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:12px 14px;}
+.briefcard-media .art{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--faint);}
+.briefcard-body{padding:16px;}
+.briefcard-top{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.briefcard-top .init{width:22px;height:22px;border-radius:50%;flex:none;background:var(--gold-tint);color:var(--gold2);display:flex;align-items:center;justify-content:center;font-family:var(--grotesk);font-weight:700;font-size:10px;}
+.briefcard-top .brand{font-family:var(--grotesk);font-size:12.5px;color:var(--dim);}
+.briefcard-top .dot{width:4px;height:4px;border-radius:50%;background:var(--faint);flex:none;}
+.briefcard-top .age{font-family:var(--grotesk);font-size:12px;color:var(--faint);}
+.briefcard-name{font-family:var(--grotesk);font-weight:600;font-size:15px;margin-bottom:14px;}
+.briefcard-bar{height:4px;border-radius:2px;background:var(--line);overflow:hidden;margin-bottom:10px;}
+.briefcard-bar .fill{height:100%;background:var(--gold);}
+.briefcard-spend{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.briefcard-spend .n{font-family:var(--grotesk);font-size:13px;font-variant-numeric:tabular-nums;}
+.briefcard-spend .of{color:var(--faint);}
+.briefcard-rate{font-family:var(--grotesk);font-size:11.5px;padding:3px 9px;border-radius:20px;background:var(--gold-tint);color:var(--gold2);white-space:nowrap;}
+
+/* brief detail */
+.detailback{display:flex;align-items:center;gap:8px;background:none;border:1px solid var(--line);color:var(--text);font-family:var(--grotesk);font-size:13px;padding:9px 16px;border-radius:20px;cursor:pointer;margin-bottom:24px;}
+.detailback:hover{border-color:var(--gold);color:var(--gold2);}
+.detailgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:start;}
+.dbrand-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.dbrand-row .init{width:26px;height:26px;border-radius:50%;flex:none;background:var(--gold-tint);color:var(--gold2);display:flex;align-items:center;justify-content:center;font-family:var(--grotesk);font-weight:700;font-size:11px;}
+.dbrand-row .name{font-family:var(--grotesk);font-weight:600;font-size:13.5px;}
+.dbrand-row .approval{font-family:var(--grotesk);font-size:12.5px;color:var(--dim);}
+.detail-h2{font-family:var(--serif);font-weight:500;font-size:30px;letter-spacing:-.01em;line-height:1.15;margin:0 0 18px;}
+.detail-desc{font-size:15px;line-height:1.65;color:var(--dim);margin:0 0 24px;max-width:62ch;}
+.detail-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:34px;}
+.detail-primarybtn{padding:13px 26px;border-radius:24px;cursor:pointer;font-family:var(--grotesk);font-weight:600;font-size:14.5px;}
+.detail-releasebtn{padding:12px 20px;border-radius:24px;cursor:pointer;font-family:var(--grotesk);font-size:13.5px;border:1px solid var(--line);background:none;color:var(--dim);}
+.detail-releasebtn:hover{color:var(--text);border-color:var(--faint);}
+.detail-closes{font-size:13px;color:var(--faint);}
+.detail-sec-title{font-family:var(--serif);font-weight:500;font-size:19px;margin-bottom:6px;}
+.detail-sec-sub{font-family:var(--grotesk);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;}
+.rulelist{display:flex;flex-direction:column;gap:11px;margin-bottom:34px;}
+.ruleitem{display:flex;gap:12px;align-items:baseline;font-size:14.5px;line-height:1.55;}
+.ruleitem .m{color:var(--gold);flex:none;}
+.ruleitem span:last-child{color:var(--dim);}
+.detail-sec-title2{font-family:var(--serif);font-weight:500;font-size:19px;margin-bottom:14px;}
+.platgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:34px;}
+.platcell{border:1px solid var(--line);border-radius:10px;padding:16px;}
+.platcell-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;}
+.platcell-top .name{font-family:var(--grotesk);font-weight:600;font-size:13.5px;}
+.platcell-top .dot{width:7px;height:7px;border-radius:50%;flex:none;}
+.platcell-rate{font-family:var(--grotesk);font-size:15px;font-variant-numeric:tabular-nums;margin-bottom:8px;}
+.platcell-rate span{font-size:12.5px;color:var(--dim);}
+.platcell-state{font-family:var(--grotesk);font-size:11.5px;color:var(--faint);}
+.resourcebox{border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.resourcebox .t{font-family:var(--grotesk);font-weight:600;font-size:13.5px;margin-bottom:4px;}
+.resourcebox .s{font-size:12.5px;color:var(--dim);}
+.resourcebox .cta{font-family:var(--grotesk);font-size:12.5px;color:var(--gold2);white-space:nowrap;}
+.detailside{display:flex;flex-direction:column;gap:20px;}
+.detail-hero{height:190px;border:1px solid var(--line);border-radius:var(--radius);background-color:var(--ink-panel);background-image:repeating-linear-gradient(135deg,rgba(243,241,234,.055) 0 7px,rgba(243,241,234,0) 7px 14px);display:flex;align-items:flex-end;padding:14px;}
+.detail-hero span{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--faint);}
+.pool-card-top{padding:20px;}
+.pool-amt{font-family:var(--grotesk);font-weight:700;font-size:24px;font-variant-numeric:tabular-nums;margin-bottom:14px;}
+.pool-amt span{font-size:14px;font-weight:400;color:var(--dim);}
+.pool-bar{height:5px;border-radius:3px;background:var(--line);overflow:hidden;margin-bottom:10px;}
+.pool-bar .fill{height:100%;background:var(--gold);}
+.pool-sub{display:flex;justify-content:space-between;font-family:var(--grotesk);font-size:13px;font-variant-numeric:tabular-nums;}
+.pool-sub .of{color:var(--dim);}
+.poolrow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;border-top:1px solid var(--line);font-size:13px;}
+.poolrow .l{color:var(--dim);}
+.poolrow .v{font-family:var(--grotesk);}
+.lbpanel-head{padding:16px 20px;border-bottom:1px solid var(--line);font-family:var(--serif);font-weight:500;font-size:16px;}
+.lbrow{display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);}
+.lbrow:last-child{border-bottom:none;}
+.lbrow .rank{width:24px;height:24px;border-radius:50%;flex:none;background:rgba(243,241,234,.08);color:var(--dim);display:flex;align-items:center;justify-content:center;font-family:var(--grotesk);font-size:11px;}
+.lbrow .handle{flex:1;font-family:var(--grotesk);font-size:13.5px;}
+.lbrow .views{font-family:var(--grotesk);font-size:13px;font-variant-numeric:tabular-nums;color:var(--dim);}
+.lbrow .paid{font-family:var(--grotesk);font-size:13px;font-variant-numeric:tabular-nums;color:var(--gold2);}
+
+.setgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start;max-width:1100px;}
+.settingsbox{border:1px solid var(--line);border-radius:var(--radius);padding:24px;}
+.settingsbox .t{font-family:var(--serif);font-weight:500;font-size:17px;margin-bottom:6px;}
+.settingsbox .sub{font-size:13px;color:var(--dim);margin-bottom:18px;}
+.savedrow{display:flex;align-items:center;gap:14px;margin-top:22px;}
+.savednote{font-family:var(--grotesk);font-size:13px;color:var(--gold2);}
+.acctrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-top:1px solid var(--line);}
+.acctrow .handle{font-family:var(--grotesk);font-size:14px;}
+.acctrow .platform{font-size:12.5px;color:var(--dim);}
+.addacctbtn{margin-top:18px;width:100%;background:none;border:1px dashed var(--line);color:var(--dim);font-family:var(--grotesk);font-size:13px;padding:11px;border-radius:8px;cursor:pointer;}
+.addacctbtn:hover{color:var(--gold2);border-color:var(--gold);}
+.togglerow{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid var(--line);font-size:14px;}
+.togglebtn{width:42px;height:24px;border-radius:20px;cursor:pointer;padding:2px;display:flex;border:1px solid var(--line);justify-content:flex-start;background:transparent;}
+.togglebtn.on{justify-content:flex-end;background:var(--gold-tint);border-color:var(--gold);}
+.togglebtn .knob{width:18px;height:18px;border-radius:50%;background:var(--faint);}
+.togglebtn.on .knob{background:var(--gold2);}
+@media(max-width:900px){.ovgrid,.detailgrid,.setgrid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<aside>
+  <div class="aside-logo"><span class="name">Clypio<span class="d">.</span></span><div class="sub">Clipper console</div></div>
+  <nav class="navlist">
+    <button type="button" class="navbtn" data-nav="overview"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>Overview</button>
+    <button type="button" class="navbtn" data-nav="briefs"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M8 12h8M8 16h5"></path></svg>Open briefs<span class="navbadge" id="openBriefBadge"></span></button>
+    <button type="button" class="navbtn" data-nav="clips"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 8 6 4-6 4V8z"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>My clips</button>
+    <a href="/clipper-payouts" class="navbtn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>Payouts</a>
+    <button type="button" class="navbtn" data-nav="settings"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings</button>
+  </nav>
+  <div class="asidefoot">
+    <div class="avatar" id="asideAvatar"></div>
+    <div class="who"><div class="name" id="asideName"></div><div class="role">Clipper</div></div>
+    <a href="#" id="logoutLink" title="Log out"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="M16 17l5-5-5-5M21 12H9"></path></svg></a>
+  </div>
+</aside>
+
+<main>
+  <div class="pagehead">
+    <div><h1 id="pageTitle"></h1><div class="sub" id="pageSub"></div></div>
+    <div class="headctl">
+      <div class="nextpayout">Next payout Aug 01</div>
+      <div class="segrow" id="rangeRow" hidden></div>
+      <button type="button" class="primarybtn" id="submitClipBtn" hidden>Submit a clip</button>
+    </div>
+  </div>
+
+  <div class="tab" data-tab="overview">
+    <div class="tiles">
+      <div class="tile"><div class="l">Verified views</div><div class="v accent" id="ovVerified"></div></div>
+      <div class="tile"><div class="l">Earned this period</div><div class="v" id="ovEarned"></div><div class="note">Paid at each brief's rate</div></div>
+      <div class="tile"><div class="l">In verification</div><div class="v" id="ovPending"></div><div class="note" id="ovPendingNote"></div></div>
+      <div class="tile"><div class="l">Your screening rate</div><div class="v" id="ovScreening"></div></div>
+    </div>
+    <div class="ovgrid">
+      <div class="panel">
+        <div class="panel-head"><div><div class="t">Verified views, your clips</div><div class="s" id="chartRangeLabel"></div></div></div>
+        <div class="chartwrap">
+          <svg width="100%" height="200" viewBox="0 0 640 200" style="display:block;overflow:visible;">
+            <line x1="0" y1="20" x2="640" y2="20" stroke="var(--line)" stroke-width="1"/>
+            <line x1="0" y1="70" x2="640" y2="70" stroke="var(--line)" stroke-width="1"/>
+            <line x1="0" y1="120" x2="640" y2="120" stroke="var(--line)" stroke-width="1"/>
+            <line x1="0" y1="170" x2="640" y2="170" stroke="var(--line)" stroke-width="1"/>
+            <polygon points="" fill="var(--gold-tint)" id="chartArea"/>
+            <polyline points="" fill="none" stroke="var(--gold)" stroke-width="2.5" id="chartLine"/>
+            <g id="chartDots"></g>
+          </svg>
+          <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;font-family:var(--grotesk);color:var(--dim);" id="chartLabels"></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div><div class="t">Your ledger</div><div class="s">Reported vs. paid on</div></div></div>
+        <div class="ledger-body">
+          <div class="lrow"><span>Reported on your clips</span><span class="n" id="ledReported"></span></div>
+          <div class="lrow dim"><span>Bot traffic filtered</span><span class="n" id="ledBot"></span></div>
+          <div class="lrow dim"><span>Above per-clip cap</span><span class="n" id="ledCap"></span></div>
+          <div class="lrow total"><span>Verified and paid on</span><span class="n" id="ledVerified"></span></div>
+          <div class="lrow pay"><span>Payout at each brief's rate</span><span class="n" id="ledEarned"></span></div>
+          <div class="lrow foot"><span>Paid to date</span><span class="n" id="ledLifetime"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><div><div class="t">Recent clips</div><div class="s" id="recentClipsLabel"></div></div><button type="button" class="ghostbtn" data-goto="clips">See all clips</button></div>
+      <div class="thead clip-grid"><span>Clip</span><span>Campaign</span><span style="text-align:right;">Reported</span><span style="text-align:right;">Verified</span><span style="text-align:right;">Paid</span><span style="text-align:right;">Status</span></div>
+      <div id="recentClipsBody"></div>
+    </div>
+  </div>
+
+  <div class="tab" data-tab="briefs">
+    <div id="briefsList">
+      <div class="brieffilterrow">
+        <div class="segrow" id="briefFilterRow"></div>
+        <div style="font-family:var(--grotesk);font-size:12.5px;color:var(--dim);" id="claimedLabel"></div>
+      </div>
+      <div class="briefgrid" id="briefGrid"></div>
+    </div>
+    <div id="briefDetailWrap" hidden></div>
+  </div>
+
+  <div class="tab" data-tab="clips">
+    <div id="submitBannerWrap"></div>
+    <div id="submitFormWrap"></div>
+    <div class="panel">
+      <div class="panel-head"><div><div class="t">All clips</div><div class="s" id="clipCountLabel"></div></div><div class="segrow" id="clipFilterRow"></div></div>
+      <div class="thead clip-grid"><span>Clip</span><span>Campaign</span><span style="text-align:right;">Reported</span><span style="text-align:right;">Verified</span><span style="text-align:right;">Paid</span><span style="text-align:right;">Status</span></div>
+      <div id="allClipsBody"></div>
+    </div>
+  </div>
+
+  <div class="tab" data-tab="payouts">
+    <div class="tiles tiles3">
+      <div class="tile"><div class="l">Building for Aug 01</div><div class="v accent" id="pyEarned"></div><div class="note" id="pyVerifiedNote"></div></div>
+      <div class="tile"><div class="l">Still in verification</div><div class="v" id="pyPending"></div><div class="note">Not payable until it verifies</div></div>
+      <div class="tile"><div class="l">Paid to date</div><div class="v" id="pyLifetime"></div></div>
+    </div>
+    <div class="panel" style="margin-bottom:24px;">
+      <div class="panel-head"><div><div class="t">Payout history</div><div class="s">Two periods a month, on verified views only</div></div></div>
+      <div class="thead" style="grid-template-columns:1.2fr 1fr 1fr .9fr .8fr;"><span>Period</span><span style="text-align:right;">Verified views</span><span style="text-align:right;">Voided</span><span style="text-align:right;">Amount</span><span style="text-align:right;">Status</span></div>
+      <div id="payoutHistoryBody"></div>
+    </div>
+    <div class="panel" style="padding:22px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border:1px solid var(--line);">
+      <div><div style="font-family:var(--grotesk);font-weight:600;font-size:14.5px;margin-bottom:6px;">Payout method</div><div style="font-size:13.5px;color:var(--dim);" id="payoutMethodLabel"></div></div>
+      <button type="button" class="ghostbtn" data-goto="settings">Change in settings</button>
+    </div>
+  </div>
+
+  <div class="tab" data-tab="settings">
+    <div class="setgrid">
+      <div class="settingsbox">
+        <div class="t">Account</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div><label class="flabel">Display name</label><input class="finput" id="setName"></div>
+          <div><label class="flabel">Email</label><input class="finput" id="setEmail"></div>
+          <div><label class="flabel">Payout method</label><select class="fselect" id="setMethod"><option value="bank">Bank transfer</option><option value="wire">International wire</option><option value="paypal">PayPal</option></select></div>
+          <div><label class="flabel">Payout details <span class="opt">(account, IBAN, or PayPal email)</span></label><input class="finput" id="setHandle" placeholder="you@email.com"></div>
+        </div>
+        <div class="savedrow"><button type="button" class="primarybtn" id="saveSettingsBtn">Save changes</button><span class="savednote" id="settingsSavedNote" hidden>Saved</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <div class="settingsbox">
+          <div class="t">Posting accounts</div>
+          <div class="sub">Verification runs against these accounts.</div>
+          <div id="accountsBody"></div>
+          <button type="button" class="addacctbtn" id="addAccountBtn">Connect another account</button>
+        </div>
+        <div class="settingsbox">
+          <div class="t">Notifications</div>
+          <div id="clipperTogglesBody"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+function fmtInt(n){return Math.round(n).toLocaleString('en-US');}
+function fmtUsd(n){return '$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fmtUsd0(n){return '$'+n.toLocaleString('en-US',{maximumFractionDigits:0});}
+function esc(s){return (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+const API='/api';
+const token=sessionStorage.getItem('clypio_token');
+if(!token || sessionStorage.getItem('clypio_role')!=='clipper'){
+  window.location.href='/login';
+}
+
+async function apiGet(path){
+  const res=await fetch(API+path,{headers:{Authorization:'Bearer '+token}});
+  if(res.status===401){ sessionStorage.clear(); window.location.href='/login'; throw new Error('signed out'); }
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok)throw new Error(data.detail||'Request failed');
+  return data;
+}
+async function apiPost(path,body){
+  const res=await fetch(API+path,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify(body||{})});
+  if(res.status===401){ sessionStorage.clear(); window.location.href='/login'; throw new Error('signed out'); }
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok)throw new Error(data.detail||'Request failed');
+  return data;
+}
+
+const RANGE_DAYS={'7D':7,'30D':30,'90D':91};
+const PLATFORM_LABELS={youtube:'YouTube Shorts',tiktok:'TikTok',instagram:'Reels',x:'X'};
+
+const state={
+  activeNav:'overview',range:'30D',clipFilter:'All',openClip:null,briefFilter:'All',openBrief:null,
+  submitOpen:false,submitCampaignId:null,lastSubmitMsg:'',
+  data:null,tax:null,accounts:null,
+  setMethod:'bank',setHandle:'',settingsSaved:false,
+  loadError:''
+};
+
+async function loadAll(){
+  const [dataR,taxR,accountsR]=await Promise.allSettled([
+    apiGet('/me/clipper'), apiGet('/auth/tax'), apiGet('/auth/accounts')
+  ]);
+  if(dataR.status==='fulfilled'){
+    state.data=dataR.value;
+    state.setMethod=dataR.value.payout_method&&['bank','wire','paypal'].includes(dataR.value.payout_method)?dataR.value.payout_method:'bank';
+  }
+  if(taxR.status==='fulfilled')state.tax=taxR.value;
+  if(accountsR.status==='fulfilled')state.accounts=accountsR.value;
+  const failed=[dataR,taxR,accountsR].find(r=>r.status==='rejected');
+  state.loadError=failed?failed.reason.message:'';
+  render();
+}
+
+function chartGeometry(values,w){
+  const h=200,pad=10;
+  const min=Math.min(...values),max=Math.max(...values);
+  const span=(max-min)||1;
+  const stepX=(w-pad*2)/(Math.max(1,values.length-1));
+  const pts=values.map((v,i)=>({x:Math.round(pad+i*stepX),y:Math.round(pad+(1-(v-min)/span)*(h-pad*2))}));
+  return {pts,linePoints:pts.map(p=>p.x+','+p.y).join(' '),areaPoints:(pts[0]?pts[0].x:0)+','+h+' '+pts.map(p=>p.x+','+p.y).join(' ')+' '+(pts[pts.length-1]?pts[pts.length-1].x:0)+','+h};
+}
+function money(str){ return parseFloat(String(str||'0').replace(/[^0-9.-]/g,''))||0; }
+
+function openSubmit(campaignId){
+  state.activeNav='clips'; state.submitOpen=true; state.lastSubmitMsg='';
+  const jobs=(state.data&&state.data.jobs)||[];
+  const open=jobs.filter(j=>!j.locked);
+  state.submitCampaignId=campaignId||(open[0]&&open[0].id)||null;
+  render();
+}
+async function submitClip(e){
+  e.preventDefault();
+  const url=document.getElementById('submitUrlInput').value.trim();
+  if(!url){ return; }
+  if(!state.submitCampaignId){ return; }
+  const btn=document.querySelector('#submitClipForm button[type=submit]');
+  btn.disabled=true; btn.textContent='Sending…';
+  try{
+    const out=await apiPost('/submissions',{campaign_id:state.submitCampaignId,post_url:url});
+    state.submitOpen=false;
+    state.lastSubmitMsg=out.status==='needs_review'
+      ? out.id+' needs manual view verification by the team before it can be decided.'
+      : out.bot
+        ? out.id+' was flagged on submission and is awaiting an operator decision.'
+        : 'Clip '+out.id+' is in screening. Verified views will show once the platform reports them.';
+    await loadAll();
+  }catch(err){
+    btn.disabled=false; btn.textContent='Send for verification';
+    alert(err.message);
+  }
+}
+
+function statusLabel(state_){ return state_==='verified'?'Verified':state_==='pending'?'Screening':state_==='rejected'?'Rejected':state_==='voided'?'Voided':state_; }
+function tagCls(state_){ return state_==='verified'?'verified':'other'; }
+function shapeClip(c){
+  const capped=c.state==='verified'&&c.reported>c.views;
+  return {
+    id:c.id,campaign:c.campaign,
+    reportedFmt:c.reported?fmtInt(c.reported):'awaiting',
+    verifiedFmt:c.state==='verified'?fmtInt(c.views):(c.state==='pending'?'pending':'0'),
+    paidFmt:c.state==='verified'?c.earned:'not yet',
+    status:statusLabel(c.state)+(capped?' (capped)':''),
+    tagCls:tagCls(c.state),
+    botFmt:c.state==='voided'?fmtInt(c.reported):'0',
+    cappedFmt:capped?fmtInt(c.reported-c.views):'0',
+    payoutNote:c.state==='verified'?'Included once the next payout run is sent.':c.state==='pending'?'Nothing is payable until the platform reports and verification clears.':c.state==='voided'?'Flagged as bot traffic; not payable.':'Not payable.'
+  };
+}
+function clipRowHtml(c){
+  const s=shapeClip(c);
+  const open=state.openClip===c.id;
+  return `<div style="border-bottom:1px solid var(--line);background:${open?'rgba(185,146,74,.06)':'transparent'};">
+    <button type="button" class="crow clip-grid" data-toggle="${esc(c.id)}" style="width:100%;box-sizing:border-box;background:none;border:none;border-bottom:none;color:inherit;font-family:inherit;text-align:left;cursor:pointer;">
+      <span style="display:flex;align-items:center;gap:9px;"><span class="chevron ${open?'open':''}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span><span style="font-family:var(--grotesk);">${esc(s.id)}</span></span>
+      <span style="color:var(--dim);">${esc(s.campaign)}</span>
+      <span class="num">${s.reportedFmt}</span>
+      <span class="num strong">${s.verifiedFmt}</span>
+      <span class="num strong">${s.paidFmt}</span>
+      <span style="text-align:right;"><span class="tagpill ${s.tagCls}">${esc(s.status)}</span></span>
+    </button>
+    ${open?`<div class="clipdetail"><div class="clipdetail-inner">
+      <div class="clipdetail-label">What you are paid on</div>
+      <div class="cdrow"><span>Reported by the platform</span><span class="v">${s.reportedFmt}</span></div>
+      <div class="cdrow dim"><span>Bot traffic filtered</span><span class="v">−${s.botFmt}</span></div>
+      <div class="cdrow dim"><span>Above the per-clip cap</span><span class="v">−${s.cappedFmt}</span></div>
+      <div class="cdrow total"><span>Verified and payable</span><span class="v">${s.verifiedFmt}</span></div>
+      <div class="cdrow pay"><span>You receive</span><span class="v">${s.paidFmt}</span></div>
+      <div class="cdnote">${s.payoutNote}</div>
+    </div></div>`:''}
+  </div>`;
+}
+
+function render(){
+  const who=sessionStorage.getItem('clypio_name')||sessionStorage.getItem('clypio_email')||'Clipper';
+  document.getElementById('asideName').textContent=who;
+  document.getElementById('asideAvatar').textContent=(who.trim().split(/\s+/).map(w=>w[0]).slice(0,2).join('')||'?').toUpperCase();
+
+  document.querySelectorAll('.navbtn[data-nav]').forEach(b=>b.classList.toggle('on',b.dataset.nav===state.activeNav));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.tab===state.activeNav));
+
+  if(!state.data){
+    document.getElementById('pageTitle').textContent=state.loadError?'Could not load':'Loading…';
+    document.getElementById('pageSub').textContent=state.loadError||'';
+    return;
+  }
+  const d=state.data;
+  const jobs=d.jobs||[];
+  const subs=d.submissions||[];
+  const decided=subs.filter(r=>r.state==='verified'||r.state==='rejected'||r.state==='voided');
+  const verifiedRows=subs.filter(r=>r.state==='verified');
+  const pendingRows=subs.filter(r=>r.state==='pending');
+  const verified=verifiedRows.reduce((a,r)=>a+r.views,0);
+  const reported=decided.reduce((a,r)=>a+r.reported,0);
+  const botFiltered=subs.filter(r=>r.state==='voided').reduce((a,r)=>a+r.reported,0);
+  const capOverage=verifiedRows.reduce((a,r)=>a+Math.max(0,r.reported-r.views),0);
+  const pendingViews=pendingRows.reduce((a,r)=>a+r.reported,0);
+  const earned=verifiedRows.reduce((a,r)=>a+money(r.earned),0);
+  const screening=reported?(verified/reported)*100:0;
+
+  const titles={overview:['Overview','Real totals from your submitted clips'],briefs:['Open briefs','Rate, per-clip cap, and pool shown before you claim'],clips:['My clips','Every clip you submitted, and what it was paid on'],payouts:['Payouts','Twice monthly, on verified views only'],settings:['Settings','Account, posting accounts, and payout method']};
+  document.getElementById('pageTitle').textContent=titles[state.activeNav][0];
+  document.getElementById('pageSub').textContent=titles[state.activeNav][1];
+
+  document.getElementById('openBriefBadge').textContent=jobs.filter(j=>!j.locked).length;
+
+  const rangeRow=document.getElementById('rangeRow');
+  rangeRow.hidden=state.activeNav!=='overview';
+  if(state.activeNav==='overview'){
+    rangeRow.innerHTML=Object.keys(RANGE_DAYS).map(k=>`<label class="${k===state.range?'on':''}" data-r="${k}">${k}</label>`).join('');
+    rangeRow.querySelectorAll('label').forEach(l=>l.onclick=()=>{ state.range=l.dataset.r; render(); });
+  }
+  const submitBtn=document.getElementById('submitClipBtn');
+  submitBtn.hidden=state.activeNav!=='clips';
+  submitBtn.onclick=()=>openSubmit(null);
+  document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>{ state.activeNav=b.dataset.goto; render(); });
+
+  if(state.activeNav==='overview'){
+    document.getElementById('ovVerified').textContent=fmtInt(verified);
+    document.getElementById('ovEarned').textContent=d.owed;
+    document.getElementById('ovPending').textContent=fmtInt(pendingViews);
+    document.getElementById('ovPendingNote').textContent=pendingRows.length+' clip(s) awaiting verification';
+    document.getElementById('ovScreening').textContent=screening.toFixed(1)+'%';
+    document.getElementById('chartRangeLabel').textContent=({'7D':'Last 7 days','30D':'Last 30 days','90D':'Last 90 days'})[state.range];
+    document.getElementById('ledReported').textContent=fmtInt(reported);
+    document.getElementById('ledBot').textContent='−'+fmtInt(botFiltered);
+    document.getElementById('ledCap').textContent='−'+fmtInt(capOverage);
+    document.getElementById('ledVerified').textContent=fmtInt(verified);
+    document.getElementById('ledEarned').textContent=fmtUsd(earned);
+    document.getElementById('ledLifetime').textContent=d.paid_to_date;
+    const full=d.series||[];
+    const days=RANGE_DAYS[state.range];
+    const slice=full.slice(Math.max(0,full.length-days));
+    const values=slice.length>1?slice.map(p=>p.v):[slice[0]?slice[0].v:0,slice[0]?slice[0].v:0];
+    const geo=chartGeometry(values,640);
+    document.getElementById('chartArea').setAttribute('points',geo.areaPoints);
+    document.getElementById('chartLine').setAttribute('points',geo.linePoints);
+    document.getElementById('chartDots').innerHTML=geo.pts.map(p=>`<circle cx="${p.x}" cy="${p.y}" r="3.5" fill="var(--ink)" stroke="var(--gold)" stroke-width="2"></circle>`).join('');
+    const labelStep=Math.max(1,Math.ceil(slice.length/7));
+    document.getElementById('chartLabels').innerHTML=slice.filter((_,i)=>i%labelStep===0||i===slice.length-1).map(p=>`<span>${esc(p.d)}</span>`).join('');
+    document.getElementById('recentClipsLabel').textContent='Latest '+Math.min(4,subs.length)+' of '+subs.length;
+    document.getElementById('recentClipsBody').innerHTML=subs.slice(0,4).map(c=>{
+      const s=shapeClip(c);
+      return `<div class="crow clip-grid"><span style="font-family:var(--grotesk);">${esc(s.id)}</span><span style="color:var(--dim);">${esc(s.campaign)}</span><span class="num">${s.reportedFmt}</span><span class="num strong">${s.verifiedFmt}</span><span class="num strong">${s.paidFmt}</span><span style="text-align:right;"><span class="tagpill ${s.tagCls}">${esc(s.status)}</span></span></div>`;
+    }).join('')||'<div class="emptynote">No clips submitted yet.</div>';
+  }
+
+  if(state.activeNav==='briefs'){
+    const det=state.openBrief?jobs.find(j=>j.id===state.openBrief):null;
+    document.getElementById('briefsList').hidden=!!det;
+    document.getElementById('briefDetailWrap').hidden=!det;
+    if(!det){
+      const filterRow=document.getElementById('briefFilterRow');
+      filterRow.innerHTML=['All','Open','Locked'].map(s=>`<label class="${s===state.briefFilter?'on':''}" data-f="${s}">${s}</label>`).join('');
+      filterRow.querySelectorAll('label').forEach(l=>l.onclick=()=>{ state.briefFilter=l.dataset.f; render(); });
+      document.getElementById('claimedLabel').textContent=jobs.filter(j=>j.my_clips>0).length+' with your clips';
+      const shaped=jobs.filter(j=>state.briefFilter==='All'||(state.briefFilter==='Open'&&!j.locked)||(state.briefFilter==='Locked'&&j.locked));
+      document.getElementById('briefGrid').innerHTML=shaped.length?shaped.map(b=>`
+        <button type="button" class="briefcard" data-brief="${b.id}">
+          <div class="briefcard-media">${b.cover_url?`<img src="${esc(b.cover_url)}" alt="" style="width:100%;height:100%;object-fit:cover;">`:`<span class="art">${esc(b.category_label)}</span>`}<span class="tagpill ${b.locked?'other':'verified'}">${b.locked?'Locked':'Open'}</span></div>
+          <div class="briefcard-body">
+            <div class="briefcard-top"><span class="brand">${esc(b.category_label)}</span></div>
+            <div class="briefcard-name">${esc(b.title)}</div>
+            <div class="briefcard-bar"><div class="fill" style="width:${b.claimed_pct}%;"></div></div>
+            <div class="briefcard-spend"><span class="n">${esc(b.earnable_left)} <span class="of">left of ${esc(b.earnable_total)}</span></span><span class="briefcard-rate">${esc(b.rate)}</span></div>
+          </div>
+        </button>`).join(''):'<div class="emptynote" style="grid-column:1/-1;border:1px solid var(--line);border-radius:12px;">No briefs match this filter.</div>';
+      document.getElementById('briefGrid').querySelectorAll('[data-brief]').forEach(b=>b.onclick=()=>{ state.openBrief=parseInt(b.dataset.brief,10); render(); });
+    } else {
+      document.getElementById('briefDetailWrap').innerHTML=briefDetailHtml(det);
+      wireBriefDetail(det);
+    }
+  }
+
+  if(state.activeNav==='clips'){
+    document.getElementById('submitBannerWrap').innerHTML=state.lastSubmitMsg?`<div class="clipsbanner"><span class="dotgold"></span><div class="msg">${esc(state.lastSubmitMsg)}</div><button type="button" id="dismissSubmittedBtn">Dismiss</button></div>`:'';
+    const dismissBtn=document.getElementById('dismissSubmittedBtn');
+    if(dismissBtn)dismissBtn.onclick=()=>{ state.lastSubmitMsg=''; render(); };
+
+    document.getElementById('submitFormWrap').innerHTML=state.submitOpen?submitFormHtml():'';
+    if(state.submitOpen)wireSubmitForm();
+
+    const filterRow=document.getElementById('clipFilterRow');
+    filterRow.innerHTML=['All','Verified','Screening','Voided','Rejected'].map(s=>`<label class="${s===state.clipFilter?'on':''}" data-f="${s}">${s}</label>`).join('');
+    filterRow.querySelectorAll('label').forEach(l=>l.onclick=()=>{ state.clipFilter=l.dataset.f; render(); });
+    const visible=subs.filter(c=>state.clipFilter==='All'||statusLabel(c.state)===state.clipFilter);
+    document.getElementById('clipCountLabel').textContent=visible.length+' of '+subs.length+' clips';
+    document.getElementById('allClipsBody').innerHTML=visible.length?visible.map(clipRowHtml).join(''):'<div class="emptynote">No clips with this status yet.</div>';
+    document.getElementById('allClipsBody').querySelectorAll('[data-toggle]').forEach(b=>b.onclick=()=>{ state.openClip=state.openClip===b.dataset.toggle?null:b.dataset.toggle; render(); });
+  }
+
+  if(state.activeNav==='settings'){
+    document.getElementById('setName').value=d.handle;
+    document.getElementById('setName').disabled=true;
+    document.getElementById('setEmail').value=sessionStorage.getItem('clypio_email')||'';
+    document.getElementById('setEmail').disabled=true;
+    document.getElementById('setMethod').value=state.setMethod;
+    document.getElementById('setMethod').onchange=(e)=>{ state.setMethod=e.target.value; state.settingsSaved=false; };
+    const handleEl=document.getElementById('setHandle');
+    if(document.activeElement!==handleEl)handleEl.value=state.setHandle;
+    handleEl.oninput=(e)=>{ state.setHandle=e.target.value; state.settingsSaved=false; };
+    document.getElementById('settingsSavedNote').hidden=!state.settingsSaved;
+    document.getElementById('saveSettingsBtn').onclick=async ()=>{
+      const btn=document.getElementById('saveSettingsBtn');
+      btn.disabled=true; btn.textContent='Saving…';
+      try{
+        await apiPost('/me/payout-method',{payout_method:state.setMethod,payout_handle:state.setHandle});
+        state.settingsSaved=true; btn.disabled=false; btn.textContent='Save changes'; render();
+        clearTimeout(window._saveT); window._saveT=setTimeout(()=>{ state.settingsSaved=false; render(); },2400);
+      }catch(err){
+        btn.disabled=false; btn.textContent='Save changes';
+        alert(err.message);
+      }
+    };
+    const acc=state.accounts||{platforms:[]};
+    document.getElementById('accountsBody').innerHTML=acc.platforms.map(p=>{
+      const rows=p.accounts.length?p.accounts.map(a=>`<div class="acctrow"><div><div class="handle">${esc(a.handle||a.title||'Linked account')}</div><div class="platform">${esc(PLATFORM_LABELS[p.platform]||p.platform)}</div></div><span class="tagpill verified">Linked</span><button type="button" class="ghostbtn" data-unlink="${a.id}" style="margin-left:8px;">Unlink</button></div>`).join('')
+        : `<div class="acctrow"><div><div class="handle">No ${esc(PLATFORM_LABELS[p.platform]||p.platform)} account linked</div><div class="platform">${p.live?'Verification live':'Not yet available'}</div></div></div>`;
+      return rows;
+    }).join('');
+    document.getElementById('accountsBody').querySelectorAll('[data-unlink]').forEach(b=>b.onclick=async ()=>{
+      try{ await apiPost(`/auth/accounts/${b.dataset.unlink}/unlink`,{}); await loadAll(); }catch(err){ alert(err.message); }
+    });
+    document.getElementById('addAccountBtn').onclick=async ()=>{
+      try{
+        const out=await apiGet('/auth/youtube/start');
+        window.location.href=out.auth_url;
+      }catch(err){ alert(err.message); }
+    };
+    document.getElementById('clipperTogglesBody').innerHTML='<p style="font-size:13.5px;color:var(--dim);line-height:1.6;">Email notifications for new briefs, verification results, and payouts are not configurable from this console yet.</p>';
+  }
+}
+
+function submitFormHtml(){
+  const jobs=(state.data&&state.data.jobs)||[];
+  const open=jobs.filter(j=>!j.locked);
+  return `<form class="submitform" id="submitClipForm">
+    <div class="submitform-head"><div><div class="t">Submit a clip</div><div class="s">The clip enters verification on the platform's own reporting.</div></div><button type="button" class="ghostbtn" id="cancelSubmitBtn">Cancel</button></div>
+    <div class="fieldrow2">
+      <div><label class="flabel">Campaign</label><select class="fselect" id="submitCampaignSelect">${open.length?open.map(j=>`<option value="${j.id}" ${j.id===state.submitCampaignId?'selected':''}>${esc(j.title)}</option>`).join(''):'<option value="">No open briefs right now</option>'}</select></div>
+    </div>
+    <div class="fgroup last"><label class="flabel">Clip link</label><input class="finput" id="submitUrlInput" required placeholder="https://youtube.com/shorts/..."></div>
+    <button type="submit" class="primarybtn" ${open.length?'':'disabled'}>Send for verification</button>
+  </form>`;
+}
+function wireSubmitForm(){
+  document.getElementById('cancelSubmitBtn').addEventListener('click',()=>{ state.submitOpen=false; render(); });
+  document.getElementById('submitCampaignSelect').addEventListener('change',(e)=>{ state.submitCampaignId=parseInt(e.target.value,10)||null; });
+  document.getElementById('submitClipForm').addEventListener('submit',submitClip);
+}
+
+function briefDetailHtml(b){
+  return `
+    <button type="button" class="detailback" id="briefBackBtn"><span style="font-size:15px;">&lsaquo;</span> Back to briefs</button>
+    <div class="detailgrid">
+      <div>
+        <div class="dbrand-row"><span class="name">${esc(b.category_label)}</span></div>
+        <h2 class="detail-h2">${esc(b.title)}</h2>
+        <p class="detail-desc">${esc(b.source)}</p>
+        <div class="detail-actions">
+          ${b.locked
+            ? `<button type="button" class="detail-primarybtn" disabled style="border:1px solid var(--line);background:transparent;color:var(--faint);cursor:default;">Locked</button><span class="detail-closes">${esc(b.locked_reason||'')}</span>`
+            : `<button type="button" class="detail-primarybtn" id="briefPrimaryBtn" style="border:1px solid var(--gold);background:var(--gold-tint);color:var(--gold2);">Submit a clip</button>`}
+        </div>
+        <div class="detail-sec-title">Requirements</div>
+        <div class="detail-sec-sub">Set by the brand</div>
+        <div class="rulelist">${(b.requirements||[]).length?b.requirements.map(r=>`<div class="ruleitem"><span class="m">/</span><span>${esc(r)}</span></div>`).join(''):'<div style="padding:10px 0;color:var(--faint);font-size:13px;">No requirements listed.</div>'}</div>
+        <div class="detail-sec-title2">Earnings</div>
+        <div class="platgrid"><div class="platcell"><div class="platcell-top"><span class="name">${esc((b.platforms||'').split(',').map(p=>PLATFORM_LABELS[p.trim()]||p.trim()).filter(Boolean).join(', ')||'Any platform')}</span></div><div class="platcell-rate">${esc(b.rate)}</div><div class="platcell-state">${esc(b.max_per_clip?('Capped at '+b.max_per_clip+' per clip'):'No per-clip cap')}</div></div></div>
+        <div class="detail-sec-title2">Your results on this brief</div>
+        <div class="platgrid"><div class="platcell"><div class="platcell-top"><span class="name">Clips</span></div><div class="platcell-rate">${b.my_clips}</div></div><div class="platcell"><div class="platcell-top"><span class="name">Verified views</span></div><div class="platcell-rate">${fmtInt(b.my_views)}</div></div><div class="platcell"><div class="platcell-top"><span class="name">Earned</span></div><div class="platcell-rate">${esc(b.my_earned)}</div></div></div>
+      </div>
+      <div class="detailside">
+        <div class="detail-hero">${b.cover_url?`<img src="${esc(b.cover_url)}" alt="" style="width:100%;height:100%;object-fit:cover;">`:`<span>${esc(b.category_label)}</span>`}</div>
+        <div class="panel">
+          <div class="pool-card-top">
+            <div class="pool-amt">${esc(b.earnable_total)} <span>pool for clippers</span></div>
+            <div class="pool-bar"><div class="fill" style="width:${b.claimed_pct}%;"></div></div>
+            <div class="pool-sub"><span>${b.claimed_pct}% claimed</span><span class="of">${esc(b.earnable_left)} left</span></div>
+          </div>
+          <div class="poolrow"><span class="l">Rate</span><span class="v">${esc(b.rate)}</span></div>
+          <div class="poolrow"><span class="l">Per-clip cap</span><span class="v">${esc(b.max_per_clip||'No cap')}</span></div>
+          <div class="poolrow"><span class="l">Disclosure</span><span class="v">${esc(b.disclosure)}</span></div>
+        </div>
+      </div>
+    </div>`;
+}
+function wireBriefDetail(b){
+  document.getElementById('briefBackBtn').addEventListener('click',()=>{ state.openBrief=null; render(); });
+  const primaryBtn=document.getElementById('briefPrimaryBtn');
+  if(primaryBtn)primaryBtn.addEventListener('click',()=>openSubmit(b.id));
+}
+
+document.querySelectorAll('.navbtn[data-nav]').forEach(b=>b.addEventListener('click',()=>{ state.activeNav=b.dataset.nav; render(); }));
+document.getElementById('logoutLink').addEventListener('click',(e)=>{ e.preventDefault(); sessionStorage.clear(); window.location.href='/login'; });
+render();
+loadAll();
+
+</script>
+</body>
+</html>

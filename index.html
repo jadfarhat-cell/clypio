@@ -38,6 +38,7 @@
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
+[hidden]{display:none!important;}
 html{scroll-behavior:smooth;}
 body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased;}
 a{color:inherit;text-decoration:none;}
@@ -275,7 +276,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
     <a href="#campaigns" class="link">Campaigns</a>
     <a href="#faq" class="link">FAQ</a>
     <a href="/clippers" class="link">For clippers</a>
-    <a href="https://app.clypio.com/login" class="link">Log in</a>
+    <a href="/login" class="link">Log in</a>
     <div class="navsocial">
       <a href="https://x.com/clypio" aria-label="Clypio on X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.3l-4.9-6.5L6 22H2.9l7.2-8.2L1.5 2H8l4.6 6.1L18.9 2zm-1.1 18h1.7L7.4 3.8H5.6L17.8 20z"></path></svg></a>
       <a href="https://instagram.com/clypio" aria-label="Clypio on Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></a>
@@ -384,7 +385,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
         <div class="pd">per 1,000 verified views. Margin is near zero on a first campaign, priced to prove the model.</div>
       </div>
     </div>
-    <p class="pricenote reveal">Creators are paid $2 per 1,000 verified views, funded from the same pool you commit to a campaign.</p>
+    <p class="pricenote reveal">You set the rate per 1,000 verified views on every campaign, and clippers see it on the brief before they claim it.</p>
   </div>
 </section>
 
@@ -469,16 +470,15 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
             <button type="submit" class="btn primary" id="bookSubmit">Book the call</button>
             <span class="nocard">No card, no commitment.</span>
           </div>
-          <div class="formerr" id="bookFormErr" hidden></div>
         </form>
 
         <div class="booked-card" id="bookedCard" hidden>
-          <div class="booked-title">Your call is booked.</div>
+          <div class="booked-title">Request sent.</div>
           <p id="bookedIntro"></p>
           <div class="booked-row"><span class="bl">When</span><span class="bv" id="bookedWhen"></span></div>
           <div class="booked-row"><span class="bl">How</span><span class="bv" id="bookedWhere"></span></div>
           <div class="booked-row"><span class="bl">Length</span><span class="bv">25 minutes</span></div>
-          <div class="booked-row"><span class="bl">With</span><span class="bv">Jad Farhat, Clypio</span></div>
+          <div class="booked-row"><span class="bl">With</span><span class="bv">Marek Duras</span></div>
           <button type="button" class="btn ghost" id="rescheduleBtn">Pick another time</button>
         </div>
       </div>
@@ -506,7 +506,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
         <div class="fcol">
           <a href="#book">Book a pilot</a>
           <a href="/clippers">For clippers</a>
-          <a href="https://app.clypio.com/login">Log in</a>
+          <a href="/login">Log in</a>
         </div>
       </div>
       <div>
@@ -593,7 +593,7 @@ const FAQS=[
   {q:'What counts as bot traffic?',a:'Views flagged by platform-level fraud signals and abnormal engagement patterns that do not reflect a real viewer.'},
   {q:'What is a per-clip cap?',a:'The maximum verified views you will pay for on any single clip, agreed before the campaign starts, so one outlier cannot blow through your budget.'},
   {q:'Which platforms are supported?',a:'YouTube Shorts verification is live, TikTok is in platform review, Reels and X follow.'},
-  {q:'How is clipper pay determined?',a:'Creators are paid $2 per 1,000 verified views, funded from the same pool you commit to a campaign.'},
+  {q:'How is clipper pay determined?',a:'You set it. Every campaign carries its own rate per 1,000 verified views, plus optional minimum and maximum payouts per clip, and clippers see all three on the brief before they claim it. It is funded from the same pool you commit to the campaign.'},
   {q:'What happens to unspent pool funds?',a:'Unspent funds stay yours. You are only billed as verified views accrue, and you can pause a campaign at any time.'}
 ];
 const faqlist=document.getElementById('faqlist');
@@ -610,8 +610,7 @@ FAQS.forEach((f,i)=>{
   faqlist.appendChild(item);
 });
 
-/* pilot call booking -> lands in the Clypio console's Requests tab */
-const CLYPIO_API='https://app.clypio.com';
+/* pilot call booking */
 const SLOT_TIMES=['09:00','09:30','10:00','11:00','13:00','13:30','14:30','16:00'];
 
 function weekdaysFrom(start,count){
@@ -691,47 +690,46 @@ renderSlots();
 
 const bookform=document.getElementById('bookform');
 const bookedCard=document.getElementById('bookedCard');
-const bookFormErr=document.getElementById('bookFormErr');
 
-bookform.addEventListener('submit',async(e)=>{
+bookform.addEventListener('submit',async (e)=>{
   e.preventDefault();
-  bookFormErr.hidden=true;
   const day=allDays[bookState.dayIndex];
   if(!day||!bookState.slot){slotError.hidden=false;return;}
-  const name=bk_name.value.trim(),email=bk_email.value.trim();
-  if(!name||!email)return;
+  const name=bk_name.value.trim();
+  const email=bk_email.value.trim();
   const phone=bk_phone.value.trim();
   const archive=bk_archive.value.trim();
   const onZoom=bookState.method==='Zoom';
   const when=day.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+' at '+bookState.slot;
-  const where=onZoom?'Zoom link sent to '+email:'We call you at '+(phone||'the number you gave us');
+  const where=onZoom?'Zoom link sent to '+(email||'your inbox'):'We call you on '+(phone||'the number you gave us');
 
-  bookSubmit.disabled=true;bookSubmit.textContent='Booking…';
-
-  const promoting=[
-    archive?`Archive: ${archive}`:null,
-    `Requested: ${when}, ${bookState.method}${phone?' ('+phone+')':''}`
-  ].filter(Boolean).join('  ·  ');
-
+  bookSubmit.disabled=true;
+  const prevLabel=bookSubmit.textContent;
+  bookSubmit.textContent='Sending…';
   try{
-    const r=await fetch(CLYPIO_API+'/access-request',{method:'POST',
-      headers:{'Content-Type':'application/json'},body:JSON.stringify({name,email,promoting,role:'client'})});
-    if(r.ok){
-      bookform.hidden=true;
-      document.getElementById('bookedIntro').textContent=onZoom
-        ? 'A calendar invite with the Zoom link is on its way to '+email+'. We send the agenda the day before.'
-        : 'We call you at that time on '+(phone||'the number you gave us')+'. No Zoom link is sent, and the invite goes to '+email+'.';
-      document.getElementById('bookedWhen').textContent=when;
-      document.getElementById('bookedWhere').textContent=where;
-      bookedCard.hidden=false;
-    }else{
-      bookSubmit.disabled=false;bookSubmit.textContent='Book the call';
-      bookFormErr.textContent='Something went wrong. Please email us directly.';bookFormErr.hidden=false;
-    }
+    await fetch('/api/access-request',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        name,email,company:archive,role:'client',
+        promoting:'Pilot call requested: '+when+' via '+bookState.method+(phone?' ('+phone+')':'')
+      })
+    });
   }catch(err){
-    bookSubmit.disabled=false;bookSubmit.textContent='Book the call';
-    bookFormErr.textContent='Network error. Please try again.';bookFormErr.hidden=false;
+    slotError.textContent='Could not send the request — check your connection and try again.';
+    slotError.hidden=false;
+    bookSubmit.disabled=false;
+    bookSubmit.textContent=prevLabel;
+    return;
   }
+
+  bookform.hidden=true;
+  document.getElementById('bookedIntro').textContent=onZoom
+    ? 'Request sent. Marek will confirm the Zoom link by email at '+(email||'your inbox')+' before the call.'
+    : 'Request sent. Marek will confirm by calling '+(phone||'the number you gave us')+' at that time.';
+  document.getElementById('bookedWhen').textContent=when;
+  document.getElementById('bookedWhere').textContent=where;
+  bookedCard.hidden=false;
 });
 
 document.getElementById('rescheduleBtn').addEventListener('click',()=>{

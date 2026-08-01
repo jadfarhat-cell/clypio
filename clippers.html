@@ -39,6 +39,7 @@
   --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
+[hidden]{display:none!important;}
 html{scroll-behavior:smooth;}
 body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased;}
 a{color:inherit;text-decoration:none;}
@@ -109,7 +110,7 @@ h2 + .steps{margin-top:48px;}
 .brief-card:hover{border-color:rgba(185,146,74,.55);transform:translateY(-2px);background:rgba(185,146,74,.04);}
 .brief-card:active{transform:translateY(0) scale(.995);}
 .brief-cover{height:150px;border:1px solid var(--line);border-radius:3px;margin-bottom:20px;background-color:var(--card);background-image:repeating-linear-gradient(135deg,rgba(243,241,234,.055) 0 7px,rgba(243,241,234,0) 7px 14px);display:flex;align-items:flex-end;padding:14px;overflow:hidden;}
-.brief-cover img{width:100%;height:100%;object-fit:cover;}
+.brief-cover .art{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--faint);}
 .brief-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px;}
 .brief-name{font-family:var(--grotesk);font-weight:600;font-size:16px;margin-bottom:4px;}
 .brief-meta{font-family:var(--grotesk);font-size:12.5px;color:var(--dim);}
@@ -132,7 +133,13 @@ h2 + .steps{margin-top:48px;}
 .brief-modal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:24px;}
 .brief-modal-stats .l{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;display:block;}
 .brief-modal-stats .v{font-family:var(--grotesk);font-weight:600;font-size:16px;font-variant-numeric:tabular-nums;}
-.brief-modal-cta{display:block;text-align:center;}
+.brief-modal-reqs-label{font-family:var(--grotesk);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.brief-modal-reqs{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+.brief-modal-req{display:flex;gap:12px;align-items:baseline;font-size:14.5px;line-height:1.55;}
+.brief-modal-req .m{color:var(--gold);flex:none;}
+.brief-modal-req span:last-child{color:var(--dim);}
+.brief-modal-footer{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.brief-modal-note{font-size:13px;color:var(--faint);max-width:34ch;line-height:1.5;}
 
 @media(max-width:700px){
   .briefs-grid{grid-template-columns:1fr;}
@@ -173,13 +180,21 @@ h2 + .steps{margin-top:48px;}
 .faqa-wrap p{font-size:15px;line-height:1.6;color:var(--dim);max-width:64ch;padding-bottom:24px;}
 
 /* apply */
-.apply{text-align:center;}
-.apply .inner{max-width:560px;margin:0 auto;}
-.apply h2{margin:0 auto 16px;max-width:none;}
-.apply .lede{margin:0 auto 32px;max-width:none;}
-.apply .cta-row{justify-content:center;}
-.apply .fineprint{font-size:13px;color:var(--faint);margin-top:20px;line-height:1.6;}
+.apply .inner{max-width:640px;margin:0 auto;}
+.apply h2{margin:0 0 16px;}
+.apply .lede{margin:0 0 36px;}
+.apply-form{display:flex;flex-direction:column;gap:20px;}
+.apply-form label{display:block;font-family:var(--grotesk);font-size:12px;color:var(--dim);margin-bottom:8px;}
+.apply-form input{width:100%;box-sizing:border-box;height:46px;background:var(--ink);border:1px solid var(--line);color:var(--text);font-family:var(--sans);font-size:14.5px;padding:0 14px;border-radius:4px;transition:border-color .16s ease;}
+.apply-form input:focus{outline:none;border-color:var(--gold);}
+.apply-submitrow{align-self:flex-start;}
+.apply .fineprint{font-size:13px;color:var(--faint);margin:0;line-height:1.55;}
 .apply .fineprint a{color:var(--gold2);}
+.apply-done{border:1px solid var(--gold);padding:28px;border-radius:4px;}
+.apply-done-title{font-family:var(--grotesk);font-weight:600;font-size:17px;margin-bottom:8px;color:var(--gold2);}
+.apply-done p{font-size:14.5px;line-height:1.6;color:var(--dim);margin:0 0 20px;}
+.apply-done-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.apply-resent{font-family:var(--grotesk);font-size:13px;color:var(--gold2);}
 
 /* footer */
 footer{padding:56px 0 40px;}
@@ -228,8 +243,8 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
     <a href="#payouts" class="link">Payouts</a>
     <a href="#faq" class="link">FAQ</a>
     <a href="/" class="link">For brands</a>
-    <a href="https://app.clypio.com/login/clipper" class="link">Log in</a>
-    <a href="https://app.clypio.com/login/clipper" class="btn primary">Create account</a>
+    <a href="/login" class="link">Log in</a>
+    <a href="#apply" class="btn primary">Create account</a>
   </div>
 </nav>
 
@@ -239,13 +254,13 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
     <h1 class="reveal">Get paid for the clips that survive.</h1>
     <p class="lede reveal">Every brief sets its own rate per 1,000 verified views, and you see it before you claim. You clip, you post from your own account, you get paid on what verifies.</p>
     <div class="cta-row reveal">
-      <a href="https://app.clypio.com/login/clipper" class="btn primary">Create account</a>
+      <a href="#apply" class="btn primary">Create account</a>
       <a href="#campaigns" class="btn text">See open campaigns</a>
     </div>
     <div class="statstrip reveal">
       <div class="stat">
         <div class="l">Rate</div>
-        <div class="v accent">$1.75 to $7.50<span class="note">per 1,000 verified views, set per brief</span></div>
+        <div class="v accent">$1 to $4<span class="note">per 1,000 verified views, set per brief</span></div>
       </div>
       <div class="stat">
         <div class="l">Payouts</div>
@@ -297,10 +312,9 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
   <div class="wrap">
     <div class="briefs-head">
       <h2 class="reveal">Briefs open to the network.</h2>
+      <span class="text-dim" style="font-family:var(--grotesk);font-size:12px;">Live</span>
     </div>
-    <div class="briefs-grid reveal" id="briefsGrid">
-      <p class="text-dim" id="briefsEmpty" hidden>No open briefs right now &mdash; check back soon.</p>
-    </div>
+    <div class="briefs-grid reveal" id="briefsGrid"></div>
   </div>
 </section>
 
@@ -321,7 +335,12 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
       <div><span class="l">Per-clip cap</span><span class="v" id="briefModalCap"></span></div>
       <div><span class="l">Pool left</span><span class="v" id="briefModalPool"></span></div>
     </div>
-    <a href="https://app.clypio.com/login/clipper" class="btn primary brief-modal-cta">Create account to claim</a>
+    <div class="brief-modal-reqs-label">What this brief asks for</div>
+    <div class="brief-modal-reqs" id="briefModalReqs"></div>
+    <div class="brief-modal-footer">
+      <a href="#apply" class="btn primary" id="briefModalCta">Create account to claim</a>
+      <span class="brief-modal-note">Claiming opens once your email is verified.</span>
+    </div>
   </div>
 </div>
 
@@ -356,15 +375,33 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
   </div>
 </section>
 
-<section id="apply" class="apply">
+<section id="apply" class="apply tinted">
   <div class="wrap">
     <div class="inner">
       <h2 class="reveal">Create your clipper account.</h2>
       <p class="lede reveal">We send a verification link to your email. Once it is confirmed you can connect your posting accounts and claim any open brief.</p>
-      <div class="cta-row reveal">
-        <a href="https://app.clypio.com/login/clipper" class="btn primary">Create account</a>
+      <form class="apply-form reveal" id="applyForm">
+        <div>
+          <label for="ap_email">Email</label>
+          <input id="ap_email" required type="email" name="email" placeholder="you@email.com">
+        </div>
+        <div>
+          <label for="ap_password">Password</label>
+          <input id="ap_password" required type="password" name="password" minlength="8" placeholder="At least 8 characters">
+        </div>
+        <button type="submit" class="btn primary apply-submitrow">Create account</button>
+        <p class="fineprint" id="applyErr" hidden style="color:var(--gold2);"></p>
+        <p class="fineprint">By creating an account you agree to the <a href="/terms.html">Terms</a> and the <a href="/privacy.html">Privacy Policy</a>. Already have an account? <a href="/login">Log in</a>.</p>
+      </form>
+      <div class="apply-done" id="applyDone" hidden>
+        <div class="apply-done-title">Check your inbox.</div>
+        <p>We sent a verification link to <span id="applySentTo" style="color:var(--text);"></span>. Claiming briefs and submitting clips unlock once the link is confirmed.</p>
+        <div class="apply-done-row">
+          <button type="button" class="btn ghost" id="applyResend">Resend link</button>
+          <button type="button" class="btn text" id="applyEditEmail" style="border:none;padding:0;">Use a different email</button>
+          <span class="apply-resent" id="applyResentNote" hidden>Sent again</span>
+        </div>
       </div>
-      <p class="fineprint reveal">By creating an account you agree to the <a href="/terms.html">Terms</a> and the <a href="/privacy.html">Privacy Policy</a>. Already have an account? <a href="https://app.clypio.com/login/clipper">Log in</a>.</p>
     </div>
   </div>
 </section>
@@ -388,7 +425,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
         <div class="fh">Company</div>
         <div class="fcol">
           <a href="/">For brands</a>
-          <a href="https://app.clypio.com/login/clipper">Log in</a>
+          <a href="/login">Log in</a>
           <a href="mailto:hello@clypio.com">Contact</a>
         </div>
       </div>
@@ -465,7 +502,7 @@ io3.observe(ledger);
 
 /* faq accordion, first item open by default */
 const FAQS=[
-  {q:'How and when do I get paid?',a:'At the rate on the brief you claimed, paid twice monthly. Rates are set by the brand, usually between $1.75 and $7.50 per 1,000 verified views, and are shown before you claim. Views enter your ledger as soon as they verify, so you can see a payout building before it lands.'},
+  {q:'How and when do I get paid?',a:'At the rate on the brief you claimed, paid twice monthly. Rates are set by the brand, usually between $1 and $4 per 1,000 verified views, and are shown before you claim. Views enter your ledger as soon as they verify, so you can see a payout building before it lands.'},
   {q:'Why were some of my views not paid?',a:'Two reasons only. Views flagged as bot traffic by platform-level fraud signals, and views above the per-clip cap set on the brief. Both are shown as separate lines in your ledger.'},
   {q:'What is a per-clip cap?',a:'The maximum verified views a single clip can be paid on, set on the brief before you claim it. It protects the brand&rsquo;s pool and it is disclosed up front, never applied after the fact.'},
   {q:'Which platforms can I post on?',a:'YouTube Shorts verification is live, TikTok is in platform review, Reels and X follow.'},
@@ -485,34 +522,40 @@ FAQS.forEach((f,i)=>{
   faqlist.appendChild(item);
 });
 
-/* open campaigns: real briefs from the live backend, not illustrative data */
+/* open campaigns: real /public/campaigns */
 function escHtml(s){return (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 const briefsGrid=document.getElementById('briefsGrid');
-const briefsEmpty=document.getElementById('briefsEmpty');
 const briefModalBackdrop=document.getElementById('briefModalBackdrop');
-let BRIEFS=[];
+const reqsLabel=document.querySelector('.brief-modal-reqs-label');
 
 function openBrief(b){
   document.getElementById('briefModalName').textContent=b.name;
   document.getElementById('briefModalMeta').textContent=`${b.type} · ${b.platform} · ${b.status}`;
-  document.getElementById('briefModalDetail').textContent=b.brief||'No additional detail from the brand yet — claim it to see the full brief.';
+  document.getElementById('briefModalDetail').textContent=b.brief||'No further detail provided by the brand yet.';
   document.getElementById('briefModalRate').textContent=b.rate;
   document.getElementById('briefModalCap').textContent=b.cap;
   document.getElementById('briefModalPool').textContent=b.pool_left;
+  const reqs=document.getElementById('briefModalReqs');
+  reqs.innerHTML='';
+  reqsLabel.hidden=true;
   briefModalBackdrop.hidden=false;
 }
 briefModalBackdrop.addEventListener('click',(e)=>{ if(e.target===briefModalBackdrop) briefModalBackdrop.hidden=true; });
 document.getElementById('briefModalClose').addEventListener('click',()=>{ briefModalBackdrop.hidden=true; });
+document.getElementById('briefModalCta').addEventListener('click',()=>{ briefModalBackdrop.hidden=true; });
 
-fetch('https://app.clypio.com/public/campaigns').then(r=>r.ok?r.json():[]).then(rows=>{
-  BRIEFS=rows||[];
-  if(BRIEFS.length===0){ briefsEmpty.hidden=false; return; }
-  BRIEFS.forEach((b,i)=>{
+fetch('/api/public/campaigns').then(r=>r.json()).then(briefs=>{
+  briefsGrid.innerHTML='';
+  if(!briefs.length){
+    briefsGrid.innerHTML='<p style="color:var(--dim);font-size:14.5px;">No open briefs right now — check back soon.</p>';
+    return;
+  }
+  briefs.forEach(b=>{
     const card=document.createElement('button');
     card.type='button';
     card.className='brief-card';
     card.innerHTML=`
-      <div class="brief-cover">${b.cover_url?`<img src="${escHtml(b.cover_url)}" alt="">`:''}</div>
+      <div class="brief-cover">${b.cover_url?`<img src="${escHtml(b.cover_url)}" alt="" style="width:100%;height:100%;object-fit:cover;">`:`<span class="art">${escHtml(b.type)} · ${escHtml(b.platform)}</span>`}</div>
       <div class="brief-card-head">
         <div><div class="brief-name">${escHtml(b.name)}</div><div class="brief-meta">${escHtml(b.type)} · ${escHtml(b.platform)}</div></div>
         <span class="brief-status">${escHtml(b.status)}</span>
@@ -526,7 +569,66 @@ fetch('https://app.clypio.com/public/campaigns').then(r=>r.ok?r.json():[]).then(
     card.addEventListener('click',()=>openBrief(b));
     briefsGrid.appendChild(card);
   });
-}).catch(()=>{ briefsEmpty.textContent='Could not load open briefs right now.'; briefsEmpty.hidden=false; });
+}).catch(()=>{
+  briefsGrid.innerHTML='<p style="color:var(--dim);font-size:14.5px;">Could not load open briefs right now.</p>';
+});
+
+/* clipper signup: real /auth/signup-clipper */
+const applyForm=document.getElementById('applyForm');
+const applyDone=document.getElementById('applyDone');
+const applyResentNote=document.getElementById('applyResentNote');
+const applySubmitBtn=applyForm.querySelector('button[type="submit"]');
+let resentTimer;
+function deriveHandle(email){
+  let h=(email.split('@')[0]||'').replace(/[^A-Za-z0-9_.\-]/g,'').slice(0,40);
+  if(h.length<2)h=(h+'clipper').slice(0,40);
+  return h;
+}
+applyForm.addEventListener('submit',async (e)=>{
+  e.preventDefault();
+  const email=ap_email.value.trim();
+  const password=ap_password.value;
+  applySubmitBtn.disabled=true;
+  const prevLabel=applySubmitBtn.textContent;
+  applySubmitBtn.textContent='Creating account…';
+  try{
+    const res=await fetch('/api/auth/signup-clipper',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({handle:deriveHandle(email),email,password,channels:''})
+    });
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok)throw new Error(data.detail||'Could not create the account.');
+    sessionStorage.setItem('clypio_token',data.token);
+    sessionStorage.setItem('clypio_role',data.role);
+    sessionStorage.setItem('clypio_name',data.name||'');
+    sessionStorage.setItem('clypio_email',data.email||email);
+    document.getElementById('applySentTo').textContent=data.email||email;
+    applyForm.hidden=true;
+    applyDone.hidden=false;
+  }catch(err){
+    applySubmitBtn.disabled=false;
+    applySubmitBtn.textContent=prevLabel;
+    const errEl=document.getElementById('applyErr');
+    errEl.textContent=err.message;
+    errEl.hidden=false;
+  }
+});
+document.getElementById('applyResend').addEventListener('click',async ()=>{
+  const t=sessionStorage.getItem('clypio_token');
+  if(!t)return;
+  try{
+    await fetch('/api/auth/resend-verification',{method:'POST',headers:{Authorization:'Bearer '+t,'Content-Type':'application/json'},body:'{}'});
+  }catch(err){}
+  applyResentNote.hidden=false;
+  clearTimeout(resentTimer);
+  resentTimer=setTimeout(()=>{applyResentNote.hidden=true;},2400);
+});
+document.getElementById('applyEditEmail').addEventListener('click',()=>{
+  applyDone.hidden=true;
+  applyForm.hidden=false;
+  applyResentNote.hidden=true;
+});
 </script>
 </body>
 </html>

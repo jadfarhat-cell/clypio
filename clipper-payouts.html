@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Payouts | Clypio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E0D0C; --ink-raised:#17160F; --ink-panel:#1C1B14; --text:#F3F1EA; --dim:#9C988F; --faint:#6E6B62; --line:rgba(243,241,234,.14);
+  --gold:#B9924A; --gold2:#D9BD84; --gold-tint:rgba(185,146,74,.14); --radius:12px;
+  --serif:'Fraunces',Georgia,serif; --grotesk:'Space Grotesk',sans-serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+[hidden]{display:none!important;}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);display:grid;grid-template-columns:235px minmax(0,1fr);min-height:100vh;}
+a{color:var(--gold2);text-decoration:none;}
+a:hover{color:var(--text);}
+::selection{background:rgba(185,146,74,.35);}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+@keyframes popIn{from{opacity:0;transform:scale(.7);}to{opacity:1;transform:scale(1);}}
+@keyframes shimmer{from{opacity:.35;}to{opacity:.75;}}
+button{font:inherit;}
+aside{border-right:1px solid var(--line);display:flex;flex-direction:column;padding:20px 0;}
+.aside-logo{padding:0 20px 20px;margin-bottom:12px;border-bottom:1px solid var(--line);}
+.aside-logo .name{font-family:var(--grotesk);font-weight:700;font-size:20px;letter-spacing:-.02em;}
+.aside-logo .d{color:var(--gold);}
+.aside-logo .sub{font-family:var(--grotesk);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:6px;}
+.navlist{display:flex;flex-direction:column;gap:2px;padding:0 12px;flex:1;}
+.navlink{display:flex;align-items:center;gap:12px;padding:10px 12px;text-decoration:none;font-size:14px;font-family:var(--grotesk);border-radius:8px;color:var(--dim);}
+.navlink:hover{background:var(--ink-raised);color:var(--text);}
+.navlink svg{flex:none;}
+.navbadge{margin-left:auto;font-family:var(--grotesk);font-size:11px;font-weight:600;padding:2px 7px;border-radius:20px;background:var(--gold-tint);color:var(--gold2);}
+.navcurrent{display:flex;align-items:center;gap:12px;padding:10px 12px;font-size:14px;font-family:var(--grotesk);font-weight:600;border-radius:8px;background:var(--gold-tint);color:var(--gold2);}
+.navdot{margin-left:auto;width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none;}
+.payoutbox{margin:12px 12px 0;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--ink-raised);}
+.payoutbox .l{font-family:var(--grotesk);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
+.payoutbox .amt{font-family:var(--serif);font-weight:500;font-size:22px;font-variant-numeric:tabular-nums;letter-spacing:-.01em;}
+.payoutbox .date{font-size:12px;color:var(--faint);margin-top:5px;}
+.payoutbox-held{display:flex;align-items:flex-start;gap:7px;margin-top:11px;padding-top:11px;border-top:1px solid var(--line);}
+.payoutbox-held svg{flex:none;margin-top:2px;color:var(--gold2);}
+.payoutbox-held span{font-size:11.5px;color:var(--gold2);line-height:1.45;}
+.asidefoot{padding:16px 20px 0;border-top:1px solid var(--line);margin-top:12px;display:flex;align-items:center;gap:10px;}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--gold-tint);color:var(--gold2);display:flex;align-items:center;justify-content:center;font-family:var(--grotesk);font-weight:700;font-size:13px;flex:none;}
+.asidefoot .who{min-width:0;flex:1;}
+.asidefoot .name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.asidefoot .role{font-size:11.5px;color:var(--dim);}
+.asidefoot a{color:var(--faint);flex:none;display:flex;}
+main{padding:28px clamp(20px,3vw,40px) 60px;min-width:0;}
+.toprow{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:28px;}
+.toptab{display:flex;align-items:center;gap:8px;padding:11px 16px;border:none;background:none;cursor:pointer;font-family:var(--grotesk);font-size:13.5px;color:var(--dim);border-bottom:2px solid transparent;margin-bottom:-1px;}
+.toptab.on{color:var(--text);font-weight:600;border-color:var(--gold);}
+.toptab .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none;}
+.tab{display:none;}
+.tab.on{display:block;}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.8vw,33px);letter-spacing:-.015em;margin:0 0 8px;}
+.pagesub{font-size:14.5px;line-height:1.6;color:var(--dim);margin:0 0 26px;max-width:60ch;}
+
+.steprow{display:flex;align-items:center;gap:0;margin-bottom:30px;}
+.stepitem{display:flex;align-items:center;gap:0;min-width:0;}
+.stepitem.grow{flex:1;}
+.stepdot{width:24px;height:24px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--grotesk);font-size:11.5px;font-weight:600;border:1px solid var(--line);}
+.stepdot.done{border-color:var(--gold);background:var(--gold-tint);color:var(--gold2);}
+.stepdot.active{border-color:var(--gold2);color:var(--text);}
+.stepdot.todo{color:var(--faint);}
+.steplabel{font-family:var(--grotesk);font-size:12.5px;white-space:nowrap;margin-left:9px;color:var(--faint);}
+.steplabel.on{color:var(--text);}
+.stepbar{height:1px;flex:1;min-width:16px;margin:0 12px;background:var(--line);}
+.stepbar.done{background:var(--gold);}
+
+.skeletonbox{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:var(--ink-raised);}
+.skelrow{border-radius:6px;background:var(--ink-panel);margin-bottom:14px;animation:shimmer 1s ease-in-out infinite alternate;}
+
+.taxform{border:1px solid var(--line);border-radius:var(--radius);background:var(--ink-raised);overflow:hidden;}
+.taxsec{padding:22px 24px;border-bottom:1px solid var(--line);}
+.taxsec:last-child{border-bottom:none;}
+.taxsec-label{font-family:var(--grotesk);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:13px;}
+.taxsec-toprow{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:13px;}
+.residencyrow{display:flex;gap:8px;flex-wrap:wrap;}
+.residencyopt{flex:1;min-width:200px;text-align:left;padding:14px 16px;border-radius:10px;cursor:pointer;border:1px solid var(--line);background:transparent;}
+.residencyopt.on{border-color:var(--gold);background:rgba(185,146,74,.1);}
+.residencyopt-top{display:flex;align-items:center;gap:10px;}
+.ring{width:16px;height:16px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--faint);}
+.residencyopt.on .ring{border-color:var(--gold);}
+.ringdot{width:8px;height:8px;border-radius:50%;background:transparent;}
+.residencyopt.on .ringdot{background:var(--gold);}
+.residencyopt-top .lbl{font-family:var(--grotesk);font-size:13.5px;font-weight:600;color:var(--text);}
+.residencyopt-desc{display:block;font-size:12px;color:var(--dim);margin-top:7px;padding-left:26px;line-height:1.5;}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px;}
+.flabelsm{display:block;font-size:11.5px;color:var(--faint);margin-bottom:7px;}
+.finput,.fselect{width:100%;box-sizing:border-box;height:44px;background:var(--ink);border:1px solid var(--line);color:var(--text);font-family:var(--sans);font-size:14px;padding:0 13px;border-radius:8px;}
+.finput.mono{font-family:var(--grotesk);font-variant-numeric:tabular-nums;}
+.finput:focus,.fselect:focus{outline:none;border-color:var(--gold);}
+.finput.bad,.fselect.bad{border-color:var(--gold);}
+.addrgroup{margin-top:16px;}
+.addrhint{font-size:11.5px;color:var(--faint);margin-top:7px;}
+.treatybox{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);}
+.methodlist{border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.methodopt{width:100%;box-sizing:border-box;display:flex;align-items:center;gap:12px;padding:13px 14px;border:none;border-bottom:1px solid var(--line);cursor:pointer;text-align:left;background:transparent;}
+.methodopt:last-child{border-bottom:none;}
+.methodopt.on{background:rgba(185,146,74,.1);}
+.methodopt .info{flex:1;min-width:0;}
+.methodopt .lbl{display:block;font-family:var(--grotesk);font-size:13.5px;color:var(--text);}
+.methodopt .sub{display:block;font-size:12px;color:var(--faint);margin-top:3px;}
+.methodopt .fee{font-family:var(--grotesk);font-size:11px;color:var(--faint);flex:none;}
+.certcheckbox{width:18px;height:18px;border-radius:5px;flex:none;margin-top:1px;cursor:pointer;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);background:transparent;color:var(--ink);}
+.certcheckbox.checked{background:var(--gold);border-color:var(--gold);}
+.certrow{display:flex;align-items:flex-start;gap:11px;margin-bottom:16px;}
+.certrow span{font-size:13px;color:var(--text);line-height:1.5;}
+.signwrap{max-width:340px;margin-bottom:18px;}
+.signinput{width:100%;box-sizing:border-box;height:46px;background:var(--ink);border:1px solid var(--line);color:var(--text);font-family:var(--serif);font-size:18px;padding:0 14px;border-radius:8px;}
+.signinput:focus{outline:none;border-color:var(--gold);}
+.err{display:flex;align-items:flex-start;gap:9px;padding:11px 13px;border:1px solid var(--gold);background:rgba(185,146,74,.1);border-radius:9px;margin-bottom:16px;}
+.err svg{flex:none;margin-top:1px;color:var(--gold2);}
+.err span{font-size:12.5px;color:var(--gold2);line-height:1.45;}
+.submitrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.taxsubmitbtn{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:var(--ink);border:none;font-family:var(--grotesk);font-weight:600;font-size:14px;padding:13px 22px;border-radius:9px;cursor:pointer;}
+.taxsubmitbtn:hover{background:var(--gold2);}
+.spinner{width:14px;height:14px;border-radius:50%;border:2px solid rgba(14,13,12,.3);border-top-color:var(--ink);animation:spin .7s linear infinite;display:none;}
+.busy .spinner{display:inline-block;}
+.notefine{font-size:12px;color:var(--faint);}
+
+.statuspanel{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:var(--ink-raised);}
+.statuspanel.reject{border-color:var(--gold);background:rgba(185,146,74,.08);}
+.pending-top{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.spinner-lg{width:34px;height:34px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--gold);animation:spin .85s linear infinite;flex:none;}
+.pending-top .t{font-family:var(--serif);font-weight:500;font-size:18px;}
+.pending-top .s{font-size:12.5px;color:var(--dim);margin-top:3px;}
+.statuspanel p{margin:0 0 18px;font-size:13.5px;line-height:1.6;color:var(--dim);max-width:58ch;}
+.actrow{display:flex;gap:10px;flex-wrap:wrap;}
+.actbtn{background:none;border:1px solid var(--line);color:var(--text);font-family:var(--grotesk);font-size:13px;padding:10px 16px;border-radius:8px;cursor:pointer;}
+.actbtn:hover{border-color:var(--gold);color:var(--gold2);}
+.verified-icon{width:42px;height:42px;border-radius:50%;background:var(--gold-tint);color:var(--gold2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;animation:popIn .32s cubic-bezier(.34,1.56,.64,1) both;}
+.verified-title{font-family:var(--serif);font-weight:500;font-size:19px;margin-bottom:8px;}
+.vrow{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13.5px;}
+.vrow .l{color:var(--dim);}
+.vrow .v{font-family:var(--grotesk);font-variant-numeric:tabular-nums;}
+.vwrap{border-top:1px solid var(--line);}
+.reject-title{font-family:var(--serif);font-weight:500;font-size:19px;margin-bottom:8px;}
+.rejectlist{display:flex;flex-direction:column;gap:9px;margin-bottom:20px;}
+.rejectitem{display:flex;gap:10px;align-items:baseline;font-size:13px;}
+.rejectitem .m{color:var(--gold);flex:none;}
+.rejectitem span:last-child{color:var(--dim);line-height:1.5;}
+
+/* submit clip */
+.submitgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px;align-items:start;}
+.claimlist{border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.claimopt{width:100%;box-sizing:border-box;display:flex;align-items:center;gap:12px;padding:13px 14px;border:none;border-bottom:1px solid var(--line);cursor:pointer;text-align:left;background:transparent;}
+.claimopt:last-child{border-bottom:none;}
+.claimopt.on{background:rgba(185,146,74,.1);}
+.claimopt .info{flex:1;min-width:0;}
+.claimopt .lbl{display:block;font-family:var(--grotesk);font-size:13.5px;color:var(--text);}
+.claimopt .sub{display:block;font-size:12px;color:var(--faint);margin-top:3px;}
+.claimopt .rate{font-family:var(--grotesk);font-size:11.5px;padding:3px 9px;border-radius:20px;background:var(--gold-tint);color:var(--gold2);flex:none;}
+.noclaims{border:1px dashed var(--line);border-radius:10px;padding:26px;text-align:center;}
+.noclaims .t{font-family:var(--grotesk);font-size:14px;margin-bottom:7px;}
+.noclaims p{margin:0 0 16px;font-size:12.5px;color:var(--dim);line-height:1.55;}
+.noclaims a{display:inline-block;background:none;border:1px solid var(--gold);color:var(--gold2);text-decoration:none;font-family:var(--grotesk);font-size:13px;padding:10px 16px;border-radius:8px;}
+.urlhintrow{display:flex;align-items:center;gap:8px;margin-top:10px;}
+.urlhintrow .dot{width:6px;height:6px;border-radius:50%;background:var(--faint);flex:none;}
+.urlhintrow .dot.on{background:var(--gold);}
+.urlhintrow span:last-child{font-size:12px;color:var(--dim);}
+.checklist{display:flex;flex-direction:column;gap:11px;margin-bottom:18px;}
+.checkitem{display:flex;align-items:flex-start;gap:11px;background:none;border:none;padding:0;cursor:pointer;text-align:left;color:inherit;}
+.checkitem span:last-child{font-size:13.5px;line-height:1.5;color:var(--dim);}
+.checkitem.on span:last-child{color:var(--text);}
+.sidepanel{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:var(--ink-raised);margin-bottom:16px;}
+.sidepanel .l{font-family:var(--grotesk);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:13px;}
+.confirmbox{border:1px solid var(--gold);border-radius:var(--radius);padding:20px;background:rgba(185,146,74,.08);margin-bottom:16px;}
+.confirmbox .icon{width:34px;height:34px;border-radius:50%;background:var(--gold-tint);color:var(--gold2);display:flex;align-items:center;justify-content:center;margin-bottom:13px;animation:popIn .32s cubic-bezier(.34,1.56,.64,1) both;}
+.confirmbox .t{font-family:var(--grotesk);font-weight:600;font-size:14.5px;margin-bottom:7px;}
+.confirmbox p{margin:0;font-size:12.5px;line-height:1.55;color:var(--dim);}
+.pipeitem{display:flex;gap:11px;align-items:flex-start;margin-bottom:14px;}
+.pipeitem:last-child{margin-bottom:0;}
+.pipeitem .n{width:20px;height:20px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--grotesk);font-size:10.5px;font-weight:600;border:1px solid var(--line);background:var(--ink-panel);color:var(--dim);}
+.pipeitem .t{display:block;font-family:var(--grotesk);font-size:13px;}
+.pipeitem .d{display:block;font-size:12px;color:var(--faint);margin-top:3px;line-height:1.5;}
+.estval{font-family:var(--serif);font-weight:500;font-size:26px;font-variant-numeric:tabular-nums;letter-spacing:-.01em;color:var(--gold2);}
+.estnote{margin:9px 0 0;font-size:12px;color:var(--faint);line-height:1.5;}
+
+/* statements */
+.stmthead{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:26px;}
+.yearrow{display:flex;gap:8px;}
+.yearchip{padding:8px 14px;border-radius:20px;cursor:pointer;font-family:var(--grotesk);font-size:12.5px;border:1px solid var(--line);background:transparent;color:var(--dim);}
+.yearchip.on{border-color:var(--gold);background:var(--gold-tint);color:var(--gold2);}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:26px;}
+.statcell{border:1px solid var(--line);border-radius:var(--radius);padding:18px;}
+.statcell .l{font-family:var(--grotesk);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.statcell .v{font-family:var(--serif);font-weight:500;font-size:26px;font-variant-numeric:tabular-nums;letter-spacing:-.01em;}
+.statcell .n{font-size:12px;color:var(--faint);margin-top:6px;}
+.pyhead{display:grid;grid-template-columns:1fr 1.1fr .9fr .9fr .8fr;padding:13px 20px;background:var(--ink-panel);font-family:var(--grotesk);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);}
+.pyrow{width:100%;box-sizing:border-box;display:grid;grid-template-columns:1fr 1.1fr .9fr .9fr .8fr;padding:14px 20px;align-items:center;background:none;border:none;color:inherit;font-family:inherit;font-size:13.5px;text-align:left;cursor:pointer;}
+.pyrow .chevron{color:var(--faint);display:inline-flex;transition:transform .2s cubic-bezier(.23,1,.32,1);}
+.pyrow .chevron.open{transform:rotate(180deg);}
+.pyrow .num{font-family:var(--grotesk);font-variant-numeric:tabular-nums;text-align:right;}
+.pydetail{padding:4px 20px 20px 42px;}
+.pydetail-inner{border:1px solid var(--line);border-radius:10px;background:var(--ink-panel);overflow:hidden;max-width:660px;}
+.pydetailhead{display:grid;grid-template-columns:.8fr 1.2fr .8fr .8fr;padding:11px 16px;border-bottom:1px solid var(--line);font-family:var(--grotesk);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);}
+.pydetailrow{display:grid;grid-template-columns:.8fr 1.2fr .8fr .8fr;padding:10px 16px;border-bottom:1px solid var(--line);font-size:12.5px;align-items:center;}
+.pydetailrow .n{font-family:var(--grotesk);font-variant-numeric:tabular-nums;text-align:right;}
+.pydetailfoot{display:flex;justify-content:space-between;gap:14px;padding:12px 16px;font-size:13px;font-weight:600;}
+.pydetailfoot .v{font-family:var(--grotesk);font-variant-numeric:tabular-nums;color:var(--gold2);}
+.pyactions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+.runsnote{display:flex;align-items:center;gap:10px;margin-top:16px;color:var(--faint);}
+.runsnote svg{flex:none;}
+.runsnote span{font-size:11.5px;line-height:1.5;}
+.emptystmt{border:1px dashed var(--line);border-radius:var(--radius);padding:44px 28px;text-align:center;}
+.emptystmt .t{font-family:var(--serif);font-weight:500;font-size:19px;margin-bottom:9px;}
+.emptystmt p{margin:0 auto 20px;max-width:44ch;font-size:13.5px;line-height:1.6;color:var(--dim);}
+.emptystmt a{display:inline-block;background:var(--gold);color:var(--ink);text-decoration:none;font-family:var(--grotesk);font-weight:600;font-size:14px;padding:12px 20px;border-radius:9px;}
+.tagpill{font-family:var(--grotesk);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:20px;}
+.tagpill.paid{background:var(--gold-tint);color:var(--gold2);}
+.tagpill.held{background:rgba(243,241,234,.08);color:var(--dim);}
+@media(max-width:900px){.submitgrid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<aside>
+  <div class="aside-logo"><span class="name">Clypio<span class="d">.</span></span><div class="sub">Clipper console</div></div>
+  <nav class="navlist">
+    <a href="/clipper-dashboard" class="navlink"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>Overview</a>
+    <a href="/clipper-dashboard" class="navlink"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M8 12h8M8 16h5"></path></svg>Open briefs<span class="navbadge" id="openBriefBadge2"></span></a>
+    <a href="/clipper-dashboard" class="navlink"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 8 6 4-6 4V8z"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>My clips</a>
+    <span class="navcurrent"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>Payouts<span class="navdot" id="navPayoutDot"></span></span>
+    <a href="/clipper-dashboard" class="navlink"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings</a>
+  </nav>
+  <div class="payoutbox">
+    <div class="l">Next payout</div>
+    <div class="amt" id="nextPayoutAmt"></div>
+    <div class="date" id="nextPayoutDate"></div>
+    <div class="payoutbox-held" id="payoutHeldNote"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4M12 16h.01"></path></svg><span>Held until your tax form is on file.</span></div>
+  </div>
+  <div class="asidefoot">
+    <div class="avatar">JV</div>
+    <div class="who"><div class="name">Jo Vance</div><div class="role">Clipper</div></div>
+    <a href="#" id="logoutLink2" title="Log out"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="M16 17l5-5-5-5M21 12H9"></path></svg></a>
+  </div>
+</aside>
+
+<main>
+  <div class="toprow" id="topTabs"></div>
+
+  <!-- TAX TAB -->
+  <div class="tab" data-tab="tax">
+    <div style="max-width:720px;">
+      <h1>Payout and tax details</h1>
+      <p class="pagesub">Required once, before your first payout leaves. Verified views keep accruing in the meantime, nothing is lost while this sits incomplete.</p>
+      <div class="steprow" id="stepRow"></div>
+      <div id="taxContent"></div>
+    </div>
+  </div>
+
+  <!-- SUBMIT TAB -->
+  <div class="tab" data-tab="submit">
+    <div style="max-width:900px;">
+      <h1>Submit a clip</h1>
+      <p class="pagesub">Post from your own account first, then paste the link. Verification starts within the hour and you can watch it clear.</p>
+      <div class="submitgrid">
+        <form class="taxform" id="clipForm">
+          <div class="taxsec">
+            <div class="taxsec-label">Which brief</div>
+            <div id="claimListWrap"></div>
+          </div>
+          <div class="taxsec">
+            <div class="taxsec-label">Where you posted it</div>
+            <input class="finput" id="clipUrl" placeholder="https://youtube.com/shorts/...">
+            <div class="urlhintrow"><span class="dot" id="urlDot"></span><span id="urlHintText"></span></div>
+            <div class="grid2" style="margin-top:18px;">
+              <div><label class="flabelsm">Posted at</label><input class="finput mono" type="datetime-local" id="clipPosted"></div>
+              <div><label class="flabelsm">Account handle</label><input class="finput mono" id="clipHandle" placeholder="@yourhandle"></div>
+            </div>
+          </div>
+          <div class="taxsec">
+            <div class="taxsec-label">Requirements on this brief</div>
+            <div class="checklist" id="checklistWrap"></div>
+            <div class="err" id="clipErr" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4M12 16h.01"></path></svg><span id="clipErrText"></span></div>
+            <button type="submit" class="taxsubmitbtn" id="clipSubmitBtn"><span class="spinner"></span><span id="clipSubmitLabel">Submit for verification</span></button>
+          </div>
+        </form>
+        <div>
+          <div class="confirmbox" id="clipConfirmBox" hidden>
+            <div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
+            <div class="t">Clip CL-4506 submitted</div>
+            <p>Verification starts within the hour. You will see reported views first, then the verified figure once bot traffic is filtered.</p>
+          </div>
+          <div class="sidepanel"><div class="l">What happens next</div><div id="pipelineWrap"></div></div>
+          <div class="sidepanel" style="margin-bottom:0;"><div class="l">Estimated on this clip</div><div class="estval" id="estRange"></div><p class="estnote" id="estNote"></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATEMENTS TAB -->
+  <div class="tab" data-tab="statements">
+    <div style="max-width:1000px;">
+      <div class="stmthead">
+        <div><h1>Payout history</h1><p class="pagesub" style="margin:0;">Every run, and the clips it paid on. Statements are itemised to the clip so you can check the arithmetic yourself.</p></div>
+        <div class="yearrow" id="yearRow"></div>
+      </div>
+      <div class="statgrid" id="statGrid"></div>
+      <div id="statementsBody"></div>
+    </div>
+  </div>
+</main>
+
+<script>
+function fmtUsd(n){return '$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fmtInt(n){return Math.round(n).toLocaleString('en-US');}
+function esc(s){return (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+const API='/api';
+const token=sessionStorage.getItem('clypio_token');
+if(!token || sessionStorage.getItem('clypio_role')!=='clipper'){
+  window.location.href='/login';
+}
+
+async function apiGet(path){
+  const res=await fetch(API+path,{headers:{Authorization:'Bearer '+token}});
+  if(res.status===401){ sessionStorage.clear(); window.location.href='/login'; throw new Error('signed out'); }
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok)throw new Error(data.detail||'Request failed');
+  return data;
+}
+async function apiPost(path,body){
+  const res=await fetch(API+path,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify(body||{})});
+  if(res.status===401){ sessionStorage.clear(); window.location.href='/login'; throw new Error('signed out'); }
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok)throw new Error(data.detail||'Request failed');
+  return data;
+}
+
+const CHECKLIST_DEFS_FALLBACK=['Posted from an account I control'];
+
+const state={
+  tab:'tax',residency:'us',legalName:'',tinLast4:'',country:'United States',
+  method:'bank',acct:'',
+  briefId:null,url:'',clipStatus:'idle',year:new Date().getFullYear().toString(),openPayout:null,error:'',busy:false,
+  data:null,tax:null,payouts:null,
+  loadError:''
+};
+
+async function loadAll(){
+  const [dataR,taxR,payoutsR]=await Promise.allSettled([
+    apiGet('/me/clipper'), apiGet('/auth/tax'), apiGet('/me/payouts')
+  ]);
+  if(dataR.status==='fulfilled'){
+    const data=dataR.value;
+    state.data=data;
+    state.method=data.payout_method&&['bank','wire','paypal'].includes(data.payout_method)?data.payout_method:'bank';
+    if(!state.briefId){
+      const open=(data.jobs||[]).filter(j=>!j.locked);
+      state.briefId=open[0]?open[0].id:null;
+    }
+  }
+  if(taxR.status==='fulfilled'){
+    const tax=taxR.value;
+    state.tax=tax;
+    state.legalName=tax.legal_name||state.legalName;
+    state.country=tax.country||state.country;
+    state.residency=tax.form_type==='w8ben'?'foreign':'us';
+  }
+  if(payoutsR.status==='fulfilled')state.payouts=payoutsR.value;
+  const failed=[dataR,taxR,payoutsR].find(r=>r.status==='rejected');
+  state.loadError=failed?failed.reason.message:'';
+  render();
+}
+
+async function submitTax(e){
+  e.preventDefault();
+  const s=state;
+  if(!s.legalName.trim()){ s.error='Enter your full legal name as it appears on your tax return.'; render(); return; }
+  const digits=s.tinLast4.replace(/\D/g,'');
+  if(digits.length!==4){ s.error='Enter the last 4 digits of your taxpayer ID.'; render(); return; }
+  if(!s.acct.trim()){ s.error='Add the account or email that should receive payouts.'; render(); return; }
+  s.error=''; s.busy=true; render();
+  try{
+    await apiPost('/auth/tax',{form_type:s.residency==='us'?'w9':'w8ben',legal_name:s.legalName.trim(),country:s.country.trim(),tax_id_last4:digits});
+    await apiPost('/me/payout-method',{payout_method:s.method,payout_handle:s.acct.trim()});
+    s.busy=false;
+    await loadAll();
+  }catch(err){
+    s.busy=false; s.error=err.message; render();
+  }
+}
+
+async function submitClip(e){
+  e.preventDefault();
+  const s=state;
+  if(!/^https?:\/\/.+\..+/.test(s.url.trim())){ s.error='Paste the full public URL of the posted clip.'; render(); return; }
+  if(!s.briefId){ s.error='Pick a brief first.'; render(); return; }
+  s.error=''; s.busy=true; s.clipStatus='busy'; render();
+  try{
+    const out=await apiPost('/submissions',{campaign_id:s.briefId,post_url:s.url.trim()});
+    s.busy=false; s.clipStatus='sent'; s.url=''; s.lastClipId=out.id;
+    await loadAll();
+  }catch(err){
+    s.busy=false; s.clipStatus='idle'; s.error=err.message; render();
+  }
+}
+
+function money(str){ return parseFloat(String(str||'0').replace(/[^0-9.-]/g,''))||0; }
+
+function render(){
+  const s=state;
+  const who=sessionStorage.getItem('clypio_name')||sessionStorage.getItem('clypio_email')||'Clipper';
+  document.querySelector('.asidefoot .avatar').textContent=(who.trim().split(/\s+/).map(w=>w[0]).slice(0,2).join('')||'?').toUpperCase();
+  document.querySelector('.asidefoot .name').textContent=who;
+
+  if(!s.data||!s.tax){
+    if(s.loadError)document.querySelector('.tab[data-tab="tax"] .pagesub').textContent='Could not load: '+s.loadError;
+    return;
+  }
+  const d=s.data;
+  const tax=s.tax;
+  document.getElementById('openBriefBadge2').textContent=(d.jobs||[]).filter(j=>!j.locked).length;
+  const isUs=s.residency==='us';
+  const formName=isUs?'Form W-9':'Form W-8BEN';
+  const verified=tax.required_now;
+
+  const nextAmt=money(d.owed);
+  document.getElementById('navPayoutDot').style.display=verified?'':'none';
+  document.getElementById('nextPayoutAmt').textContent=d.owed;
+  document.getElementById('nextPayoutDate').textContent='Releases '+d.next_payout_date;
+  document.getElementById('payoutHeldNote').style.display=verified?'flex':'none';
+
+  const tabs=[{key:'tax',label:'Payout and tax',dot:tax.status!=='verified'&&(nextAmt>0||tax.status!=='not_submitted')},{key:'submit',label:'Submit a clip',dot:false},{key:'statements',label:'Payout history',dot:false}];
+  document.getElementById('topTabs').innerHTML=tabs.map(t=>`<button type="button" class="toptab ${s.tab===t.key?'on':''}" data-t="${t.key}">${t.label}${t.dot?'<span class="dot"></span>':''}</button>`).join('');
+  document.getElementById('topTabs').querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{ s.tab=b.dataset.t; s.error=''; render(); });
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.tab===s.tab));
+
+  if(s.tab==='tax'){
+    const stepDefs=[
+      {label:'Residency',done:true},
+      {label:'Identity',done:tax.status!=='not_submitted'||!!s.legalName.trim()},
+      {label:'Payout method',done:tax.status!=='not_submitted'||!!s.acct.trim()}
+    ];
+    const activeIdx=stepDefs.findIndex(x=>!x.done);
+    document.getElementById('stepRow').innerHTML=stepDefs.map((x,i)=>{
+      const active=i===activeIdx;
+      const cls=x.done?'done':active?'active':'todo';
+      return `<div class="stepitem ${i===stepDefs.length-1?'':'grow'}">
+        <span class="stepdot ${cls}">${x.done?'✓':i+1}</span>
+        <span class="steplabel ${x.done||active?'on':''}">${x.label}</span>
+      </div>${i!==stepDefs.length-1?`<span class="stepbar ${x.done?'done':''}"></span>`:''}`;
+    }).join('');
+
+    const content=document.getElementById('taxContent');
+    if(tax.status==='verified'){
+      const rows=[
+        {k:'Form on file',v:formName},
+        {k:'Legal name',v:tax.legal_name},
+        {k:'Taxpayer ID',v:'Ending '+(tax.tax_id_last4||s.tinLast4||'****')},
+        {k:'Payout method',v:d.payout_method||'not set'},
+      ];
+      content.innerHTML=`<div class="statuspanel">
+        <div class="verified-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
+        <div class="verified-title">Payouts are live</div>
+        <p>${esc(formName)} is on file and verified by the team. Held earnings release with the next run.</p>
+        <div class="vwrap">${rows.map(r=>`<div class="vrow"><span class="l">${esc(r.k)}</span><span class="v">${esc(r.v)}</span></div>`).join('')}</div>
+        <div class="actrow" style="margin-top:20px;"><button type="button" class="actbtn" id="goStatementsBtn">See statements</button></div>
+      </div>`;
+      document.getElementById('goStatementsBtn').onclick=()=>{ s.tab='statements'; render(); };
+    } else if(tax.status==='submitted'){
+      content.innerHTML=`<div class="statuspanel">
+        <div class="pending-top"><span class="spinner-lg"></span><div><div class="t">In review</div><div class="s">${esc(formName)} submitted, awaiting verification</div></div></div>
+        <p>Verified views keep accruing while this runs. Your first payout releases once the team verifies the form on file.</p>
+      </div>`;
+    } else {
+      content.innerHTML=taxFormHtml(isUs,formName);
+      wireTaxForm();
+    }
+  }
+
+  if(s.tab==='submit'){
+    const jobs=(d.jobs||[]).filter(j=>!j.locked);
+    const claimListWrap=document.getElementById('claimListWrap');
+    if(jobs.length){
+      claimListWrap.innerHTML=`<div class="claimlist">${jobs.map(b=>`<button type="button" class="claimopt ${s.briefId===b.id?'on':''}" data-i="${b.id}"><span class="ring"><span class="ringdot"></span></span><span class="info"><span class="lbl">${esc(b.title)}</span><span class="sub">${esc(b.category_label)}</span></span><span class="rate">${esc(b.rate)}</span></button>`).join('')}</div>`;
+      claimListWrap.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{ s.briefId=parseInt(b.dataset.i,10); s.error=''; render(); });
+    } else {
+      claimListWrap.innerHTML=`<div class="noclaims"><div class="t">No open briefs right now</div><p>Check back once a brand funds a new pool.</p><a href="/clipper-dashboard">Browse open briefs</a></div>`;
+    }
+    const urlInput=document.getElementById('clipUrl');
+    if(document.activeElement!==urlInput)urlInput.value=s.url;
+    urlInput.oninput=(e)=>{ s.url=e.target.value; s.error=''; render(); };
+    urlInput.classList.toggle('bad',/URL/i.test(s.error));
+    const isShorts=/youtube\.com\/shorts/i.test(s.url);
+    document.getElementById('urlDot').classList.toggle('on',isShorts);
+    document.getElementById('urlHintText').textContent='The platform is detected automatically from the link.';
+
+    document.getElementById('clipErr').hidden=!s.error;
+    document.getElementById('clipErrText').textContent=s.error;
+    document.getElementById('clipSubmitBtn').classList.toggle('busy',s.busy);
+    document.getElementById('clipSubmitLabel').textContent=s.busy?'Submitting':'Submit for verification';
+    document.getElementById('clipConfirmBox').hidden=s.clipStatus!=='sent';
+    if(s.clipStatus==='sent'){
+      document.querySelector('#clipConfirmBox .t').textContent='Clip '+(s.lastClipId||'')+' submitted';
+    }
+
+    document.getElementById('pipelineWrap').innerHTML=[
+      {n:'1',title:'Platform data pulled',desc:'We read reported views straight from the platform, not a screenshot.'},
+      {n:'2',title:'Bot traffic filtered',desc:'Suspect views are voided before anything is payable.'},
+      {n:'3',title:'Operator decides',desc:'Approved, rejected, or voided — every decision is on the record.'},
+      {n:'4',title:'Verified and payable',desc:'The figure enters your ledger for the next payout run.'}
+    ].map(p=>`<div class="pipeitem"><span class="n">${p.n}</span><span><span class="t">${p.title}</span><span class="d">${p.desc}</span></span></div>`).join('');
+
+    const brief=jobs.find(j=>j.id===s.briefId);
+    document.getElementById('estRange').textContent=brief?brief.rate:'—';
+    document.getElementById('estNote').textContent=brief?('Rate on '+brief.title+'. Actual pay depends on verified views.'):'Pick a brief to see its rate.';
+  }
+
+  if(s.tab==='statements'){
+    const payouts=s.payouts||[];
+    const years=Array.from(new Set(payouts.map(p=>(p.created_at||'').slice(0,4)))).filter(Boolean);
+    if(!years.length)years.push(s.year);
+    document.getElementById('yearRow').innerHTML=years.map(y=>`<button type="button" class="yearchip ${s.year===y?'on':''}" data-y="${y}">${y}</button>`).join('');
+    document.getElementById('yearRow').querySelectorAll('[data-y]').forEach(b=>b.onclick=()=>{ s.year=b.dataset.y; s.openPayout=null; render(); });
+
+    const payoutsForYear=payouts.filter(p=>(p.created_at||'').slice(0,4)===s.year);
+    const sentTotal=payoutsForYear.filter(p=>p.status==='sent').reduce((a,p)=>a+money(p.amount),0);
+    document.getElementById('statGrid').innerHTML=[
+      {label:'Paid this year',value:fmtUsd(sentTotal),note:payoutsForYear.filter(p=>p.status==='sent').length+' run(s)'},
+      {label:'Currently owed',value:d.owed,note:'Not yet paid out'},
+      {label:'Verified clips',value:d.verified_clips+'',note:'All time'},
+      {label:'Lifetime earned',value:d.lifetime_earned,note:'All time'}
+    ].map(st=>`<div class="statcell"><div class="l">${st.label}</div><div class="v">${st.value}</div><div class="n">${st.note}</div></div>`).join('');
+
+    const body=document.getElementById('statementsBody');
+    if(payoutsForYear.length===0){
+      body.innerHTML=`<div class="emptystmt"><div class="t">No payouts in ${esc(s.year)}</div><p>Your first run lands once the team sends a payout for your verified views.</p><a href="/clipper-dashboard">Find a brief to clip</a></div>`;
+    } else {
+      body.innerHTML=`<div class="panel" style="border:1px solid var(--line);border-radius:12px;overflow:hidden;">
+        <div class="pyhead"><span>Run</span><span>Sent</span><span style="text-align:right;">Clips</span><span style="text-align:right;">Amount</span><span style="text-align:right;">Status</span></div>
+        <div id="payoutRowsWrap"></div>
+      </div>`;
+      document.getElementById('payoutRowsWrap').innerHTML=payoutsForYear.map(p=>{
+        return `<div style="border-bottom:1px solid var(--line);">
+          <div class="pyrow" style="cursor:default;">
+            <span style="font-family:var(--grotesk);">PR-${p.id}</span>
+            <span style="color:var(--dim);">${p.sent_at?p.sent_at.slice(0,10):p.created_at.slice(0,10)}</span>
+            <span class="num">${p.clips}</span>
+            <span class="num" style="font-weight:600;">${esc(p.amount)}</span>
+            <span style="text-align:right;"><span class="tagpill ${p.status==='sent'?'paid':'held'}">${esc(p.status)}</span></span>
+          </div>
+        </div>`;
+      }).join('');
+    }
+  }
+}
+
+function taxFormHtml(isUs,formName){
+  const countryOptions=isUs?['United States']:['United Kingdom','Canada','Australia','Germany','Netherlands','Ireland','Philippines','Brazil'];
+  const s=state;
+  return `<form class="taxform" id="taxForm">
+    <div class="taxsec">
+      <div class="taxsec-label">Where you are taxed</div>
+      <div class="residencyrow">
+        <button type="button" class="residencyopt ${s.residency==='us'?'on':''}" data-res="us"><span class="residencyopt-top"><span class="ring"><span class="ringdot"></span></span><span class="lbl">United States</span></span><span class="residencyopt-desc">You file a US return. We collect a W-9 and issue a 1099 above $600.</span></button>
+        <button type="button" class="residencyopt ${s.residency==='foreign'?'on':''}" data-res="foreign"><span class="residencyopt-top"><span class="ring"><span class="ringdot"></span></span><span class="lbl">Outside the United States</span></span><span class="residencyopt-desc">We collect a W-8BEN.</span></button>
+      </div>
+    </div>
+    <div class="taxsec">
+      <div class="taxsec-toprow"><div class="taxsec-label" style="margin-bottom:0;">Taxpayer identity</div><div style="font-family:var(--grotesk);font-size:11px;color:var(--gold2);">${esc(formName)}</div></div>
+      <div class="grid2">
+        <div><label class="flabelsm">Full legal name</label><input class="finput ${/legal name/i.test(s.error)?'bad':''}" id="legalNameInput" placeholder="As it appears on your tax return" value="${esc(s.legalName)}"></div>
+        <div><label class="flabelsm">Last 4 digits of your ${isUs?'SSN or EIN':'foreign taxpayer ID'}</label><input class="finput mono ${/taxpayer ID|digits/i.test(s.error)?'bad':''}" id="tinInput" maxlength="4" inputmode="numeric" placeholder="0000" value="${esc(s.tinLast4)}"></div>
+        <div><label class="flabelsm">Country of residence</label><select class="fselect" id="countrySelect">${countryOptions.map(o=>`<option ${o===s.country?'selected':''}>${o}</option>`).join('')}</select></div>
+      </div>
+      <div class="addrhint">We only ever store the last 4 digits of your taxpayer ID.</div>
+    </div>
+    <div class="taxsec">
+      <div class="taxsec-label">How you get paid</div>
+      <div class="methodlist" id="methodListWrap"></div>
+      <div class="grid2" style="margin-top:16px;">
+        <div><label class="flabelsm" id="acctLabel"></label><input class="finput mono ${/account/i.test(s.error)?'bad':''}" id="acctInput" value="${esc(s.acct)}"></div>
+      </div>
+    </div>
+    <div class="taxsec">
+      ${s.error?`<div class="err"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4M12 16h.01"></path></svg><span>${esc(s.error)}</span></div>`:''}
+      <div class="submitrow">
+        <button type="submit" class="taxsubmitbtn ${s.busy?'busy':''}"><span class="spinner"></span>${s.busy?'Submitting':'Submit '+esc(formName)}</button>
+        <span class="notefine">Encrypted in transit. Clypio stores the last four digits of your ${isUs?'TIN':'foreign TIN'} only.</span>
+      </div>
+    </div>
+  </form>`;
+}
+function wireTaxForm(){
+  const s=state;
+  document.querySelectorAll('[data-res]').forEach(b=>b.addEventListener('click',()=>{
+    s.residency=b.dataset.res; s.error=''; s.country=b.dataset.res==='us'?'United States':'United Kingdom'; render();
+  }));
+  document.getElementById('legalNameInput').addEventListener('input',(e)=>{ s.legalName=e.target.value; s.error=''; });
+  document.getElementById('tinInput').addEventListener('input',(e)=>{ s.tinLast4=e.target.value.replace(/\D/g,'').slice(0,4); s.error=''; });
+  document.getElementById('countrySelect').addEventListener('change',(e)=>{ s.country=e.target.value; });
+  const methodOptions=[
+    {key:'bank',label:'Bank transfer, ACH',sub:'US accounts'},
+    {key:'wire',label:'International wire',sub:'Most countries'},
+    {key:'paypal',label:'PayPal',sub:'Same day in most markets'}
+  ];
+  document.getElementById('methodListWrap').innerHTML=methodOptions.map(m=>{
+    const on=s.method===m.key;
+    return `<button type="button" class="methodopt ${on?'on':''}" data-m="${m.key}"><span class="ring"><span class="ringdot"></span></span><span class="info"><span class="lbl">${m.label}</span><span class="sub">${m.sub}</span></span></button>`;
+  }).join('');
+  document.getElementById('methodListWrap').querySelectorAll('[data-m]').forEach(b=>b.addEventListener('click',()=>{ s.method=b.dataset.m; s.error=''; render(); }));
+  const acctLabels={bank:'Account and routing number',wire:'IBAN or account number',paypal:'PayPal email'};
+  const acctPlaceholders={bank:'000000000 / 00000000',wire:'GB00 XXXX 0000 0000',paypal:'you@email.com'};
+  document.getElementById('acctLabel').textContent=acctLabels[s.method];
+  document.getElementById('acctInput').placeholder=acctPlaceholders[s.method];
+  document.getElementById('acctInput').addEventListener('input',(e)=>{ s.acct=e.target.value; s.error=''; });
+  document.getElementById('taxForm').addEventListener('submit',submitTax);
+}
+
+document.getElementById('clipForm').addEventListener('submit',submitClip);
+document.getElementById('logoutLink2').addEventListener('click',(e)=>{ e.preventDefault(); sessionStorage.clear(); window.location.href='/login'; });
+render();
+loadAll();
+
+</script>
+</body>
+</html>
