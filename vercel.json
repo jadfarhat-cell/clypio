@@ -3,5 +3,15 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/api/:path*", "destination": "https://app.clypio.com/:path*" }
+  ],
+  "redirects": [
+    { "source": "/login", "destination": "https://app.clypio.com/login", "permanent": false },
+    { "source": "/login/clipper", "destination": "https://app.clypio.com/login/clipper", "permanent": false },
+    { "source": "/auth", "destination": "https://app.clypio.com/auth", "permanent": false },
+    { "source": "/reset-password", "destination": "https://app.clypio.com/reset-password", "permanent": false },
+    { "source": "/dashboard", "destination": "https://app.clypio.com/dashboard", "permanent": false },
+    { "source": "/admin-dashboard", "destination": "https://app.clypio.com/admin-dashboard", "permanent": false },
+    { "source": "/clipper-dashboard", "destination": "https://app.clypio.com/clipper-dashboard", "permanent": false },
+    { "source": "/clipper-payouts", "destination": "https://app.clypio.com/clipper-payouts", "permanent": false }
   ]
 }
