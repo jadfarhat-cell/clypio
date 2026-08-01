@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- REVIEW BEFORE PUBLISHING: this is a drafted starting point, not a
+     third-party accessibility audit. The WCAG 2.1 AA target below reflects
+     work actually done as of the "last updated" date (contrast, keyboard
+     operability, focus indicators, semantic labels, skip links) — it is a
+     good-faith self-assessment, not a conformance certification. Complex
+     interactive widgets (charts, multi-step forms) have not been tested with
+     a screen reader end-to-end; say so plainly rather than overclaim. -->
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all">
+<meta name="description" content="Clypio's accessibility target, what's been done, and how to report a problem.">
+<title>Accessibility Statement | Clypio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..560&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E0D0C; --ink2:#17160F; --card:#17160F; --card2:#17160F; --line:rgba(243,241,234,.14);
+  --text:#F3F1EA; --dim:#9C988F; --faint:#8A867A; --gold:#B9924A; --gold2:#D9BD84; --green:#3FB66B;
+  --serif:'Fraunces',Georgia,serif; --grotesk:'Space Grotesk',sans-serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+.skip{position:absolute;left:-999px;top:10px;z-index:1000;background:var(--gold);color:var(--ink);font-family:var(--grotesk);font-weight:600;font-size:13px;padding:10px 16px;border-radius:8px;}
+.skip:focus{left:16px;}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.68;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
+
+nav{position:sticky;top:0;z-index:40;background:rgba(12,13,16,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{font-family:var(--grotesk);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--text);}
+.logo .d{color:var(--gold);}
+.navlinks{display:flex;align-items:center;gap:32px;}
+.navlinks a{font-family:var(--grotesk);font-size:14px;color:var(--dim);transition:.2s;}
+.navlinks a:hover{color:var(--text);}
+
+header{padding:64px 0 34px;border-bottom:1px solid var(--line);}
+.eyebrow{font-family:var(--grotesk);font-weight:500;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);}
+h1{font-family:var(--serif);font-weight:540;font-size:clamp(32px,5vw,52px);line-height:1.04;letter-spacing:-.015em;margin:16px 0 0;}
+.updated{color:var(--faint);font-size:13.5px;font-family:var(--grotesk);margin-top:18px;}
+.intro{color:var(--dim);font-size:16.5px;max-width:66ch;margin-top:22px;}
+
+.doc{display:grid;grid-template-columns:230px 1fr;gap:48px;padding:52px 0 96px;}
+.toc{position:sticky;top:92px;align-self:start;display:flex;flex-direction:column;gap:32px;}
+.docswitch{display:flex;flex-direction:column;}
+.docswitch a{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding:14px 0;font-family:var(--grotesk);font-weight:600;font-size:14px;color:var(--dim);transition:opacity .16s ease;}
+.docswitch a:last-child{border-bottom:1px solid var(--line);}
+.docswitch a:hover{opacity:.82;}
+.docswitch a.on{color:var(--text);}
+.docswitch .bar{width:3px;height:15px;flex:none;background:transparent;}
+.docswitch a.on .bar{background:var(--gold);}
+
+.body h2{font-family:var(--serif);font-weight:540;font-size:26px;line-height:1.15;letter-spacing:-.01em;margin:44px 0 14px;scroll-margin-top:88px;}
+.body h2:first-child{margin-top:0;}
+.body p{color:var(--dim);font-size:15.5px;margin:0 0 15px;max-width:70ch;}
+.body ul{margin:0 0 15px;padding-left:0;list-style:none;max-width:70ch;}
+.body li{color:var(--dim);font-size:15.5px;position:relative;padding-left:22px;margin-bottom:10px;}
+.body li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:.7;}
+.body strong{color:var(--text);font-weight:600;}
+.body a.inline{color:var(--gold2);border-bottom:1px solid rgba(227,192,74,.35);}
+.body a.inline:hover{border-color:var(--gold2);}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:16px 20px;margin:20px 0;}
+.note p{margin:0;color:var(--dim);font-size:14.5px;}
+
+footer{border-top:1px solid var(--line);padding:40px 0;}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center;}
+.flinks a{font-family:var(--grotesk);font-size:13px;color:var(--dim);margin-right:20px;transition:.2s;}
+.flinks a:hover{color:var(--text);}
+.fcopy{font-size:12.5px;color:var(--faint);font-family:var(--grotesk);}
+
+@media (max-width:820px){
+  .doc{grid-template-columns:1fr;gap:0;}
+  .toc{display:none;}
+}
+@media (pointer:coarse){ .backlink,.flinks a{min-height:36px;display:inline-flex;align-items:center;} }
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<nav><div class="wrap">
+  <a href="https://clypio.com" class="logo">Clypio<span class="d">.</span></a>
+  <div class="navlinks">
+    <a href="https://clypio.com">For brands</a>
+    <a href="/clippers.html">For clippers</a>
+    <a href="https://app.clypio.com/login">Log in</a>
+  </div>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="eyebrow">Legal</div>
+  <h1>Accessibility Statement</h1>
+  <div class="updated">Last updated: August 1, 2026</div>
+  <p class="intro">Clypio aims to meet WCAG 2.1 Level AA across our website and dashboards. This page states that target plainly, what we've actually done toward it, what we haven't gotten to yet, and how to reach us if something doesn't work for you.</p>
+</div></header>
+
+<div class="wrap"><div class="doc">
+  <aside class="toc" aria-label="Table of contents">
+    <nav class="docswitch">
+      <a href="/terms.html"><span class="bar"></span>Terms of Service</a>
+      <a href="/privacy.html"><span class="bar"></span>Privacy Policy</a>
+      <a href="/accessibility.html" class="on"><span class="bar"></span>Accessibility</a>
+    </nav>
+  </aside>
+
+  <main class="body" id="main">
+    <h2>Our target</h2>
+    <p>We're working toward <strong>WCAG 2.1 Level AA</strong>, the widely-used benchmark for digital accessibility, across clypio.com and the client, clipper, and admin consoles at app.clypio.com. This is a self-assessment against that standard, not a certification from a third-party auditor — we haven't commissioned one yet.</p>
+
+    <h2>What we've done</h2>
+    <ul>
+      <li><strong>Color contrast:</strong> text and interactive elements are checked against the 4.5:1 (normal text) and 3:1 (large text, UI components) ratios WCAG AA requires.</li>
+      <li><strong>Keyboard access:</strong> every control we build — including filter toggles, modals, and menus — can be operated without a mouse, with a visible focus indicator that doesn't disappear on interactive elements.</li>
+      <li><strong>Labels:</strong> form fields are programmatically associated with their labels, not just visually adjacent, so screen readers and voice control announce the right thing.</li>
+      <li><strong>Skip links:</strong> every page lets a keyboard user jump straight past repeated navigation to the main content.</li>
+      <li><strong>Semantic structure:</strong> headings, landmarks, and lists follow their actual document structure rather than being faked with generic styled divs.</li>
+    </ul>
+
+    <h2>What we haven't fully tested yet</h2>
+    <p>Clypio is an early-stage product and this is an ongoing effort, not a finished project. Specifically:</p>
+    <ul>
+      <li>The overview charts (verified-views trend lines) have not been tested end-to-end with a screen reader; the underlying numbers are available elsewhere on the same page as a fallback.</li>
+      <li>Below roughly 1024px width, the console sidebar has not been redesigned into a dedicated mobile pattern; it remains usable but is not yet optimized for that width.</li>
+      <li>We have not run a full audit with assistive technology (NVDA, JAWS, VoiceOver) end-to-end across every screen.</li>
+    </ul>
+
+    <h2>Feedback</h2>
+    <p>If you hit a barrier using Clypio — a control you can't reach by keyboard, text you can't read, or anything else — tell us and we'll work on it. Email <a class="inline" href="mailto:privacy@clypio.com">privacy@clypio.com</a> with what page you were on and what happened; we read every message and will follow up.</p>
+
+    <h2>Changes to this statement</h2>
+    <p>We'll update the date at the top when we make a material change to what's covered here.</p>
+  </main>
+</div></div>
+
+<footer><div class="wrap">
+  <div class="flinks">
+    <a href="https://clypio.com">Home</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="/accessibility.html">Accessibility</a>
+    <a href="https://app.clypio.com/login">Log in</a>
+  </div>
+  <div class="fcopy">© 2026 Clypio. Performance clipping network.</div>
+</div></footer>
+</body>
+</html>
