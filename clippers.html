@@ -65,9 +65,12 @@ h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.2vw,44px);lin
 nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:36px;padding:18px clamp(20px,5vw,72px);border-bottom:1px solid transparent;background:rgba(12,13,16,.7);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);transition:border-color .3s ease,background .3s ease;}
 nav.scrolled{border-bottom-color:var(--line);background:rgba(12,13,16,.92);}
 .logo{font-family:var(--grotesk);font-weight:700;font-size:21px;letter-spacing:-.02em;margin-right:auto;}
-.logo .d{color:var(--gold);}
-nav a.link{color:var(--dim);font-size:14px;font-family:var(--grotesk);transition:color .18s ease;}
+.logo .d{color:var(--gold);display:inline-block;transition:transform .3s var(--ease);}
+.logo:hover .d{transform:translateY(-3px);}
+nav a.link{position:relative;color:var(--dim);font-size:14px;font-family:var(--grotesk);transition:color .18s ease;}
 nav a.link:hover{color:var(--text);}
+nav a.link::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--gold2);transform:scaleX(0);transform-origin:left;transition:transform .22s var(--ease);}
+nav a.link:hover::after{transform:scaleX(1);}
 nav .navcta{padding:10px 20px;font-size:14px;}
 .navlinks{display:flex;align-items:center;gap:32px;}
 .navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:0;}
@@ -155,7 +158,8 @@ h2 + .steps{margin-top:48px;}
 .statuslist{display:flex;flex-direction:column;gap:14px;margin-top:24px;}
 .statusitem{display:flex;align-items:center;gap:10px;font-family:var(--grotesk);font-size:14px;}
 .dot{width:8px;height:8px;border-radius:50%;flex:none;}
-.dot.live{background:var(--gold);}
+.dot.live{background:var(--gold);animation:dotpulse 2.2s ease-in-out infinite;}
+@keyframes dotpulse{0%,100%{opacity:1;}50%{opacity:.4;}}
 .dot.review{border:1.5px solid var(--gold2);}
 .dot.later{border:1.5px solid var(--faint);}
 .statusitem.later{color:var(--dim);}
