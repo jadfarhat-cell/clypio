@@ -469,7 +469,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
 
           <div class="method-label">How we meet</div>
           <div class="method-grid" id="methodGrid">
-            <button type="button" class="method-btn" data-method="Zoom"><span class="ml">Zoom</span><span class="mh">Link sent with the invite</span></button>
+            <button type="button" class="method-btn" data-method="Google Meet"><span class="ml">Google Meet</span><span class="mh">Link sent with the invite</span></button>
             <button type="button" class="method-btn" data-method="Phone"><span class="ml">Phone call</span><span class="mh">We call you, no link</span></button>
           </div>
 
@@ -506,7 +506,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
           <div class="booked-row"><span class="bl">When</span><span class="bv" id="bookedWhen"></span></div>
           <div class="booked-row"><span class="bl">How</span><span class="bv" id="bookedWhere"></span></div>
           <div class="booked-row"><span class="bl">Length</span><span class="bv">25 minutes</span></div>
-          <div class="booked-row"><span class="bl">With</span><span class="bv">Marek Duras</span></div>
+          <div class="booked-row" id="bookedMeetRow" hidden><span class="bl">Link</span><span class="bv"><a id="bookedMeetLink" href="#" target="_blank" rel="noopener">Join Google Meet</a></span></div>
           <button type="button" class="btn ghost" id="rescheduleBtn">Pick another time</button>
         </div>
       </div>
@@ -663,7 +663,7 @@ function weekdaysFrom(start,count){
   return out;
 }
 
-const bookState={weekOffset:0,dayIndex:0,slot:'',method:'Zoom'};
+const bookState={weekOffset:0,dayIndex:0,slot:'',method:'Google Meet'};
 const allDays=weekdaysFrom(new Date(),10);
 
 const dayGrid=document.getElementById('dayGrid');
@@ -719,7 +719,7 @@ document.querySelectorAll('.method-btn').forEach(btn=>{
     phoneField.hidden=bookState.method!=='Phone';
   });
 });
-document.querySelector('.method-btn[data-method="Zoom"]').classList.add('on');
+document.querySelector('.method-btn[data-method="Google Meet"]').classList.add('on');
 
 calPrev.addEventListener('click',()=>{if(bookState.weekOffset>0){bookState.weekOffset--;renderDays();}});
 calNext.addEventListener('click',()=>{if(bookState.weekOffset<1){bookState.weekOffset++;renderDays();}});
@@ -738,22 +738,31 @@ bookform.addEventListener('submit',async (e)=>{
   const email=bk_email.value.trim();
   const phone=bk_phone.value.trim();
   const archive=bk_archive.value.trim();
-  const onZoom=bookState.method==='Zoom';
+  const onMeet=bookState.method==='Google Meet';
   const when=day.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+' at '+bookState.slot;
-  const where=onZoom?'Zoom link sent to '+(email||'your inbox'):'We call you on '+(phone||'the number you gave us');
+  const where=onMeet?'Google Meet link sent to '+(email||'your inbox'):'We call you on '+(phone||'the number you gave us');
+  const pad=n=>String(n).padStart(2,'0');
+  const [hh,mm]=bookState.slot.split(':').map(Number);
+  const meetStart=`${day.getFullYear()}-${pad(day.getMonth()+1)}-${pad(day.getDate())}T${pad(hh)}:${pad(mm)}:00`;
+  let meetTz='';
+  try{ meetTz=Intl.DateTimeFormat().resolvedOptions().timeZone||''; }catch(err){}
 
   bookSubmit.disabled=true;
   const prevLabel=bookSubmit.textContent;
   bookSubmit.textContent='Sending…';
+  let meetLink='';
   try{
-    await fetch('/api/access-request',{
+    const res=await fetch('/api/access-request',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
         name,email,company:archive,role:'client',
-        promoting:'Pilot call requested: '+when+' via '+bookState.method+(phone?' ('+phone+')':'')
+        promoting:'Pilot call requested: '+when+' via '+bookState.method+(phone?' ('+phone+')':''),
+        contact_method:bookState.method,meet_start:onMeet?meetStart:'',meet_tz:onMeet?meetTz:''
       })
     });
+    const data=await res.json().catch(()=>({}));
+    meetLink=data.meet_link||'';
   }catch(err){
     slotError.textContent='Could not send the request — check your connection and try again.';
     slotError.hidden=false;
@@ -763,11 +772,15 @@ bookform.addEventListener('submit',async (e)=>{
   }
 
   bookform.hidden=true;
-  document.getElementById('bookedIntro').textContent=onZoom
-    ? 'Request sent. Marek will confirm the Zoom link by email at '+(email||'your inbox')+' before the call.'
-    : 'Request sent. Marek will confirm by calling '+(phone||'the number you gave us')+' at that time.';
+  document.getElementById('bookedIntro').textContent=onMeet
+    ? (meetLink?'Request sent. Your Google Meet is confirmed below and on its way to '+(email||'your inbox')+'.'
+                :'Request sent. We\'ll confirm the Google Meet link by email at '+(email||'your inbox')+' before the call.')
+    : 'Request sent. We\'ll confirm by calling '+(phone||'the number you gave us')+' at that time.';
   document.getElementById('bookedWhen').textContent=when;
   document.getElementById('bookedWhere').textContent=where;
+  const meetRow=document.getElementById('bookedMeetRow');
+  meetRow.hidden=!meetLink;
+  if(meetLink)document.getElementById('bookedMeetLink').href=meetLink;
   bookedCard.hidden=false;
 });
 
@@ -778,7 +791,7 @@ document.getElementById('rescheduleBtn').addEventListener('click',()=>{
   bookState.slot='';
   bookSubmit.disabled=false;
   bookSubmit.textContent='Book the call';
-  document.querySelector('.method-btn[data-method="Zoom"]').click();
+  document.querySelector('.method-btn[data-method="Google Meet"]').click();
   renderSlots();
 });
 </script>
