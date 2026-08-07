@@ -70,6 +70,11 @@ nav a.link{color:var(--dim);font-size:14px;font-family:var(--grotesk);transition
 nav a.link:hover{color:var(--text);}
 nav .navcta{padding:10px 20px;font-size:14px;}
 .navlinks{display:flex;align-items:center;gap:32px;}
+.navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:0;}
+.navtoggle span{display:block;width:22px;height:2px;background:var(--text);transition:transform .25s var(--ease),opacity .2s ease;}
+.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* reveal (scroll-in) */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
@@ -212,8 +217,17 @@ footer .ftag{font-size:13px;color:var(--dim);max-width:30ch;}
   .statstrip{grid-template-columns:1fr;gap:20px;}
   .steps .row{grid-template-columns:1fr;gap:8px;}
   .fgrid{grid-template-columns:1fr 1fr;gap:28px;}
-  nav .navlinks a.link{display:none;}
   section{padding:72px 0;}
+  .navtoggle{display:flex;}
+  .navlinks{
+    position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
+    background:rgba(12,13,16,.98);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--line);padding:8px clamp(20px,5vw,72px) 8px;
+    max-height:0;overflow:hidden;opacity:0;transition:max-height .32s var(--ease),opacity .25s ease;
+  }
+  .navlinks.open{max-height:70vh;opacity:1;overflow-y:auto;}
+  .navlinks a.link{display:block;padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px;}
+  .navlinks .btn.primary{display:block;text-align:center;margin:18px 0 20px;}
 }
 @media(max-width:600px){
   .fgrid{grid-template-columns:1fr;}
@@ -237,14 +251,15 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
 
 <nav id="nav">
   <a href="#top" class="logo" onclick="return goTop()">Clypio<span class="d">.</span></a>
-  <div class="navlinks">
+  <button type="button" class="navtoggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+  <div class="navlinks" id="navlinks">
     <a href="#how" class="link">How it works</a>
     <a href="#campaigns" class="link">Open campaigns</a>
     <a href="#payouts" class="link">Payouts</a>
     <a href="#faq" class="link">FAQ</a>
     <a href="/" class="link">For brands</a>
     <a href="https://app.clypio.com/login" class="link">Log in</a>
-    <a href="#apply" class="btn primary">Create account</a>
+    <a href="https://app.clypio.com/auth?screen=signupClipper" class="btn primary">Create account</a>
   </div>
 </nav>
 
@@ -254,7 +269,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
     <h1 class="reveal">Get paid for the clips that survive.</h1>
     <p class="lede reveal">Every brief sets its own rate per 1,000 verified views, and you see it before you claim. You clip, you post from your own account, you get paid on what verifies.</p>
     <div class="cta-row reveal">
-      <a href="#apply" class="btn primary">Create account</a>
+      <a href="https://app.clypio.com/auth?screen=signupClipper" class="btn primary">Create account</a>
       <a href="#campaigns" class="btn text">See open campaigns</a>
     </div>
     <div class="statstrip reveal">
@@ -338,7 +353,7 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
     <div class="brief-modal-reqs-label">What this brief asks for</div>
     <div class="brief-modal-reqs" id="briefModalReqs"></div>
     <div class="brief-modal-footer">
-      <a href="#apply" class="btn primary" id="briefModalCta">Create account to claim</a>
+      <a href="https://app.clypio.com/auth?screen=signupClipper" class="btn primary" id="briefModalCta">Create account to claim</a>
       <span class="brief-modal-note">Claiming opens once your email is verified.</span>
     </div>
   </div>
@@ -372,37 +387,6 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
   <div class="wrap" style="max-width:820px;">
     <h2 class="reveal">What clippers ask first.</h2>
     <div class="faq-list" id="faqlist"></div>
-  </div>
-</section>
-
-<section id="apply" class="apply tinted">
-  <div class="wrap">
-    <div class="inner">
-      <h2 class="reveal">Create your clipper account.</h2>
-      <p class="lede reveal">We send a verification link to your email. Once it is confirmed you can connect your posting accounts and claim any open brief.</p>
-      <form class="apply-form reveal" id="applyForm">
-        <div>
-          <label for="ap_email">Email</label>
-          <input id="ap_email" required type="email" name="email" placeholder="you@email.com">
-        </div>
-        <div>
-          <label for="ap_password">Password</label>
-          <input id="ap_password" required type="password" name="password" minlength="8" placeholder="At least 8 characters">
-        </div>
-        <button type="submit" class="btn primary apply-submitrow">Create account</button>
-        <p class="fineprint" id="applyErr" hidden style="color:var(--gold2);"></p>
-        <p class="fineprint">By creating an account you agree to the <a href="/terms.html">Terms</a> and the <a href="/privacy.html">Privacy Policy</a>. Already have an account? <a href="https://app.clypio.com/login">Log in</a>.</p>
-      </form>
-      <div class="apply-done" id="applyDone" hidden>
-        <div class="apply-done-title">Check your inbox.</div>
-        <p>We sent a verification link to <span id="applySentTo" style="color:var(--text);"></span>. Claiming briefs and submitting clips unlock once the link is confirmed.</p>
-        <div class="apply-done-row">
-          <button type="button" class="btn ghost" id="applyResend">Resend link</button>
-          <button type="button" class="btn text" id="applyEditEmail" style="border:none;padding:0;">Use a different email</button>
-          <span class="apply-resent" id="applyResentNote" hidden>Sent again</span>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -449,6 +433,16 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
 const nav=document.getElementById('nav');
 function goTop(){window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',location.pathname+location.search);return false;}
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8));
+
+/* mobile nav toggle */
+const navToggle=document.getElementById('navToggle');
+const navlinksEl=document.getElementById('navlinks');
+function setNavOpen(open){
+  navlinksEl.classList.toggle('open',open);
+  navToggle.setAttribute('aria-expanded',open?'true':'false');
+}
+navToggle.addEventListener('click',()=>setNavOpen(!navlinksEl.classList.contains('open')));
+navlinksEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setNavOpen(false)));
 
 const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -574,62 +568,6 @@ fetch('/api/public/campaigns').then(r=>r.json()).then(briefs=>{
   briefsGrid.innerHTML='<p style="color:var(--dim);font-size:14.5px;">Could not load open briefs right now.</p>';
 });
 
-/* clipper signup: real /auth/signup-clipper */
-const applyForm=document.getElementById('applyForm');
-const applyDone=document.getElementById('applyDone');
-const applyResentNote=document.getElementById('applyResentNote');
-const applySubmitBtn=applyForm.querySelector('button[type="submit"]');
-let resentTimer;
-function deriveHandle(email){
-  let h=(email.split('@')[0]||'').replace(/[^A-Za-z0-9_.\-]/g,'').slice(0,40);
-  if(h.length<2)h=(h+'clipper').slice(0,40);
-  return h;
-}
-applyForm.addEventListener('submit',async (e)=>{
-  e.preventDefault();
-  const email=ap_email.value.trim();
-  const password=ap_password.value;
-  applySubmitBtn.disabled=true;
-  const prevLabel=applySubmitBtn.textContent;
-  applySubmitBtn.textContent='Creating account…';
-  try{
-    const res=await fetch('/api/auth/signup-clipper',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({handle:deriveHandle(email),email,password,channels:''})
-    });
-    const data=await res.json().catch(()=>({}));
-    if(!res.ok)throw new Error(data.detail||'Could not create the account.');
-    sessionStorage.setItem('clypio_token',data.token);
-    sessionStorage.setItem('clypio_role',data.role);
-    sessionStorage.setItem('clypio_name',data.name||'');
-    sessionStorage.setItem('clypio_email',data.email||email);
-    document.getElementById('applySentTo').textContent=data.email||email;
-    applyForm.hidden=true;
-    applyDone.hidden=false;
-  }catch(err){
-    applySubmitBtn.disabled=false;
-    applySubmitBtn.textContent=prevLabel;
-    const errEl=document.getElementById('applyErr');
-    errEl.textContent=err.message;
-    errEl.hidden=false;
-  }
-});
-document.getElementById('applyResend').addEventListener('click',async ()=>{
-  const t=sessionStorage.getItem('clypio_token');
-  if(!t)return;
-  try{
-    await fetch('/api/auth/resend-verification',{method:'POST',headers:{Authorization:'Bearer '+t,'Content-Type':'application/json'},body:'{}'});
-  }catch(err){}
-  applyResentNote.hidden=false;
-  clearTimeout(resentTimer);
-  resentTimer=setTimeout(()=>{applyResentNote.hidden=true;},2400);
-});
-document.getElementById('applyEditEmail').addEventListener('click',()=>{
-  applyDone.hidden=true;
-  applyForm.hidden=false;
-  applyResentNote.hidden=true;
-});
 </script>
 </body>
 </html>

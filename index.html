@@ -69,6 +69,11 @@ nav a.link{color:var(--dim);font-size:14px;font-family:var(--grotesk);transition
 nav a.link:hover{color:var(--text);}
 nav .navcta{padding:10px 20px;font-size:14px;}
 .navlinks{display:flex;align-items:center;gap:32px;}
+.navtoggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:0;}
+.navtoggle span{display:block;width:22px;height:2px;background:var(--text);transition:transform .25s var(--ease),opacity .2s ease;}
+.navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 .navsocial{display:flex;align-items:center;gap:14px;padding-left:14px;border-left:1px solid var(--line);}
 .navsocial a{color:var(--dim);display:flex;transition:color .18s ease;}
 .navsocial a:hover{color:var(--text);}
@@ -240,8 +245,18 @@ footer .ftag{font-size:13px;color:var(--dim);max-width:30ch;}
   .campaign-grid{grid-template-columns:1fr 1fr;}
   .steps .row{grid-template-columns:1fr;gap:8px;}
   .fgrid{grid-template-columns:1fr 1fr;gap:28px;}
-  nav .navlinks a.link{display:none;}
   section{padding:72px 0;}
+  .navtoggle{display:flex;}
+  .navlinks{
+    position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
+    background:rgba(14,13,12,.98);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--line);padding:8px clamp(20px,5vw,72px) 8px;
+    max-height:0;overflow:hidden;opacity:0;transition:max-height .32s var(--ease),opacity .25s ease;
+  }
+  .navlinks.open{max-height:70vh;opacity:1;overflow-y:auto;}
+  .navlinks a.link{display:block;padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px;}
+  .navlinks .navsocial{border-left:none;padding-left:0;gap:20px;padding:16px 0;}
+  .navlinks .btn.primary{display:block;text-align:center;margin:14px 0 20px;}
 }
 @media(max-width:600px){
   .campaign-grid{grid-template-columns:1fr;}
@@ -278,7 +293,8 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
 
 <nav id="nav">
   <a href="#top" class="logo" onclick="return goTop()">Clypio<span class="d">.</span></a>
-  <div class="navlinks">
+  <button type="button" class="navtoggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+  <div class="navlinks" id="navlinks">
     <a href="#how" class="link">How it works</a>
     <a href="#verification" class="link">Verification</a>
     <a href="#pricing" class="link">Pricing</a>
@@ -536,6 +552,16 @@ if('scrollRestoration' in history){history.scrollRestoration='manual';}
 const nav=document.getElementById('nav');
 function goTop(){window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',location.pathname+location.search);return false;}
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8));
+
+/* mobile nav toggle */
+const navToggle=document.getElementById('navToggle');
+const navlinksEl=document.getElementById('navlinks');
+function setNavOpen(open){
+  navlinksEl.classList.toggle('open',open);
+  navToggle.setAttribute('aria-expanded',open?'true':'false');
+}
+navToggle.addEventListener('click',()=>setNavOpen(!navlinksEl.classList.contains('open')));
+navlinksEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setNavOpen(false)));
 
 const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 
