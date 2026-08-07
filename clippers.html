@@ -233,6 +233,11 @@ footer .ftag{font-size:13px;color:var(--dim);max-width:30ch;}
   .fgrid{grid-template-columns:1fr;}
   .hero{padding:56px 0 40px;}
   nav{gap:20px;}
+  /* 3 equal columns of numeric stats get cramped on a narrow phone --
+     give each one real room instead of squeezing rates/view counts. */
+  .brief-stats,.brief-modal-stats{grid-template-columns:repeat(2,1fr);}
+  .brief-modal-backdrop{padding:12px;}
+  .brief-modal{padding:24px;}
 }
 
 @media (prefers-reduced-motion: reduce){
